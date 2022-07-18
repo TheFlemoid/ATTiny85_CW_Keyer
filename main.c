@@ -512,34 +512,30 @@ void commandmode(void)
             case	'E': // Playback Macro 1
                 yackinhibit(OFF);
                 yackmessage(PLAY,1);
-                yackinhibit(ON);
-                timer = YACKSECS(MACTIMEOUT);
+                yackinhibit(OFF); // Go to normal mode after playing saved message
                 c = FALSE;
-                break;
+                return;
                 
             case	'I': // Playback Macro 2
                 yackinhibit(OFF);
                 yackmessage(PLAY,2);
-                yackinhibit(ON);
-                timer = YACKSECS(MACTIMEOUT);
+                yackinhibit(OFF); // Go to normal mode after playing saved message;
                 c = FALSE;
-                break;
+                return;
 				
 			case	'T': // Playback Macro 3
                 yackinhibit(OFF);
                 yackmessage(PLAY,3);
-                yackinhibit(ON);
-                timer = YACKSECS(MACTIMEOUT);
+                yackinhibit(OFF); // Go to normal mode after playing saved message;
                 c = FALSE;
-                break;	
+                return;
 				
 			case	'M': // Playback Macro 4
                 yackinhibit(OFF);
                 yackmessage(PLAY,4);
-                yackinhibit(ON);
-                timer = YACKSECS(MACTIMEOUT);
+                yackinhibit(OFF); // Go to normal mode after playing saved message;
                 c = FALSE;
-                break;	
+                return;
                 
             case    'W': // Query WPM
                 yacknumber(yackwpm());

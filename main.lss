@@ -1,0 +1,3349 @@
+
+main.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000f70  00000000  00000000  000000b4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000004  00800060  00000f70  00001024  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000016  00800064  00800064  00001028  2**0
+                  ALLOC
+  3 .eeprom       0000019a  00810000  00810000  00001028  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .stab         00002760  00000000  00000000  000011c4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  5 .stabstr      000013a5  00000000  00000000  00003924  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .comment      00000011  00000000  00000000  00004cc9  2**0
+                  CONTENTS, READONLY
+  7 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00004cdc  2**2
+                  CONTENTS, READONLY
+  8 .avr.prop     00000016  00000000  00000000  00004d18  2**0
+                  CONTENTS, READONLY
+  9 .debug_info   00000420  00000000  00000000  00004d2e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_abbrev 000003e8  00000000  00000000  0000514e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_line   0000001a  00000000  00000000  00005536  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_str    00000169  00000000  00000000  00005550  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	69 c0       	rjmp	.+210    	; 0xd4 <__ctors_end>
+   2:	83 c0       	rjmp	.+262    	; 0x10a <__bad_interrupt>
+   4:	f6 c2       	rjmp	.+1516   	; 0x5f2 <__vector_2>
+   6:	81 c0       	rjmp	.+258    	; 0x10a <__bad_interrupt>
+   8:	80 c0       	rjmp	.+256    	; 0x10a <__bad_interrupt>
+   a:	7f c0       	rjmp	.+254    	; 0x10a <__bad_interrupt>
+   c:	7e c0       	rjmp	.+252    	; 0x10a <__bad_interrupt>
+   e:	7d c0       	rjmp	.+250    	; 0x10a <__bad_interrupt>
+  10:	7c c0       	rjmp	.+248    	; 0x10a <__bad_interrupt>
+  12:	7b c0       	rjmp	.+246    	; 0x10a <__bad_interrupt>
+  14:	7a c0       	rjmp	.+244    	; 0x10a <__bad_interrupt>
+  16:	79 c0       	rjmp	.+242    	; 0x10a <__bad_interrupt>
+  18:	78 c0       	rjmp	.+240    	; 0x10a <__bad_interrupt>
+  1a:	77 c0       	rjmp	.+238    	; 0x10a <__bad_interrupt>
+  1c:	76 c0       	rjmp	.+236    	; 0x10a <__bad_interrupt>
+  1e:	2c c2       	rjmp	.+1112   	; 0x478 <__LOCK_REGION_LENGTH__+0x78>
+  20:	2f c2       	rjmp	.+1118   	; 0x480 <__LOCK_REGION_LENGTH__+0x80>
+  22:	32 c2       	rjmp	.+1124   	; 0x488 <__LOCK_REGION_LENGTH__+0x88>
+  24:	35 c2       	rjmp	.+1130   	; 0x490 <__LOCK_REGION_LENGTH__+0x90>
+  26:	3d c2       	rjmp	.+1146   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  28:	3c c2       	rjmp	.+1144   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  2a:	3b c2       	rjmp	.+1142   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  2c:	3a c2       	rjmp	.+1140   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  2e:	39 c2       	rjmp	.+1138   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  30:	38 c2       	rjmp	.+1136   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  32:	37 c2       	rjmp	.+1134   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  34:	36 c2       	rjmp	.+1132   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  36:	35 c2       	rjmp	.+1130   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  38:	34 c2       	rjmp	.+1128   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  3a:	33 c2       	rjmp	.+1126   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  3c:	32 c2       	rjmp	.+1124   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  3e:	09 c2       	rjmp	.+1042   	; 0x452 <__LOCK_REGION_LENGTH__+0x52>
+  40:	0a c2       	rjmp	.+1044   	; 0x456 <__LOCK_REGION_LENGTH__+0x56>
+  42:	2f c2       	rjmp	.+1118   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  44:	0c c2       	rjmp	.+1048   	; 0x45e <__LOCK_REGION_LENGTH__+0x5e>
+  46:	2d c2       	rjmp	.+1114   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  48:	15 c2       	rjmp	.+1066   	; 0x474 <__LOCK_REGION_LENGTH__+0x74>
+  4a:	2b c2       	rjmp	.+1110   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  4c:	2a c2       	rjmp	.+1108   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  4e:	29 c2       	rjmp	.+1106   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  50:	28 c2       	rjmp	.+1104   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  52:	0c c2       	rjmp	.+1048   	; 0x46c <__LOCK_REGION_LENGTH__+0x6c>
+  54:	02 c2       	rjmp	.+1028   	; 0x45a <__LOCK_REGION_LENGTH__+0x5a>
+  56:	25 c2       	rjmp	.+1098   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  58:	21 c2       	rjmp	.+1090   	; 0x49c <__LOCK_REGION_LENGTH__+0x9c>
+  5a:	23 c2       	rjmp	.+1094   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  5c:	22 c2       	rjmp	.+1092   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  5e:	21 c2       	rjmp	.+1090   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  60:	f6 c1       	rjmp	.+1004   	; 0x44e <__LOCK_REGION_LENGTH__+0x4e>
+  62:	02 c2       	rjmp	.+1028   	; 0x468 <__LOCK_REGION_LENGTH__+0x68>
+  64:	1e c2       	rjmp	.+1084   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  66:	1d c2       	rjmp	.+1082   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  68:	1c c2       	rjmp	.+1080   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  6a:	1b c2       	rjmp	.+1078   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  6c:	fb c1       	rjmp	.+1014   	; 0x464 <__LOCK_REGION_LENGTH__+0x64>
+  6e:	19 c2       	rjmp	.+1074   	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+  70:	ff c1       	rjmp	.+1022   	; 0x470 <__LOCK_REGION_LENGTH__+0x70>
+
+00000072 <__trampolines_end>:
+  72:	37 33       	cpi	r19, 0x37	; 55
+	...
+
+00000075 <prgx>:
+  75:	23 00                                               #.
+
+00000077 <vers>:
+  77:	56 30 2e 38 37 00                                   V0.87.
+
+0000007d <txok>:
+  7d:	52 00                                               R.
+
+0000007f <spechar>:
+  7f:	3f 2e 2f 21 2c 3a 3b 7e 24 5e 28 29 2d 40 5f 7c     ?./!,:;~$^()-@_|
+  8f:	3d 23 2b 2a 25 26 3c 3e                             =#+*%&<>
+
+00000097 <morse>:
+  97:	fc 7c 3c 1c 0c 04 84 c4 e4 f4 60 88 a8 90 40 28     .|<.......`...@(
+  a7:	d0 08 20 78 b0 48 e0 a0 f0 68 d8 50 10 c0 30 18     .. x.H...h.P..0.
+  b7:	70 98 b8 c8 32 56 94 e8 ce e2 aa 4a 13 7a b4 b6     p...2V.....J.z..
+  c7:	86 6a 36 52 8c 16 54 8b 44 ac 14 58 00              .j6R..T.D..X.
+
+000000d4 <__ctors_end>:
+  d4:	11 24       	eor	r1, r1
+  d6:	1f be       	out	0x3f, r1	; 63
+  d8:	cf e5       	ldi	r28, 0x5F	; 95
+  da:	d2 e0       	ldi	r29, 0x02	; 2
+  dc:	de bf       	out	0x3e, r29	; 62
+  de:	cd bf       	out	0x3d, r28	; 61
+
+000000e0 <__do_copy_data>:
+  e0:	10 e0       	ldi	r17, 0x00	; 0
+  e2:	a0 e6       	ldi	r26, 0x60	; 96
+  e4:	b0 e0       	ldi	r27, 0x00	; 0
+  e6:	e0 e7       	ldi	r30, 0x70	; 112
+  e8:	ff e0       	ldi	r31, 0x0F	; 15
+  ea:	02 c0       	rjmp	.+4      	; 0xf0 <__do_copy_data+0x10>
+  ec:	05 90       	lpm	r0, Z+
+  ee:	0d 92       	st	X+, r0
+  f0:	a4 36       	cpi	r26, 0x64	; 100
+  f2:	b1 07       	cpc	r27, r17
+  f4:	d9 f7       	brne	.-10     	; 0xec <__do_copy_data+0xc>
+
+000000f6 <__do_clear_bss>:
+  f6:	20 e0       	ldi	r18, 0x00	; 0
+  f8:	a4 e6       	ldi	r26, 0x64	; 100
+  fa:	b0 e0       	ldi	r27, 0x00	; 0
+  fc:	01 c0       	rjmp	.+2      	; 0x100 <.do_clear_bss_start>
+
+000000fe <.do_clear_bss_loop>:
+  fe:	1d 92       	st	X+, r1
+
+00000100 <.do_clear_bss_start>:
+ 100:	aa 37       	cpi	r26, 0x7A	; 122
+ 102:	b2 07       	cpc	r27, r18
+ 104:	e1 f7       	brne	.-8      	; 0xfe <.do_clear_bss_loop>
+ 106:	b1 d6       	rcall	.+3426   	; 0xe6a <main>
+ 108:	31 c7       	rjmp	.+3682   	; 0xf6c <_exit>
+
+0000010a <__bad_interrupt>:
+ 10a:	7a cf       	rjmp	.-268    	; 0x0 <__vectors>
+
+0000010c <pitch>:
+ This function implements pitch change mode. A series of dots is played and pitch can 
+ be adjusted using the paddle levers.
+ 
+ Once 10 dots have been played at the same pitch, the mode terminates
+ */
+{
+ 10c:	cf 93       	push	r28
+ 10e:	df 93       	push	r29
+ 110:	ca e0       	ldi	r28, 0x0A	; 10
+ 112:	d0 e0       	ldi	r29, 0x00	; 0
+	word	timer=PITCHREPEAT;
+	
+	while (timer) 			// while not yet timed out
+	{
+		timer--;
+		yackchar('E');		// play an 'e'
+ 114:	85 e4       	ldi	r24, 0x45	; 69
+ 116:	6c d4       	rcall	.+2264   	; 0x9f0 <yackchar>
+		
+		if (yackctrlkey(TRUE)) {return;}
+ 118:	81 e0       	ldi	r24, 0x01	; 1
+ 11a:	21 d4       	rcall	.+2114   	; 0x95e <yackctrlkey>
+ 11c:	81 11       	cpse	r24, r1
+ 11e:	0f c0       	rjmp	.+30     	; 0x13e <pitch+0x32>
+		
+		if(!(KEYINP & (1<<DITPIN))) // if DIT was keyed
+ 120:	b3 9b       	sbis	0x16, 3	; 22
+ 122:	02 c0       	rjmp	.+4      	; 0x128 <pitch+0x1c>
+{
+	word	timer=PITCHREPEAT;
+	
+	while (timer) 			// while not yet timed out
+	{
+		timer--;
+ 124:	21 97       	sbiw	r28, 0x01	; 1
+ 126:	04 c0       	rjmp	.+8      	; 0x130 <pitch+0x24>
+		
+		if (yackctrlkey(TRUE)) {return;}
+		
+		if(!(KEYINP & (1<<DITPIN))) // if DIT was keyed
+	  	{
+	  		yackpitch(DOWN);		// increase the pitch
+ 128:	82 e0       	ldi	r24, 0x02	; 2
+ 12a:	54 d3       	rcall	.+1704   	; 0x7d4 <yackpitch>
+	  		timer=PITCHREPEAT;
+ 12c:	ca e0       	ldi	r28, 0x0A	; 10
+ 12e:	d0 e0       	ldi	r29, 0x00	; 0
+	  	}
+		
+		if(!(KEYINP & (1<<DAHPIN))) // if DAH was keyed
+ 130:	b4 99       	sbic	0x16, 4	; 22
+ 132:	03 c0       	rjmp	.+6      	; 0x13a <pitch+0x2e>
+	  	{
+	  		yackpitch(UP);	// lower the pitch
+ 134:	81 e0       	ldi	r24, 0x01	; 1
+ 136:	4e d3       	rcall	.+1692   	; 0x7d4 <yackpitch>
+ 138:	eb cf       	rjmp	.-42     	; 0x110 <pitch+0x4>
+ Once 10 dots have been played at the same pitch, the mode terminates
+ */
+{
+	word	timer=PITCHREPEAT;
+	
+	while (timer) 			// while not yet timed out
+ 13a:	20 97       	sbiw	r28, 0x00	; 0
+ 13c:	59 f7       	brne	.-42     	; 0x114 <pitch+0x8>
+	  	}
+	  	
+	}
+	
+	
+}
+ 13e:	df 91       	pop	r29
+ 140:	cf 91       	pop	r28
+ 142:	08 95       	ret
+
+00000144 <setfarns>:
+ 
+ This function implements farnsworth pause change mode. Farnsworth pauses can be added or removed
+ with the paddle keys.
+ 
+ */
+{
+ 144:	cf 93       	push	r28
+	byte	timer=0;
+ 146:	c0 e0       	ldi	r28, 0x00	; 0
+	
+	while (timer++ != FARNSREPEAT) 			// while not yet timed out
+	{
+	    if (yackctrlkey(TRUE)) {return;}
+ 148:	81 e0       	ldi	r24, 0x01	; 1
+ 14a:	09 d4       	rcall	.+2066   	; 0x95e <yackctrlkey>
+ 14c:	81 11       	cpse	r24, r1
+ 14e:	18 c0       	rjmp	.+48     	; 0x180 <setfarns+0x3c>
+		
+	    yackplay(DIT);
+ 150:	81 e0       	ldi	r24, 0x01	; 1
+ 152:	aa d3       	rcall	.+1876   	; 0x8a8 <yackplay>
+        yackdelay(IEGLEN);	// Inter Element gap  
+ 154:	81 e0       	ldi	r24, 0x01	; 1
+ 156:	89 d3       	rcall	.+1810   	; 0x86a <yackdelay>
+        yackplay(DAH);
+ 158:	82 e0       	ldi	r24, 0x02	; 2
+ 15a:	a6 d3       	rcall	.+1868   	; 0x8a8 <yackplay>
+        yackdelay(ICGLEN);	// Inter Character gap  
+ 15c:	83 e0       	ldi	r24, 0x03	; 3
+ 15e:	85 d3       	rcall	.+1802   	; 0x86a <yackdelay>
+        yackfarns(); // Additional Farnsworth delay
+ 160:	95 d3       	rcall	.+1834   	; 0x88c <yackfarns>
+	
+        
+		if(!(KEYINP & (1<<DITPIN))) // if DIT was keyed
+ 162:	b3 99       	sbic	0x16, 3	; 22
+ 164:	03 c0       	rjmp	.+6      	; 0x16c <setfarns+0x28>
+	  	{
+	  		yackspeed(DOWN,FARNSWORTH);		// increase interword spacing
+ 166:	61 e0       	ldi	r22, 0x01	; 1
+ 168:	82 e0       	ldi	r24, 0x02	; 2
+ 16a:	08 c0       	rjmp	.+16     	; 0x17c <setfarns+0x38>
+	  		timer=0;
+	  	}
+		
+		else if(!(KEYINP & (1<<DAHPIN))) // if DAH was keyed
+ 16c:	b4 9b       	sbis	0x16, 4	; 22
+ 16e:	04 c0       	rjmp	.+8      	; 0x178 <setfarns+0x34>
+ 
+ */
+{
+	byte	timer=0;
+	
+	while (timer++ != FARNSREPEAT) 			// while not yet timed out
+ 170:	cf 5f       	subi	r28, 0xFF	; 255
+ 172:	ca 30       	cpi	r28, 0x0A	; 10
+ 174:	49 f7       	brne	.-46     	; 0x148 <setfarns+0x4>
+ 176:	04 c0       	rjmp	.+8      	; 0x180 <setfarns+0x3c>
+	  		timer=0;
+	  	}
+		
+		else if(!(KEYINP & (1<<DAHPIN))) // if DAH was keyed
+	  	{
+	  		yackspeed(UP,FARNSWORTH);	// decrease interword spacing
+ 178:	61 e0       	ldi	r22, 0x01	; 1
+ 17a:	81 e0       	ldi	r24, 0x01	; 1
+ 17c:	aa d3       	rcall	.+1876   	; 0x8d2 <yackspeed>
+ 17e:	e3 cf       	rjmp	.-58     	; 0x146 <setfarns+0x2>
+	  	}
+	  
+        
+	}
+	
+}
+ 180:	cf 91       	pop	r28
+ 182:	08 95       	ret
+
+00000184 <lfsr>:
+{
+	
+	static word 	lfsr = 0xACE1;
+	byte			random;
+	
+  	lfsr = (lfsr >> 1) ^ (-(lfsr & 1u) & 0xB400u);    
+ 184:	40 91 62 00 	lds	r20, 0x0062	; 0x800062 <lfsr.1962>
+ 188:	50 91 63 00 	lds	r21, 0x0063	; 0x800063 <lfsr.1962+0x1>
+ 18c:	9a 01       	movw	r18, r20
+ 18e:	21 70       	andi	r18, 0x01	; 1
+ 190:	33 27       	eor	r19, r19
+ 192:	31 95       	neg	r19
+ 194:	21 95       	neg	r18
+ 196:	31 09       	sbc	r19, r1
+ 198:	22 27       	eor	r18, r18
+ 19a:	34 7b       	andi	r19, 0xB4	; 180
+ 19c:	56 95       	lsr	r21
+ 19e:	47 95       	ror	r20
+ 1a0:	24 27       	eor	r18, r20
+ 1a2:	35 27       	eor	r19, r21
+ 1a4:	30 93 63 00 	sts	0x0063, r19	; 0x800063 <lfsr.1962+0x1>
+ 1a8:	20 93 62 00 	sts	0x0062, r18	; 0x800062 <lfsr.1962>
+	
+	random = lfsr >> 8; // Byte = upper byte of word 
+ 1ac:	93 2f       	mov	r25, r19
+	
+	while (random >= n) random -= n; // Cheap modulo :-)
+ 1ae:	98 17       	cp	r25, r24
+ 1b0:	10 f0       	brcs	.+4      	; 0x1b6 <lfsr+0x32>
+ 1b2:	98 1b       	sub	r25, r24
+ 1b4:	fc cf       	rjmp	.-8      	; 0x1ae <lfsr+0x2a>
+	
+	return random;
+	
+}
+ 1b6:	89 2f       	mov	r24, r25
+ 1b8:	90 e0       	ldi	r25, 0x00	; 0
+ 1ba:	08 95       	ret
+
+000001bc <rndcall>:
+ 
+ This creates a random callsign with 2 letters + 1 digit + 2 letters
+ 
+ @param call a pointer to a buffer of sufficient size to store the callsign
+ */
+{
+ 1bc:	ef 92       	push	r14
+ 1be:	ff 92       	push	r15
+ 1c0:	0f 93       	push	r16
+ 1c2:	1f 93       	push	r17
+ 1c4:	cf 93       	push	r28
+ 1c6:	7c 01       	movw	r14, r24
+ 1c8:	8c 01       	movw	r16, r24
+	byte	i;
+	
+	// Generate a random callsign 2 Char, 1 Digit, 2 Char
+	
+	for (i=0;i<5;i++)
+ 1ca:	c0 e0       	ldi	r28, 0x00	; 0
+	{
+		if (i == 2)
+ 1cc:	c2 30       	cpi	r28, 0x02	; 2
+ 1ce:	31 f4       	brne	.+12     	; 0x1dc <rndcall+0x20>
+			call[i]=lfsr(10) + '0';
+ 1d0:	8a e0       	ldi	r24, 0x0A	; 10
+ 1d2:	d8 df       	rcall	.-80     	; 0x184 <lfsr>
+ 1d4:	80 5d       	subi	r24, 0xD0	; 208
+ 1d6:	f7 01       	movw	r30, r14
+ 1d8:	82 83       	std	Z+2, r24	; 0x02
+ 1da:	05 c0       	rjmp	.+10     	; 0x1e6 <rndcall+0x2a>
+		else
+			call[i]=lfsr(26) + 'A';
+ 1dc:	8a e1       	ldi	r24, 0x1A	; 26
+ 1de:	d2 df       	rcall	.-92     	; 0x184 <lfsr>
+ 1e0:	8f 5b       	subi	r24, 0xBF	; 191
+ 1e2:	f8 01       	movw	r30, r16
+ 1e4:	80 83       	st	Z, r24
+{
+	byte	i;
+	
+	// Generate a random callsign 2 Char, 1 Digit, 2 Char
+	
+	for (i=0;i<5;i++)
+ 1e6:	cf 5f       	subi	r28, 0xFF	; 255
+ 1e8:	0f 5f       	subi	r16, 0xFF	; 255
+ 1ea:	1f 4f       	sbci	r17, 0xFF	; 255
+ 1ec:	c5 30       	cpi	r28, 0x05	; 5
+ 1ee:	71 f7       	brne	.-36     	; 0x1cc <rndcall+0x10>
+			call[i]=lfsr(10) + '0';
+		else
+			call[i]=lfsr(26) + 'A';
+		
+	}
+}
+ 1f0:	cf 91       	pop	r28
+ 1f2:	1f 91       	pop	r17
+ 1f4:	0f 91       	pop	r16
+ 1f6:	ff 90       	pop	r15
+ 1f8:	ef 90       	pop	r14
+ 1fa:	08 95       	ret
+
+000001fc <cstrain>:
+ 
+ This implements callsign training. The keyer plays a random callsign and the 
+ user repeats it on the paddle. If a mistake happens, the error prosign is
+ sounded, the callsign sent again and the user attempts one more time.
+ */
+{
+ 1fc:	cf 92       	push	r12
+ 1fe:	df 92       	push	r13
+ 200:	ef 92       	push	r14
+ 202:	ff 92       	push	r15
+ 204:	0f 93       	push	r16
+ 206:	1f 93       	push	r17
+ 208:	cf 93       	push	r28
+ 20a:	df 93       	push	r29
+ 20c:	00 d0       	rcall	.+0      	; 0x20e <cstrain+0x12>
+ 20e:	00 d0       	rcall	.+0      	; 0x210 <cstrain+0x14>
+ 210:	1f 92       	push	r1
+ 212:	cd b7       	in	r28, 0x3d	; 61
+ 214:	de b7       	in	r29, 0x3e	; 62
+ 216:	6e 01       	movw	r12, r28
+ 218:	86 e0       	ldi	r24, 0x06	; 6
+ 21a:	c8 0e       	add	r12, r24
+ 21c:	d1 1c       	adc	r13, r1
+	word	timer;		// Timeout timer
+	
+	while(1)	// Endless loop will exit throught RETURN statement only
+		
+	{
+		rndcall(call); // Make up a callsign
+ 21e:	ce 01       	movw	r24, r28
+ 220:	01 96       	adiw	r24, 0x01	; 1
+ 222:	cc df       	rcall	.-104    	; 0x1bc <rndcall>
+		
+		i=0; // i counts the number of chracters correctly guessed
+ 224:	10 e0       	ldi	r17, 0x00	; 0
+		
+		while(i<5)
+		{
+            if (!i) // If nothing guessed yet, play the callsign
+ 226:	11 23       	and	r17, r17
+ 228:	09 f1       	breq	.+66     	; 0x26c <__stack+0xd>
+	while(1)	// Endless loop will exit throught RETURN statement only
+		
+	{
+		rndcall(call); // Make up a callsign
+		
+		i=0; // i counts the number of chracters correctly guessed
+ 22a:	80 ed       	ldi	r24, 0xD0	; 208
+ 22c:	e8 2e       	mov	r14, r24
+ 22e:	87 e0       	ldi	r24, 0x07	; 7
+ 230:	f8 2e       	mov	r15, r24
+			timer = YACKSECS(TRAINTIMEOUT);
+			
+			do 
+			{ 
+				
+				c=yackiambic(OFF); 	// Wait for a character 
+ 232:	80 e0       	ldi	r24, 0x00	; 0
+ 234:	6e d4       	rcall	.+2268   	; 0xb12 <yackiambic>
+ 236:	08 2f       	mov	r16, r24
+				yackbeat();			// FSM heartbeat
+ 238:	c6 d2       	rcall	.+1420   	; 0x7c6 <yackbeat>
+				timer--;			// Countdown
+ 23a:	f1 e0       	ldi	r31, 0x01	; 1
+ 23c:	ef 1a       	sub	r14, r31
+ 23e:	f1 08       	sbc	r15, r1
+                
+			} while ((!c) && timer && !(yackctrlkey(FALSE))); // Stop when character or timeout
+ 240:	01 11       	cpse	r16, r1
+ 242:	26 c0       	rjmp	.+76     	; 0x290 <__stack+0x31>
+ 244:	71 f1       	breq	.+92     	; 0x2a2 <__stack+0x43>
+ 246:	80 e0       	ldi	r24, 0x00	; 0
+ 248:	8a d3       	rcall	.+1812   	; 0x95e <yackctrlkey>
+ 24a:	88 23       	and	r24, r24
+ 24c:	91 f3       	breq	.-28     	; 0x232 <cstrain+0x36>
+			
+			if (timer == 0 || yackctrlkey(TRUE))	// If termination because of timeout 
+ 24e:	81 e0       	ldi	r24, 0x01	; 1
+ 250:	86 d3       	rcall	.+1804   	; 0x95e <yackctrlkey>
+ 252:	81 11       	cpse	r24, r1
+ 254:	26 c0       	rjmp	.+76     	; 0x2a2 <__stack+0x43>
+				return;				// then return
+			
+			if (call[i] == c)		// Was it the right character?
+ 256:	e1 e0       	ldi	r30, 0x01	; 1
+ 258:	f0 e0       	ldi	r31, 0x00	; 0
+ 25a:	ec 0f       	add	r30, r28
+ 25c:	fd 1f       	adc	r31, r29
+ 25e:	e1 0f       	add	r30, r17
+ 260:	f1 1d       	adc	r31, r1
+ 262:	80 81       	ld	r24, Z
+ 264:	80 17       	cp	r24, r16
+ 266:	b9 f0       	breq	.+46     	; 0x296 <__stack+0x37>
+				i++;				// then increment counter
+			else
+			{
+		   		yackerror();		// Send an error prosign
+ 268:	6f d3       	rcall	.+1758   	; 0x948 <yackerror>
+				i=0;				// And reset the counter
+ 26a:	10 e0       	ldi	r17, 0x00	; 0
+		
+		while(i<5)
+		{
+            if (!i) // If nothing guessed yet, play the callsign
+			{
+				yackdelay(2 * IWGLEN); // Give him some time to breathe b4 next callsign
+ 26c:	8e e0       	ldi	r24, 0x0E	; 14
+ 26e:	fd d2       	rcall	.+1530   	; 0x86a <yackdelay>
+ 270:	fe 01       	movw	r30, r28
+ 272:	31 96       	adiw	r30, 0x01	; 1
+ 274:	7f 01       	movw	r14, r30
+				for (n=0;n<5;n++)
+                {    
+					yackchar(call[n]);
+ 276:	f7 01       	movw	r30, r14
+ 278:	81 91       	ld	r24, Z+
+ 27a:	7f 01       	movw	r14, r30
+ 27c:	b9 d3       	rcall	.+1906   	; 0x9f0 <yackchar>
+                    yackfarns(); // Add potential farnsworth delays
+ 27e:	06 d3       	rcall	.+1548   	; 0x88c <yackfarns>
+                    if(yackctrlkey(TRUE)) 
+ 280:	81 e0       	ldi	r24, 0x01	; 1
+ 282:	6d d3       	rcall	.+1754   	; 0x95e <yackctrlkey>
+ 284:	81 11       	cpse	r24, r1
+ 286:	0d c0       	rjmp	.+26     	; 0x2a2 <__stack+0x43>
+		while(i<5)
+		{
+            if (!i) // If nothing guessed yet, play the callsign
+			{
+				yackdelay(2 * IWGLEN); // Give him some time to breathe b4 next callsign
+				for (n=0;n<5;n++)
+ 288:	ec 14       	cp	r14, r12
+ 28a:	fd 04       	cpc	r15, r13
+ 28c:	a1 f7       	brne	.-24     	; 0x276 <__stack+0x17>
+ 28e:	cd cf       	rjmp	.-102    	; 0x22a <cstrain+0x2e>
+				yackbeat();			// FSM heartbeat
+				timer--;			// Countdown
+                
+			} while ((!c) && timer && !(yackctrlkey(FALSE))); // Stop when character or timeout
+			
+			if (timer == 0 || yackctrlkey(TRUE))	// If termination because of timeout 
+ 290:	ef 28       	or	r14, r15
+ 292:	e9 f6       	brne	.-70     	; 0x24e <cstrain+0x52>
+ 294:	06 c0       	rjmp	.+12     	; 0x2a2 <__stack+0x43>
+				return;				// then return
+			
+			if (call[i] == c)		// Was it the right character?
+				i++;				// then increment counter
+ 296:	1f 5f       	subi	r17, 0xFF	; 255
+	{
+		rndcall(call); // Make up a callsign
+		
+		i=0; // i counts the number of chracters correctly guessed
+		
+		while(i<5)
+ 298:	15 30       	cpi	r17, 0x05	; 5
+ 29a:	29 f6       	brne	.-118    	; 0x226 <cstrain+0x2a>
+				i=0;				// And reset the counter
+			}
+			
+		}
+		
+		yackchar ('R');
+ 29c:	82 e5       	ldi	r24, 0x52	; 82
+ 29e:	a8 d3       	rcall	.+1872   	; 0x9f0 <yackchar>
+		
+	}
+ 2a0:	be cf       	rjmp	.-132    	; 0x21e <cstrain+0x22>
+}
+ 2a2:	0f 90       	pop	r0
+ 2a4:	0f 90       	pop	r0
+ 2a6:	0f 90       	pop	r0
+ 2a8:	0f 90       	pop	r0
+ 2aa:	0f 90       	pop	r0
+ 2ac:	df 91       	pop	r29
+ 2ae:	cf 91       	pop	r28
+ 2b0:	1f 91       	pop	r17
+ 2b2:	0f 91       	pop	r16
+ 2b4:	ff 90       	pop	r15
+ 2b6:	ef 90       	pop	r14
+ 2b8:	df 90       	pop	r13
+ 2ba:	cf 90       	pop	r12
+ 2bc:	08 95       	ret
+
+000002be <beacon>:
+ @param mode RECORD (read and store the beacon interval) or PLAY (beacon)
+
+ @see main
+ 
+*/
+{
+ 2be:	0f 93       	push	r16
+ 2c0:	1f 93       	push	r17
+ 2c2:	cf 93       	push	r28
+ 2c4:	c8 2f       	mov	r28, r24
+	static word interval = 65000; // A dummy value that can not be reached
+	static word timer;
+	char c;
+
+	
+	if (interval == 65000) // 
+ 2c6:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 2ca:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 2ce:	88 3e       	cpi	r24, 0xE8	; 232
+ 2d0:	9d 4f       	sbci	r25, 0xFD	; 253
+ 2d2:	49 f4       	brne	.+18     	; 0x2e6 <beacon+0x28>
+		interval = yackuser(READ, 1, 0);	
+ 2d4:	40 e0       	ldi	r20, 0x00	; 0
+ 2d6:	50 e0       	ldi	r21, 0x00	; 0
+ 2d8:	61 e0       	ldi	r22, 0x01	; 1
+ 2da:	81 e0       	ldi	r24, 0x01	; 1
+ 2dc:	53 d2       	rcall	.+1190   	; 0x784 <yackuser>
+ 2de:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 2e2:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+	
+	if (mode == RECORD)
+ 2e6:	c1 30       	cpi	r28, 0x01	; 1
+ 2e8:	09 f0       	breq	.+2      	; 0x2ec <beacon+0x2e>
+ 2ea:	4b c0       	rjmp	.+150    	; 0x382 <beacon+0xc4>
+	{
+		interval = 0; // Reset previous settings
+ 2ec:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 2f0:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__DATA_REGION_ORIGIN__>
+		timer = YACKSECS(DEFTIMEOUT);
+ 2f4:	88 ee       	ldi	r24, 0xE8	; 232
+ 2f6:	93 e0       	ldi	r25, 0x03	; 3
+ 2f8:	90 93 65 00 	sts	0x0065, r25	; 0x800065 <__data_end+0x1>
+ 2fc:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <__data_end>
+		
+		yackchar('N');
+ 300:	8e e4       	ldi	r24, 0x4E	; 78
+ 302:	76 d3       	rcall	.+1772   	; 0x9f0 <yackchar>
+			
+			if (c>='0' && c<='9')
+			{
+				interval *= 10;
+				interval += c - '0';
+				timer = YACKSECS(DEFTIMEOUT);
+ 304:	08 ee       	ldi	r16, 0xE8	; 232
+ 306:	13 e0       	ldi	r17, 0x03	; 3
+		interval = 0; // Reset previous settings
+		timer = YACKSECS(DEFTIMEOUT);
+		
+		yackchar('N');
+		
+		while(--timer)
+ 308:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <__data_end>
+ 30c:	90 91 65 00 	lds	r25, 0x0065	; 0x800065 <__data_end+0x1>
+ 310:	01 97       	sbiw	r24, 0x01	; 1
+ 312:	90 93 65 00 	sts	0x0065, r25	; 0x800065 <__data_end+0x1>
+ 316:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <__data_end>
+ 31a:	89 2b       	or	r24, r25
+ 31c:	d9 f0       	breq	.+54     	; 0x354 <beacon+0x96>
+		{	
+			c=yackiambic(FALSE);
+ 31e:	80 e0       	ldi	r24, 0x00	; 0
+ 320:	f8 d3       	rcall	.+2032   	; 0xb12 <yackiambic>
+ 322:	c8 2f       	mov	r28, r24
+			yackbeat();
+ 324:	50 d2       	rcall	.+1184   	; 0x7c6 <yackbeat>
+			
+			if (c>='0' && c<='9')
+ 326:	80 ed       	ldi	r24, 0xD0	; 208
+ 328:	8c 0f       	add	r24, r28
+ 32a:	8a 30       	cpi	r24, 0x0A	; 10
+ 32c:	68 f7       	brcc	.-38     	; 0x308 <beacon+0x4a>
+			{
+				interval *= 10;
+				interval += c - '0';
+ 32e:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 332:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 336:	6a e0       	ldi	r22, 0x0A	; 10
+ 338:	70 e0       	ldi	r23, 0x00	; 0
+ 33a:	a9 d5       	rcall	.+2898   	; 0xe8e <__mulhi3>
+ 33c:	c0 97       	sbiw	r24, 0x30	; 48
+ 33e:	8c 0f       	add	r24, r28
+ 340:	91 1d       	adc	r25, r1
+ 342:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 346:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+				timer = YACKSECS(DEFTIMEOUT);
+ 34a:	10 93 65 00 	sts	0x0065, r17	; 0x800065 <__data_end+0x1>
+ 34e:	00 93 64 00 	sts	0x0064, r16	; 0x800064 <__data_end>
+ 352:	da cf       	rjmp	.-76     	; 0x308 <beacon+0x4a>
+			}
+		}
+		
+		if (interval >= 0 && interval <= 9999)
+ 354:	40 91 60 00 	lds	r20, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 358:	50 91 61 00 	lds	r21, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 35c:	40 31       	cpi	r20, 0x10	; 16
+ 35e:	87 e2       	ldi	r24, 0x27	; 39
+ 360:	58 07       	cpc	r21, r24
+ 362:	58 f4       	brcc	.+22     	; 0x37a <beacon+0xbc>
+		{
+			yackuser(WRITE, 1, interval); // Record interval
+ 364:	61 e0       	ldi	r22, 0x01	; 1
+ 366:	82 e0       	ldi	r24, 0x02	; 2
+ 368:	0d d2       	rcall	.+1050   	; 0x784 <yackuser>
+			yacknumber(interval); // Playback number
+ 36a:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 36e:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+			
+		}
+				
+	}
+	
+}
+ 372:	cf 91       	pop	r28
+ 374:	1f 91       	pop	r17
+ 376:	0f 91       	pop	r16
+		}
+		
+		if (interval >= 0 && interval <= 9999)
+		{
+			yackuser(WRITE, 1, interval); // Record interval
+			yacknumber(interval); // Playback number
+ 378:	99 c3       	rjmp	.+1842   	; 0xaac <yacknumber>
+			
+		}
+				
+	}
+	
+}
+ 37a:	cf 91       	pop	r28
+ 37c:	1f 91       	pop	r17
+ 37e:	0f 91       	pop	r16
+			yackuser(WRITE, 1, interval); // Record interval
+			yacknumber(interval); // Playback number
+		}
+		else 
+		{
+			yackerror();
+ 380:	e3 c2       	rjmp	.+1478   	; 0x948 <yackerror>
+		}
+		
+	}
+
+	
+	if ((mode == PLAY) && interval)
+ 382:	c2 30       	cpi	r28, 0x02	; 2
+ 384:	a1 f5       	brne	.+104    	; 0x3ee <beacon+0x130>
+ 386:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 38a:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 38e:	89 2b       	or	r24, r25
+ 390:	71 f1       	breq	.+92     	; 0x3ee <beacon+0x130>
+#ifdef POWERSAVE
+
+        // If we execute this, the interval counter is positive which means we are waiting
+        // for a message playback. In this case we must not allow the CPU to enter sleep mode.
+        
+        yackpower(FALSE); // Inhibit sleep mode
+ 392:	80 e0       	ldi	r24, 0x00	; 0
+ 394:	38 d1       	rcall	.+624    	; 0x606 <yackpower>
+        
+#endif
+        
+		if (timer) timer--; // Countdown until a second has expired
+ 396:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <__data_end>
+ 39a:	90 91 65 00 	lds	r25, 0x0065	; 0x800065 <__data_end+0x1>
+ 39e:	00 97       	sbiw	r24, 0x00	; 0
+ 3a0:	31 f0       	breq	.+12     	; 0x3ae <beacon+0xf0>
+ 3a2:	01 97       	sbiw	r24, 0x01	; 1
+ 3a4:	90 93 65 00 	sts	0x0065, r25	; 0x800065 <__data_end+0x1>
+ 3a8:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <__data_end>
+ 3ac:	20 c0       	rjmp	.+64     	; 0x3ee <beacon+0x130>
+		else 
+		{
+			timer = YACKSECS(1); // Reset timer
+ 3ae:	88 ec       	ldi	r24, 0xC8	; 200
+ 3b0:	90 e0       	ldi	r25, 0x00	; 0
+ 3b2:	90 93 65 00 	sts	0x0065, r25	; 0x800065 <__data_end+0x1>
+ 3b6:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <__data_end>
+			
+			if ((--interval)==0) // Interval was > 0. Did decrement bring it to 0?
+ 3ba:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 3be:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 3c2:	01 97       	sbiw	r24, 0x01	; 1
+ 3c4:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 3c8:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 3cc:	89 2b       	or	r24, r25
+ 3ce:	79 f4       	brne	.+30     	; 0x3ee <beacon+0x130>
+			{
+
+				interval = yackuser(READ, 1, 0); // Reset the interval timer
+ 3d0:	40 e0       	ldi	r20, 0x00	; 0
+ 3d2:	50 e0       	ldi	r21, 0x00	; 0
+ 3d4:	61 e0       	ldi	r22, 0x01	; 1
+ 3d6:	81 e0       	ldi	r24, 0x01	; 1
+ 3d8:	d5 d1       	rcall	.+938    	; 0x784 <yackuser>
+ 3da:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 3de:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+				yackmessage(PLAY,4); // And play message 4
+ 3e2:	64 e0       	ldi	r22, 0x04	; 4
+ 3e4:	82 e0       	ldi	r24, 0x02	; 2
+			
+		}
+				
+	}
+	
+}
+ 3e6:	cf 91       	pop	r28
+ 3e8:	1f 91       	pop	r17
+ 3ea:	0f 91       	pop	r16
+			
+			if ((--interval)==0) // Interval was > 0. Did decrement bring it to 0?
+			{
+
+				interval = yackuser(READ, 1, 0); // Reset the interval timer
+				yackmessage(PLAY,4); // And play message 4
+ 3ec:	9b c4       	rjmp	.+2358   	; 0xd24 <yackmessage>
+			
+		}
+				
+	}
+	
+}
+ 3ee:	cf 91       	pop	r28
+ 3f0:	1f 91       	pop	r17
+ 3f2:	0f 91       	pop	r16
+ 3f4:	08 95       	ret
+
+000003f6 <commandmode>:
+ 
+ This routine implements command mode. Entries are read from the paddle
+ and interpreted as commands.
+ 
+*/
+{
+ 3f6:	0f 93       	push	r16
+ 3f8:	1f 93       	push	r17
+ 3fa:	cf 93       	push	r28
+	
+	char 	c;				// Character from Morse key
+    word    timer;          // Exit timer
+	
+	yackinhibit(ON); 		// Sidetone = on, Keyer = off
+ 3fc:	81 e0       	ldi	r24, 0x01	; 1
+ 3fe:	b8 d1       	rcall	.+880    	; 0x770 <yackinhibit>
+	
+	yackchar('?'); 			// Play Greeting
+ 400:	8f e3       	ldi	r24, 0x3F	; 63
+ 402:	f6 d2       	rcall	.+1516   	; 0x9f0 <yackchar>
+	
+    timer = YACKSECS(DEFTIMEOUT); // Time out after 10 seconds
+ 404:	08 ee       	ldi	r16, 0xE8	; 232
+ 406:	13 e0       	ldi	r17, 0x03	; 3
+    
+    while ((yackctrlkey(TRUE)==0) && (timer-- > 0))
+ 408:	81 e0       	ldi	r24, 0x01	; 1
+ 40a:	a9 d2       	rcall	.+1362   	; 0x95e <yackctrlkey>
+ 40c:	81 11       	cpse	r24, r1
+ 40e:	8e c0       	rjmp	.+284    	; 0x52c <__LOCK_REGION_LENGTH__+0x12c>
+ 410:	01 15       	cp	r16, r1
+ 412:	11 05       	cpc	r17, r1
+ 414:	09 f4       	brne	.+2      	; 0x418 <__LOCK_REGION_LENGTH__+0x18>
+ 416:	8a c0       	rjmp	.+276    	; 0x52c <__LOCK_REGION_LENGTH__+0x12c>
+	{
+		
+		c=yackiambic(OFF);
+ 418:	80 e0       	ldi	r24, 0x00	; 0
+ 41a:	7b d3       	rcall	.+1782   	; 0xb12 <yackiambic>
+ 41c:	c8 2f       	mov	r28, r24
+        if (c) timer = YACKSECS(DEFTIMEOUT); // Reset timeout if character read
+ 41e:	81 11       	cpse	r24, r1
+ 420:	03 c0       	rjmp	.+6      	; 0x428 <__LOCK_REGION_LENGTH__+0x28>
+	
+	yackchar('?'); 			// Play Greeting
+	
+    timer = YACKSECS(DEFTIMEOUT); // Time out after 10 seconds
+    
+    while ((yackctrlkey(TRUE)==0) && (timer-- > 0))
+ 422:	01 50       	subi	r16, 0x01	; 1
+ 424:	11 09       	sbc	r17, r1
+ 426:	02 c0       	rjmp	.+4      	; 0x42c <__LOCK_REGION_LENGTH__+0x2c>
+	{
+		
+		c=yackiambic(OFF);
+        if (c) timer = YACKSECS(DEFTIMEOUT); // Reset timeout if character read
+ 428:	08 ee       	ldi	r16, 0xE8	; 232
+ 42a:	13 e0       	ldi	r17, 0x03	; 3
+        
+		yackbeat();
+ 42c:	cc d1       	rcall	.+920    	; 0x7c6 <yackbeat>
+        
+        lfsr(255);          // Keep seeding the LFSR so we get different callsigns
+ 42e:	8f ef       	ldi	r24, 0xFF	; 255
+ 430:	a9 de       	rcall	.-686    	; 0x184 <lfsr>
+		
+        if (!yackflag(CONFLOCK)) // No Configuration lock?
+ 432:	82 e0       	ldi	r24, 0x02	; 2
+ 434:	0b d2       	rcall	.+1046   	; 0x84c <yackflag>
+ 436:	81 11       	cpse	r24, r1
+ 438:	34 c0       	rjmp	.+104    	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+        {    
+            switch (c) // These are the lockable configuration commands
+ 43a:	8c 2f       	mov	r24, r28
+ 43c:	90 e0       	ldi	r25, 0x00	; 0
+ 43e:	fc 01       	movw	r30, r24
+ 440:	f1 97       	sbiw	r30, 0x31	; 49
+ 442:	ea 32       	cpi	r30, 0x2A	; 42
+ 444:	f1 05       	cpc	r31, r1
+ 446:	68 f5       	brcc	.+90     	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+ 448:	e1 5f       	subi	r30, 0xF1	; 241
+ 44a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 44c:	09 94       	ijmp
+            {
+                    
+                case	'R': // Reset
+                    yackreset();
+ 44e:	3c d1       	rcall	.+632    	; 0x6c8 <yackreset>
+                    c = TRUE;
+                    break;
+ 450:	75 c0       	rjmp	.+234    	; 0x53c <__LOCK_REGION_LENGTH__+0x13c>
+                    
+                case	'A': // IAMBIC A
+                    yackmode(IAMBICA);
+ 452:	80 e0       	ldi	r24, 0x00	; 0
+ 454:	05 c0       	rjmp	.+10     	; 0x460 <__LOCK_REGION_LENGTH__+0x60>
+                    c = TRUE;
+                    break;
+                    
+                case	'B': // IAMBIC B
+                    yackmode(IAMBICB);
+ 456:	84 e0       	ldi	r24, 0x04	; 4
+ 458:	03 c0       	rjmp	.+6      	; 0x460 <__LOCK_REGION_LENGTH__+0x60>
+                    c = TRUE;
+                    break;
+
+                case	'L': // ULTIMATIC
+                    yackmode(ULTIMATIC);
+ 45a:	88 e0       	ldi	r24, 0x08	; 8
+ 45c:	01 c0       	rjmp	.+2      	; 0x460 <__LOCK_REGION_LENGTH__+0x60>
+                    c = TRUE;
+                    break;
+                    
+                case    'D': // DAHPRIO
+                    yackmode(DAHPRIO);
+ 45e:	8c e0       	ldi	r24, 0x0C	; 12
+ 460:	e9 d1       	rcall	.+978    	; 0x834 <yackmode>
+                    c = TRUE;
+                    break;
+ 462:	6c c0       	rjmp	.+216    	; 0x53c <__LOCK_REGION_LENGTH__+0x13c>
+                    
+                case	'X': // Paddle swapping
+                    yacktoggle(PDLSWAP);
+ 464:	80 e8       	ldi	r24, 0x80	; 128
+ 466:	4f c0       	rjmp	.+158    	; 0x506 <__LOCK_REGION_LENGTH__+0x106>
+                    c = TRUE;
+                    break;
+                    
+                case    'S': // Sidetone toggle
+                    yacktoggle(SIDETONE);
+ 468:	80 e1       	ldi	r24, 0x10	; 16
+ 46a:	4d c0       	rjmp	.+154    	; 0x506 <__LOCK_REGION_LENGTH__+0x106>
+                    c = TRUE;
+                    break;
+                    
+                case    'K': // TX keying toggle
+                    yacktoggle(TXKEY);
+ 46c:	80 e2       	ldi	r24, 0x20	; 32
+ 46e:	4b c0       	rjmp	.+150    	; 0x506 <__LOCK_REGION_LENGTH__+0x106>
+                    c = TRUE;
+                    break;
+                    
+                case    'Z': // Farnsworth pause
+                    setfarns();
+ 470:	69 de       	rcall	.-814    	; 0x144 <setfarns>
+                    c = TRUE;
+                    break;
+ 472:	64 c0       	rjmp	.+200    	; 0x53c <__LOCK_REGION_LENGTH__+0x13c>
+                        
+                case    'F': // TX level inverter toggle
+                    yacktoggle(TXINV);
+ 474:	80 e4       	ldi	r24, 0x40	; 64
+ 476:	47 c0       	rjmp	.+142    	; 0x506 <__LOCK_REGION_LENGTH__+0x106>
+                    c = TRUE;
+                    break;
+                    
+                case	'1': // Record Macro 1
+                    yackchar('1');
+ 478:	81 e3       	ldi	r24, 0x31	; 49
+ 47a:	ba d2       	rcall	.+1396   	; 0x9f0 <yackchar>
+                    yackmessage(RECORD,1); 
+ 47c:	61 e0       	ldi	r22, 0x01	; 1
+ 47e:	0b c0       	rjmp	.+22     	; 0x496 <__LOCK_REGION_LENGTH__+0x96>
+                    c = TRUE;
+                    break;
+                    
+                case	'2': // Record Macro 2
+                    yackchar('2');
+ 480:	82 e3       	ldi	r24, 0x32	; 50
+ 482:	b6 d2       	rcall	.+1388   	; 0x9f0 <yackchar>
+                    yackmessage(RECORD,2); 
+ 484:	62 e0       	ldi	r22, 0x02	; 2
+ 486:	07 c0       	rjmp	.+14     	; 0x496 <__LOCK_REGION_LENGTH__+0x96>
+                    c = TRUE;
+                    break;
+					
+				case	'3': // Record Macro 3
+                    yackchar('3');
+ 488:	83 e3       	ldi	r24, 0x33	; 51
+ 48a:	b2 d2       	rcall	.+1380   	; 0x9f0 <yackchar>
+                    yackmessage(RECORD,3); 
+ 48c:	63 e0       	ldi	r22, 0x03	; 3
+ 48e:	03 c0       	rjmp	.+6      	; 0x496 <__LOCK_REGION_LENGTH__+0x96>
+                    c = TRUE;
+                    break;
+
+				case	'4': // Record Macro 4
+                    yackchar('4');
+ 490:	84 e3       	ldi	r24, 0x34	; 52
+ 492:	ae d2       	rcall	.+1372   	; 0x9f0 <yackchar>
+                    yackmessage(RECORD,4); 
+ 494:	64 e0       	ldi	r22, 0x04	; 4
+ 496:	81 e0       	ldi	r24, 0x01	; 1
+ 498:	45 d4       	rcall	.+2186   	; 0xd24 <yackmessage>
+                    c = TRUE;
+                    break;	
+ 49a:	50 c0       	rjmp	.+160    	; 0x53c <__LOCK_REGION_LENGTH__+0x13c>
+                    
+                case	'N': // Automatic Beacon
+                    beacon(RECORD);
+ 49c:	81 e0       	ldi	r24, 0x01	; 1
+ 49e:	0f df       	rcall	.-482    	; 0x2be <beacon>
+                    c = TRUE;
+                    break;
+ 4a0:	4d c0       	rjmp	.+154    	; 0x53c <__LOCK_REGION_LENGTH__+0x13c>
+                    
+            }
+            
+        }
+        
+        switch (c) // Commands that can be used anytime
+ 4a2:	cd 34       	cpi	r28, 0x4D	; 77
+ 4a4:	b1 f1       	breq	.+108    	; 0x512 <__LOCK_REGION_LENGTH__+0x112>
+ 4a6:	78 f4       	brcc	.+30     	; 0x4c6 <__LOCK_REGION_LENGTH__+0xc6>
+ 4a8:	c3 34       	cpi	r28, 0x43	; 67
+ 4aa:	59 f1       	breq	.+86     	; 0x502 <__LOCK_REGION_LENGTH__+0x102>
+ 4ac:	20 f4       	brcc	.+8      	; 0x4b6 <__LOCK_REGION_LENGTH__+0xb6>
+ 4ae:	c0 33       	cpi	r28, 0x30	; 48
+ 4b0:	b1 f5       	brne	.+108    	; 0x51e <__LOCK_REGION_LENGTH__+0x11e>
+                cstrain();
+                c = TRUE;
+                break;
+                
+            case    '0': // Lock changes
+                yacktoggle(CONFLOCK);
+ 4b2:	82 e0       	ldi	r24, 0x02	; 2
+ 4b4:	28 c0       	rjmp	.+80     	; 0x506 <__LOCK_REGION_LENGTH__+0x106>
+                    
+            }
+            
+        }
+        
+        switch (c) // Commands that can be used anytime
+ 4b6:	c5 34       	cpi	r28, 0x45	; 69
+ 4b8:	41 f1       	breq	.+80     	; 0x50a <__LOCK_REGION_LENGTH__+0x10a>
+ 4ba:	c9 34       	cpi	r28, 0x49	; 73
+ 4bc:	81 f5       	brne	.+96     	; 0x51e <__LOCK_REGION_LENGTH__+0x11e>
+                yackinhibit(OFF); // Go to normal mode after playing saved message
+                c = FALSE;
+                return;
+                
+            case	'I': // Playback Macro 2
+                yackinhibit(OFF);
+ 4be:	80 e0       	ldi	r24, 0x00	; 0
+ 4c0:	57 d1       	rcall	.+686    	; 0x770 <yackinhibit>
+                yackmessage(PLAY,2);
+ 4c2:	62 e0       	ldi	r22, 0x02	; 2
+ 4c4:	29 c0       	rjmp	.+82     	; 0x518 <__LOCK_REGION_LENGTH__+0x118>
+                    
+            }
+            
+        }
+        
+        switch (c) // Commands that can be used anytime
+ 4c6:	c5 35       	cpi	r28, 0x55	; 85
+ 4c8:	b1 f0       	breq	.+44     	; 0x4f6 <__LOCK_REGION_LENGTH__+0xf6>
+ 4ca:	40 f4       	brcc	.+16     	; 0x4dc <__LOCK_REGION_LENGTH__+0xdc>
+ 4cc:	c0 35       	cpi	r28, 0x50	; 80
+ 4ce:	89 f0       	breq	.+34     	; 0x4f2 <__LOCK_REGION_LENGTH__+0xf2>
+ 4d0:	c4 35       	cpi	r28, 0x54	; 84
+ 4d2:	29 f5       	brne	.+74     	; 0x51e <__LOCK_REGION_LENGTH__+0x11e>
+                yackinhibit(OFF); // Go to normal mode after playing saved message;
+                c = FALSE;
+                return;
+				
+			case	'T': // Playback Macro 3
+                yackinhibit(OFF);
+ 4d4:	80 e0       	ldi	r24, 0x00	; 0
+ 4d6:	4c d1       	rcall	.+664    	; 0x770 <yackinhibit>
+                yackmessage(PLAY,3);
+ 4d8:	63 e0       	ldi	r22, 0x03	; 3
+ 4da:	1e c0       	rjmp	.+60     	; 0x518 <__LOCK_REGION_LENGTH__+0x118>
+                    
+            }
+            
+        }
+        
+        switch (c) // Commands that can be used anytime
+ 4dc:	c6 35       	cpi	r28, 0x56	; 86
+ 4de:	29 f0       	breq	.+10     	; 0x4ea <__LOCK_REGION_LENGTH__+0xea>
+ 4e0:	c7 35       	cpi	r28, 0x57	; 87
+ 4e2:	e9 f4       	brne	.+58     	; 0x51e <__LOCK_REGION_LENGTH__+0x11e>
+                yackinhibit(OFF); // Go to normal mode after playing saved message;
+                c = FALSE;
+                return;
+                
+            case    'W': // Query WPM
+                yacknumber(yackwpm());
+ 4e4:	6c d1       	rcall	.+728    	; 0x7be <yackwpm>
+ 4e6:	e2 d2       	rcall	.+1476   	; 0xaac <yacknumber>
+                c = TRUE;
+                break;
+ 4e8:	29 c0       	rjmp	.+82     	; 0x53c <__LOCK_REGION_LENGTH__+0x13c>
+        
+        switch (c) // Commands that can be used anytime
+        {
+                
+            case    'V': // Version
+                yackstring(vers);
+ 4ea:	87 e7       	ldi	r24, 0x77	; 119
+ 4ec:	90 e0       	ldi	r25, 0x00	; 0
+ 4ee:	ca d2       	rcall	.+1428   	; 0xa84 <yackstring>
+                c = TRUE;
+                break;
+ 4f0:	25 c0       	rjmp	.+74     	; 0x53c <__LOCK_REGION_LENGTH__+0x13c>
+    
+                
+            case	'P': // Pitch
+                pitch();
+ 4f2:	0c de       	rcall	.-1000   	; 0x10c <pitch>
+                c = TRUE;
+                break;
+ 4f4:	23 c0       	rjmp	.+70     	; 0x53c <__LOCK_REGION_LENGTH__+0x13c>
+                
+            case	'U': // Tune
+                yackinhibit(OFF);
+ 4f6:	80 e0       	ldi	r24, 0x00	; 0
+ 4f8:	3b d1       	rcall	.+630    	; 0x770 <yackinhibit>
+                yacktune();
+ 4fa:	66 d2       	rcall	.+1228   	; 0x9c8 <yacktune>
+                yackinhibit(ON); 
+ 4fc:	81 e0       	ldi	r24, 0x01	; 1
+ 4fe:	38 d1       	rcall	.+624    	; 0x770 <yackinhibit>
+                c = TRUE;
+                break;
+ 500:	1d c0       	rjmp	.+58     	; 0x53c <__LOCK_REGION_LENGTH__+0x13c>
+                
+            case	'C': // Callsign training
+                cstrain();
+ 502:	7c de       	rcall	.-776    	; 0x1fc <cstrain>
+                c = TRUE;
+                break;
+ 504:	1b c0       	rjmp	.+54     	; 0x53c <__LOCK_REGION_LENGTH__+0x13c>
+                
+            case    '0': // Lock changes
+                yacktoggle(CONFLOCK);
+ 506:	a6 d1       	rcall	.+844    	; 0x854 <yacktoggle>
+                c = TRUE;
+                break;
+ 508:	19 c0       	rjmp	.+50     	; 0x53c <__LOCK_REGION_LENGTH__+0x13c>
+                
+            case	'E': // Playback Macro 1
+                yackinhibit(OFF);
+ 50a:	80 e0       	ldi	r24, 0x00	; 0
+ 50c:	31 d1       	rcall	.+610    	; 0x770 <yackinhibit>
+                yackmessage(PLAY,1);
+ 50e:	61 e0       	ldi	r22, 0x01	; 1
+ 510:	03 c0       	rjmp	.+6      	; 0x518 <__LOCK_REGION_LENGTH__+0x118>
+                yackinhibit(OFF); // Go to normal mode after playing saved message;
+                c = FALSE;
+                return;
+				
+			case	'M': // Playback Macro 4
+                yackinhibit(OFF);
+ 512:	80 e0       	ldi	r24, 0x00	; 0
+ 514:	2d d1       	rcall	.+602    	; 0x770 <yackinhibit>
+                yackmessage(PLAY,4);
+ 516:	64 e0       	ldi	r22, 0x04	; 4
+ 518:	82 e0       	ldi	r24, 0x02	; 2
+ 51a:	04 d4       	rcall	.+2056   	; 0xd24 <yackmessage>
+ 51c:	0a c0       	rjmp	.+20     	; 0x532 <__LOCK_REGION_LENGTH__+0x132>
+                break;
+                
+                
+        }
+        
+        if (c == TRUE) // If c still contains a string, the command was not handled properly
+ 51e:	c1 30       	cpi	r28, 0x01	; 1
+ 520:	69 f0       	breq	.+26     	; 0x53c <__LOCK_REGION_LENGTH__+0x13c>
+		{
+			yacksave(); //Save any non-volatile changes to EEPROM
+			yackdelay(DAHLEN * 3); //Eliminate runon txok on some commands
+            yackstring(txok);
+		}
+        else if (c)
+ 522:	cc 23       	and	r28, r28
+ 524:	09 f4       	brne	.+2      	; 0x528 <__LOCK_REGION_LENGTH__+0x128>
+ 526:	70 cf       	rjmp	.-288    	; 0x408 <__LOCK_REGION_LENGTH__+0x8>
+            yackerror();    
+ 528:	0f d2       	rcall	.+1054   	; 0x948 <yackerror>
+ 52a:	6e cf       	rjmp	.-292    	; 0x408 <__LOCK_REGION_LENGTH__+0x8>
+            
+	}
+        
+        
+	yackstring(prgx); 			// Sign off
+ 52c:	85 e7       	ldi	r24, 0x75	; 117
+ 52e:	90 e0       	ldi	r25, 0x00	; 0
+ 530:	a9 d2       	rcall	.+1362   	; 0xa84 <yackstring>
+
+	yackinhibit(OFF);		// Back to normal mode
+ 532:	80 e0       	ldi	r24, 0x00	; 0
+	
+}
+ 534:	cf 91       	pop	r28
+ 536:	1f 91       	pop	r17
+ 538:	0f 91       	pop	r16
+	}
+        
+        
+	yackstring(prgx); 			// Sign off
+
+	yackinhibit(OFF);		// Back to normal mode
+ 53a:	1a c1       	rjmp	.+564    	; 0x770 <yackinhibit>
+                
+        }
+        
+        if (c == TRUE) // If c still contains a string, the command was not handled properly
+		{
+			yacksave(); //Save any non-volatile changes to EEPROM
+ 53c:	a1 d0       	rcall	.+322    	; 0x680 <yacksave>
+			yackdelay(DAHLEN * 3); //Eliminate runon txok on some commands
+ 53e:	89 e0       	ldi	r24, 0x09	; 9
+ 540:	94 d1       	rcall	.+808    	; 0x86a <yackdelay>
+            yackstring(txok);
+ 542:	8d e7       	ldi	r24, 0x7D	; 125
+ 544:	90 e0       	ldi	r25, 0x00	; 0
+ 546:	9e d2       	rcall	.+1340   	; 0xa84 <yackstring>
+ 548:	5f cf       	rjmp	.-322    	; 0x408 <__LOCK_REGION_LENGTH__+0x8>
+
+0000054a <keylatch>:
+ */
+{
+	
+	byte	swap;	 // Status of swap flag
+	
+	swap    = ( yackflags & PDLSWAP);
+ 54a:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <yackflags>
+ 54e:	80 78       	andi	r24, 0x80	; 128
+	
+	if (!( KEYINP & (1<<DITPIN)))
+ 550:	b3 99       	sbic	0x16, 3	; 22
+ 552:	0a c0       	rjmp	.+20     	; 0x568 <keylatch+0x1e>
+		volflags |= (swap?DAHLATCH:DITLATCH);
+ 554:	81 11       	cpse	r24, r1
+ 556:	02 c0       	rjmp	.+4      	; 0x55c <keylatch+0x12>
+ 558:	91 e0       	ldi	r25, 0x01	; 1
+ 55a:	01 c0       	rjmp	.+2      	; 0x55e <keylatch+0x14>
+ 55c:	92 e0       	ldi	r25, 0x02	; 2
+ 55e:	20 91 78 00 	lds	r18, 0x0078	; 0x800078 <volflags>
+ 562:	92 2b       	or	r25, r18
+ 564:	90 93 78 00 	sts	0x0078, r25	; 0x800078 <volflags>
+	
+	if (!( KEYINP & (1<<DAHPIN)))
+ 568:	b4 99       	sbic	0x16, 4	; 22
+ 56a:	0a c0       	rjmp	.+20     	; 0x580 <keylatch+0x36>
+		volflags |= (swap?DITLATCH:DAHLATCH);
+ 56c:	81 11       	cpse	r24, r1
+ 56e:	02 c0       	rjmp	.+4      	; 0x574 <keylatch+0x2a>
+ 570:	82 e0       	ldi	r24, 0x02	; 2
+ 572:	01 c0       	rjmp	.+2      	; 0x576 <keylatch+0x2c>
+ 574:	81 e0       	ldi	r24, 0x01	; 1
+ 576:	90 91 78 00 	lds	r25, 0x0078	; 0x800078 <volflags>
+ 57a:	89 2b       	or	r24, r25
+ 57c:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <volflags>
+ 580:	08 95       	ret
+
+00000582 <key.part.0>:
+    }
+    
+    if (mode == UP) 
+    {
+
+        if (volflags & SIDETONE) // Sidetone active?
+ 582:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ 586:	84 ff       	sbrs	r24, 4
+ 588:	02 c0       	rjmp	.+4      	; 0x58e <key.part.0+0xc>
+        {
+            TCCR0A = 0;
+ 58a:	1a bc       	out	0x2a, r1	; 42
+            TCCR0B = 0;
+ 58c:	13 be       	out	0x33, r1	; 51
+        }
+        
+        if (volflags & TXKEY) // Are we keying the TX?
+ 58e:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ 592:	85 ff       	sbrs	r24, 5
+ 594:	07 c0       	rjmp	.+14     	; 0x5a4 <key.part.0+0x22>
+        {
+            if (yackflags & TXINV) // Do we need to invert keying?
+ 596:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <yackflags>
+ 59a:	86 ff       	sbrs	r24, 6
+ 59c:	02 c0       	rjmp	.+4      	; 0x5a2 <key.part.0+0x20>
+                SETBIT(OUTPORT,OUTPIN);
+ 59e:	c0 9a       	sbi	0x18, 0	; 24
+ 5a0:	08 95       	ret
+            else
+                CLEARBIT(OUTPORT,OUTPIN);
+ 5a2:	c0 98       	cbi	0x18, 0	; 24
+ 5a4:	08 95       	ret
+
+000005a6 <yackinhibit.part.3>:
+	
+	else
+		
+	{
+		volflags &= ~(TXKEY | SIDETONE);
+		volflags |= (yackflags & (TXKEY | SIDETONE));
+ 5a6:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <yackflags>
+ 5aa:	98 2f       	mov	r25, r24
+ 5ac:	90 73       	andi	r25, 0x30	; 48
+ 5ae:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ 5b2:	8f 7c       	andi	r24, 0xCF	; 207
+ 5b4:	89 2b       	or	r24, r25
+ 5b6:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <volflags>
+ 5ba:	e3 cf       	rjmp	.-58     	; 0x582 <key.part.0>
+
+000005bc <key.constprop.4>:
+ */
+{
+	
+    if (mode == DOWN) 
+    {
+        if (volflags & SIDETONE) // Are we generating a Sidetone?
+ 5bc:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ 5c0:	84 ff       	sbrs	r24, 4
+ 5c2:	0b c0       	rjmp	.+22     	; 0x5da <key.constprop.4+0x1e>
+        {
+            OCR0A = ctcvalue;		// Then switch on the Sidetone generator
+ 5c4:	80 91 76 00 	lds	r24, 0x0076	; 0x800076 <ctcvalue>
+ 5c8:	89 bd       	out	0x29, r24	; 41
+            OCR0B = ctcvalue;
+ 5ca:	80 91 76 00 	lds	r24, 0x0076	; 0x800076 <ctcvalue>
+ 5ce:	88 bd       	out	0x28, r24	; 40
+            
+            // Activate CTC mode
+            TCCR0A |= (1<<COM0B0 | 1<<WGM01);
+ 5d0:	8a b5       	in	r24, 0x2a	; 42
+ 5d2:	82 61       	ori	r24, 0x12	; 18
+ 5d4:	8a bd       	out	0x2a, r24	; 42
+            
+            // Configure prescaler
+            TCCR0B = 1<<CS01;
+ 5d6:	82 e0       	ldi	r24, 0x02	; 2
+ 5d8:	83 bf       	out	0x33, r24	; 51
+        }
+        
+        if (volflags & TXKEY) // Are we keying the TX?
+ 5da:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ 5de:	85 ff       	sbrs	r24, 5
+ 5e0:	07 c0       	rjmp	.+14     	; 0x5f0 <key.constprop.4+0x34>
+        {
+            if (yackflags & TXINV) // Do we need to invert keying?
+ 5e2:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <yackflags>
+ 5e6:	86 ff       	sbrs	r24, 6
+ 5e8:	02 c0       	rjmp	.+4      	; 0x5ee <key.constprop.4+0x32>
+                CLEARBIT(OUTPORT,OUTPIN);
+ 5ea:	c0 98       	cbi	0x18, 0	; 24
+ 5ec:	08 95       	ret
+            else
+                SETBIT(OUTPORT,OUTPIN);
+ 5ee:	c0 9a       	sbi	0x18, 0	; 24
+ 5f0:	08 95       	ret
+
+000005f2 <__vector_2>:
+ 
+ This function is called whenever the system is in sleep mode and there is a level change on one of the contacts 
+ we are monitoring (dit, dah and the command key). As all handling is already taken care of by polling in the main 
+ routines, there is nothing we need to do here.
+ */
+{
+ 5f2:	1f 92       	push	r1
+ 5f4:	0f 92       	push	r0
+ 5f6:	0f b6       	in	r0, 0x3f	; 63
+ 5f8:	0f 92       	push	r0
+ 5fa:	11 24       	eor	r1, r1
+    // Nothing to do here. All we want is to wake up..
+}
+ 5fc:	0f 90       	pop	r0
+ 5fe:	0f be       	out	0x3f, r0	; 63
+ 600:	0f 90       	pop	r0
+ 602:	1f 90       	pop	r1
+ 604:	18 95       	reti
+
+00000606 <yackpower>:
+*/
+
+{
+    static uint32_t shdntimer=0;
+    
+    if (n) // True = we could go to sleep
+ 606:	88 23       	and	r24, r24
+ 608:	91 f1       	breq	.+100    	; 0x66e <yackpower+0x68>
+    {
+        if(shdntimer++ == YACKSECS(PSTIME))
+ 60a:	80 91 6e 00 	lds	r24, 0x006E	; 0x80006e <shdntimer.2031>
+ 60e:	90 91 6f 00 	lds	r25, 0x006F	; 0x80006f <shdntimer.2031+0x1>
+ 612:	a0 91 70 00 	lds	r26, 0x0070	; 0x800070 <shdntimer.2031+0x2>
+ 616:	b0 91 71 00 	lds	r27, 0x0071	; 0x800071 <shdntimer.2031+0x3>
+ 61a:	80 37       	cpi	r24, 0x70	; 112
+ 61c:	27 e1       	ldi	r18, 0x17	; 23
+ 61e:	92 07       	cpc	r25, r18
+ 620:	a1 05       	cpc	r26, r1
+ 622:	b1 05       	cpc	r27, r1
+ 624:	61 f0       	breq	.+24     	; 0x63e <yackpower+0x38>
+ 626:	01 96       	adiw	r24, 0x01	; 1
+ 628:	a1 1d       	adc	r26, r1
+ 62a:	b1 1d       	adc	r27, r1
+ 62c:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <shdntimer.2031>
+ 630:	90 93 6f 00 	sts	0x006F, r25	; 0x80006f <shdntimer.2031+0x1>
+ 634:	a0 93 70 00 	sts	0x0070, r26	; 0x800070 <shdntimer.2031+0x2>
+ 638:	b0 93 71 00 	sts	0x0071, r27	; 0x800071 <shdntimer.2031+0x3>
+ 63c:	08 95       	ret
+        {
+            shdntimer=0; // So we do not go to sleep right after waking up..
+ 63e:	10 92 6e 00 	sts	0x006E, r1	; 0x80006e <shdntimer.2031>
+ 642:	10 92 6f 00 	sts	0x006F, r1	; 0x80006f <shdntimer.2031+0x1>
+ 646:	10 92 70 00 	sts	0x0070, r1	; 0x800070 <shdntimer.2031+0x2>
+ 64a:	10 92 71 00 	sts	0x0071, r1	; 0x800071 <shdntimer.2031+0x3>
+
+            set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+ 64e:	85 b7       	in	r24, 0x35	; 53
+ 650:	87 7e       	andi	r24, 0xE7	; 231
+ 652:	80 61       	ori	r24, 0x10	; 16
+ 654:	85 bf       	out	0x35, r24	; 53
+            sleep_bod_disable();
+ 656:	85 b7       	in	r24, 0x35	; 53
+ 658:	84 68       	ori	r24, 0x84	; 132
+ 65a:	85 bf       	out	0x35, r24	; 53
+ 65c:	8b 7f       	andi	r24, 0xFB	; 251
+ 65e:	85 bf       	out	0x35, r24	; 53
+            sleep_enable();
+ 660:	85 b7       	in	r24, 0x35	; 53
+ 662:	80 62       	ori	r24, 0x20	; 32
+ 664:	85 bf       	out	0x35, r24	; 53
+            sei();
+ 666:	78 94       	sei
+            sleep_cpu();
+ 668:	88 95       	sleep
+            cli();
+ 66a:	f8 94       	cli
+ 66c:	08 95       	ret
+        }
+        
+    }
+    else // Passed parameter is FALSE
+    {
+        shdntimer=0;
+ 66e:	10 92 6e 00 	sts	0x006E, r1	; 0x80006e <shdntimer.2031>
+ 672:	10 92 6f 00 	sts	0x006F, r1	; 0x80006f <shdntimer.2031+0x1>
+ 676:	10 92 70 00 	sts	0x0070, r1	; 0x800070 <shdntimer.2031+0x2>
+ 67a:	10 92 71 00 	sts	0x0071, r1	; 0x800071 <shdntimer.2031+0x3>
+ 67e:	08 95       	ret
+
+00000680 <yacksave>:
+ @callergraph
+ 
+ */
+{
+	
+	if(volflags & DIRTYFLAG) // Dirty flag set?
+ 680:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ 684:	82 ff       	sbrs	r24, 2
+ 686:	1f c0       	rjmp	.+62     	; 0x6c6 <yacksave+0x46>
+	{	
+		
+		eeprom_write_byte(&magic, MAGPAT);
+ 688:	65 ea       	ldi	r22, 0xA5	; 165
+ 68a:	89 e9       	ldi	r24, 0x99	; 153
+ 68c:	91 e0       	ldi	r25, 0x01	; 1
+ 68e:	5d d4       	rcall	.+2234   	; 0xf4a <eeprom_write_byte>
+		eeprom_write_word(&ctcstor, ctcvalue);
+ 690:	60 91 76 00 	lds	r22, 0x0076	; 0x800076 <ctcvalue>
+ 694:	70 91 77 00 	lds	r23, 0x0077	; 0x800077 <ctcvalue+0x1>
+ 698:	86 e9       	ldi	r24, 0x96	; 150
+ 69a:	91 e0       	ldi	r25, 0x01	; 1
+ 69c:	64 d4       	rcall	.+2248   	; 0xf66 <eeprom_write_word>
+		eeprom_write_byte(&wpmstor, wpm);
+ 69e:	60 91 73 00 	lds	r22, 0x0073	; 0x800073 <wpm>
+ 6a2:	85 e9       	ldi	r24, 0x95	; 149
+ 6a4:	91 e0       	ldi	r25, 0x01	; 1
+ 6a6:	51 d4       	rcall	.+2210   	; 0xf4a <eeprom_write_byte>
+		eeprom_write_byte(&flagstor, yackflags);
+ 6a8:	60 91 79 00 	lds	r22, 0x0079	; 0x800079 <yackflags>
+ 6ac:	88 e9       	ldi	r24, 0x98	; 152
+ 6ae:	91 e0       	ldi	r25, 0x01	; 1
+ 6b0:	4c d4       	rcall	.+2200   	; 0xf4a <eeprom_write_byte>
+        eeprom_write_byte(&fwstor, farnsworth);
+ 6b2:	60 91 72 00 	lds	r22, 0x0072	; 0x800072 <farnsworth>
+ 6b6:	84 e9       	ldi	r24, 0x94	; 148
+ 6b8:	91 e0       	ldi	r25, 0x01	; 1
+ 6ba:	47 d4       	rcall	.+2190   	; 0xf4a <eeprom_write_byte>
+		
+		volflags &= ~DIRTYFLAG; // Clear the dirty flag
+ 6bc:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ 6c0:	8b 7f       	andi	r24, 0xFB	; 251
+ 6c2:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <volflags>
+ 6c6:	08 95       	ret
+
+000006c8 <yackreset>:
+ stored in the .h file. It sets the dirty flag and calls the save routine
+ to write the data into EEPROM immediately.
+*/
+{
+
+	ctcvalue=DEFCTC; // Initialize to 800 Hz
+ 6c8:	8d e4       	ldi	r24, 0x4D	; 77
+ 6ca:	90 e0       	ldi	r25, 0x00	; 0
+ 6cc:	90 93 77 00 	sts	0x0077, r25	; 0x800077 <ctcvalue+0x1>
+ 6d0:	80 93 76 00 	sts	0x0076, r24	; 0x800076 <ctcvalue>
+    wpm=DEFWPM; // Init to default speed
+ 6d4:	8f e0       	ldi	r24, 0x0F	; 15
+ 6d6:	80 93 73 00 	sts	0x0073, r24	; 0x800073 <wpm>
+	wpmcnt=(1200/YACKBEAT)/DEFWPM; // default speed
+ 6da:	80 e1       	ldi	r24, 0x10	; 16
+ 6dc:	90 e0       	ldi	r25, 0x00	; 0
+ 6de:	90 93 75 00 	sts	0x0075, r25	; 0x800075 <wpmcnt+0x1>
+ 6e2:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <wpmcnt>
+    farnsworth=0; // No Farnsworth gap
+ 6e6:	10 92 72 00 	sts	0x0072, r1	; 0x800072 <farnsworth>
+	yackflags = FLAGDEFAULT;  
+ 6ea:	84 e3       	ldi	r24, 0x34	; 52
+ 6ec:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <yackflags>
+
+	volflags |= DIRTYFLAG;
+ 6f0:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ 6f4:	84 60       	ori	r24, 0x04	; 4
+ 6f6:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <volflags>
+	yacksave(); // Store them in EEPROM
+ 6fa:	c2 cf       	rjmp	.-124    	; 0x680 <yacksave>
+
+000006fc <yackinit>:
+{
+	
+	byte magval;
+	
+	// Configure DDR. Make OUT and ST output ports
+	SETBIT (OUTDDR,OUTPIN);    
+ 6fc:	b8 9a       	sbi	0x17, 0	; 23
+	SETBIT (STDDR,STPIN);
+ 6fe:	b9 9a       	sbi	0x17, 1	; 23
+	
+	// Raise internal pullups for all inputs
+	SETBIT (KEYPORT,DITPIN);  
+ 700:	c3 9a       	sbi	0x18, 3	; 24
+	SETBIT (KEYPORT,DAHPIN);
+ 702:	c4 9a       	sbi	0x18, 4	; 24
+	SETBIT (BTNPORT,BTNPIN);
+ 704:	c2 9a       	sbi	0x18, 2	; 24
+	
+	magval = eeprom_read_byte(&magic); // Retrieve magic value
+ 706:	89 e9       	ldi	r24, 0x99	; 153
+ 708:	91 e0       	ldi	r25, 0x01	; 1
+ 70a:	09 d4       	rcall	.+2066   	; 0xf1e <eeprom_read_byte>
+	
+	if (magval == MAGPAT) // Is memory valid
+ 70c:	85 3a       	cpi	r24, 0xA5	; 165
+ 70e:	01 f5       	brne	.+64     	; 0x750 <yackinit+0x54>
+	{
+		ctcvalue = eeprom_read_word(&ctcstor); // Retrieve last ctc setting
+ 710:	86 e9       	ldi	r24, 0x96	; 150
+ 712:	91 e0       	ldi	r25, 0x01	; 1
+ 714:	0c d4       	rcall	.+2072   	; 0xf2e <eeprom_read_word>
+ 716:	90 93 77 00 	sts	0x0077, r25	; 0x800077 <ctcvalue+0x1>
+ 71a:	80 93 76 00 	sts	0x0076, r24	; 0x800076 <ctcvalue>
+		wpm = eeprom_read_byte(&wpmstor); // Retrieve last wpm setting
+ 71e:	85 e9       	ldi	r24, 0x95	; 149
+ 720:	91 e0       	ldi	r25, 0x01	; 1
+ 722:	fd d3       	rcall	.+2042   	; 0xf1e <eeprom_read_byte>
+ 724:	80 93 73 00 	sts	0x0073, r24	; 0x800073 <wpm>
+        wpmcnt=(1200/YACKBEAT)/wpm; // Calculate speed
+ 728:	68 2f       	mov	r22, r24
+ 72a:	70 e0       	ldi	r23, 0x00	; 0
+ 72c:	80 ef       	ldi	r24, 0xF0	; 240
+ 72e:	90 e0       	ldi	r25, 0x00	; 0
+ 730:	d3 d3       	rcall	.+1958   	; 0xed8 <__divmodhi4>
+ 732:	70 93 75 00 	sts	0x0075, r23	; 0x800075 <wpmcnt+0x1>
+ 736:	60 93 74 00 	sts	0x0074, r22	; 0x800074 <wpmcnt>
+		farnsworth = eeprom_read_byte(&fwstor); // Retrieve last wpm setting	
+ 73a:	84 e9       	ldi	r24, 0x94	; 148
+ 73c:	91 e0       	ldi	r25, 0x01	; 1
+ 73e:	ef d3       	rcall	.+2014   	; 0xf1e <eeprom_read_byte>
+ 740:	80 93 72 00 	sts	0x0072, r24	; 0x800072 <farnsworth>
+		yackflags = eeprom_read_byte(&flagstor); // Retrieve last flags	
+ 744:	88 e9       	ldi	r24, 0x98	; 152
+ 746:	91 e0       	ldi	r25, 0x01	; 1
+ 748:	ea d3       	rcall	.+2004   	; 0xf1e <eeprom_read_byte>
+ 74a:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <yackflags>
+ 74e:	01 c0       	rjmp	.+2      	; 0x752 <yackinit+0x56>
+	}
+	else
+	{
+		yackreset();
+ 750:	bb df       	rcall	.-138    	; 0x6c8 <yackreset>
+ 752:	29 df       	rcall	.-430    	; 0x5a6 <yackinhibit.part.3>
+	
+	yackinhibit(OFF);
+
+#ifdef POWERSAVE
+    
+    PCMSK |= PWRWAKE;    // Define which keys wake us up
+ 754:	85 b3       	in	r24, 0x15	; 21
+ 756:	8c 61       	ori	r24, 0x1C	; 28
+ 758:	85 bb       	out	0x15, r24	; 21
+    GIMSK |= (1<<PCIE);  // Enable pin change interrupt
+ 75a:	8b b7       	in	r24, 0x3b	; 59
+ 75c:	80 62       	ori	r24, 0x20	; 32
+ 75e:	8b bf       	out	0x3b, r24	; 59
+    
+    // Initialize timer1 to serve as the system heartbeat
+    // CK runs at 1MHz. Prescaling by 64 makes that 15625 Hz.
+    // Counting 78 cycles of that generates an overflow every 5ms
+    
+    OCR1C = 78; // 77 counts per cycle
+ 760:	8e e4       	ldi	r24, 0x4E	; 78
+ 762:	8d bd       	out	0x2d, r24	; 45
+    TCCR1 |= (1<<CTC1) | 0b00000111 ; // Clear Timer on match, prescale ck by 64
+ 764:	80 b7       	in	r24, 0x30	; 48
+ 766:	87 68       	ori	r24, 0x87	; 135
+ 768:	80 bf       	out	0x30, r24	; 48
+    OCR1A = 1; // CTC mode does not create an overflow so we use OCR1A
+ 76a:	81 e0       	ldi	r24, 0x01	; 1
+ 76c:	8e bd       	out	0x2e, r24	; 46
+ 76e:	08 95       	ret
+
+00000770 <yackinhibit>:
+ @param mode   ON inhibits keying, OFF re-enables keying 
+ 
+ */
+{
+	
+	if (mode)
+ 770:	88 23       	and	r24, r24
+ 772:	39 f0       	breq	.+14     	; 0x782 <yackinhibit+0x12>
+	{
+		volflags &= ~(TXKEY | SIDETONE);
+		volflags |= SIDETONE;
+ 774:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ 778:	8f 7c       	andi	r24, 0xCF	; 207
+ 77a:	80 61       	ori	r24, 0x10	; 16
+ 77c:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <volflags>
+ 780:	08 95       	ret
+ 782:	11 cf       	rjmp	.-478    	; 0x5a6 <yackinhibit.part.3>
+
+00000784 <yackuser>:
+ @param nr      1 or 2 (Number of user storage to access)
+ @param content The 16 bit word to write. Not used in read mode.
+ @return        The content of the retrieved value in read mode.
+ 
+ */
+{
+ 784:	96 2f       	mov	r25, r22
+	
+    
+	if (func == READ)
+ 786:	81 30       	cpi	r24, 0x01	; 1
+ 788:	51 f4       	brne	.+20     	; 0x79e <yackuser+0x1a>
+	{
+		if (nr == 1) 
+ 78a:	61 30       	cpi	r22, 0x01	; 1
+ 78c:	19 f4       	brne	.+6      	; 0x794 <yackuser+0x10>
+			return (eeprom_read_word(&user1));
+ 78e:	82 e9       	ldi	r24, 0x92	; 146
+ 790:	91 e0       	ldi	r25, 0x01	; 1
+ 792:	04 c0       	rjmp	.+8      	; 0x79c <yackuser+0x18>
+		else if (nr == 2)
+ 794:	62 30       	cpi	r22, 0x02	; 2
+ 796:	81 f4       	brne	.+32     	; 0x7b8 <yackuser+0x34>
+			return (eeprom_read_word(&user2));
+ 798:	80 e9       	ldi	r24, 0x90	; 144
+ 79a:	91 e0       	ldi	r25, 0x01	; 1
+ 79c:	c8 c3       	rjmp	.+1936   	; 0xf2e <eeprom_read_word>
+	}
+	
+	if (func == WRITE)
+ 79e:	82 30       	cpi	r24, 0x02	; 2
+ 7a0:	59 f4       	brne	.+22     	; 0x7b8 <yackuser+0x34>
+ 7a2:	ba 01       	movw	r22, r20
+	{
+        
+		if (nr == 1)
+ 7a4:	91 30       	cpi	r25, 0x01	; 1
+ 7a6:	19 f4       	brne	.+6      	; 0x7ae <yackuser+0x2a>
+			eeprom_write_word(&user1, content);
+ 7a8:	82 e9       	ldi	r24, 0x92	; 146
+ 7aa:	91 e0       	ldi	r25, 0x01	; 1
+ 7ac:	04 c0       	rjmp	.+8      	; 0x7b6 <yackuser+0x32>
+		else if (nr == 2)
+ 7ae:	92 30       	cpi	r25, 0x02	; 2
+ 7b0:	19 f4       	brne	.+6      	; 0x7b8 <yackuser+0x34>
+			eeprom_write_word(&user2, content);
+ 7b2:	80 e9       	ldi	r24, 0x90	; 144
+ 7b4:	91 e0       	ldi	r25, 0x01	; 1
+ 7b6:	d7 d3       	rcall	.+1966   	; 0xf66 <eeprom_write_word>
+	}
+
+    return (FALSE);
+    
+}
+ 7b8:	80 e0       	ldi	r24, 0x00	; 0
+ 7ba:	90 e0       	ldi	r25, 0x00	; 0
+ 7bc:	08 95       	ret
+
+000007be <yackwpm>:
+ @return        Current speed in WPM
+ 
+ */
+{
+    
+    return wpm; 
+ 7be:	80 91 73 00 	lds	r24, 0x0073	; 0x800073 <wpm>
+    
+}
+ 7c2:	90 e0       	ldi	r25, 0x00	; 0
+ 7c4:	08 95       	ret
+
+000007c6 <yackbeat>:
+ using an interrupt or a timer. For simpler cases this is a busy wait routine
+ that delays exactly YACKBEAT ms.
+ 
+ */
+{
+    while((TIFR & (1<<OCF1A)) == 0); // Wait for Timeout
+ 7c6:	08 b6       	in	r0, 0x38	; 56
+ 7c8:	06 fe       	sbrs	r0, 6
+ 7ca:	fd cf       	rjmp	.-6      	; 0x7c6 <yackbeat>
+    TIFR |= (1<<OCF1A);                // Reset output compare flag
+ 7cc:	88 b7       	in	r24, 0x38	; 56
+ 7ce:	80 64       	ori	r24, 0x40	; 64
+ 7d0:	88 bf       	out	0x38, r24	; 56
+ 7d2:	08 95       	ret
+
+000007d4 <yackpitch>:
+ calculations at runtime. As is all calculations are done by the preprocessor.
+ 
+ @param dir     UP or DOWN
+ 
+ */
+{
+ 7d4:	20 91 76 00 	lds	r18, 0x0076	; 0x800076 <ctcvalue>
+ 7d8:	30 91 77 00 	lds	r19, 0x0077	; 0x800077 <ctcvalue+0x1>
+	if (dir == UP)
+ 7dc:	81 30       	cpi	r24, 0x01	; 1
+ 7de:	19 f4       	brne	.+6      	; 0x7e6 <yackpitch+0x12>
+		ctcvalue--;
+ 7e0:	21 50       	subi	r18, 0x01	; 1
+ 7e2:	31 09       	sbc	r19, r1
+ 7e4:	04 c0       	rjmp	.+8      	; 0x7ee <yackpitch+0x1a>
+	if (dir == DOWN)
+ 7e6:	82 30       	cpi	r24, 0x02	; 2
+ 7e8:	31 f4       	brne	.+12     	; 0x7f6 <yackpitch+0x22>
+		ctcvalue++;
+ 7ea:	2f 5f       	subi	r18, 0xFF	; 255
+ 7ec:	3f 4f       	sbci	r19, 0xFF	; 255
+ 7ee:	30 93 77 00 	sts	0x0077, r19	; 0x800077 <ctcvalue+0x1>
+ 7f2:	20 93 76 00 	sts	0x0076, r18	; 0x800076 <ctcvalue>
+	
+	if (ctcvalue < MAXCTC)
+ 7f6:	80 91 76 00 	lds	r24, 0x0076	; 0x800076 <ctcvalue>
+ 7fa:	90 91 77 00 	lds	r25, 0x0077	; 0x800077 <ctcvalue+0x1>
+ 7fe:	88 97       	sbiw	r24, 0x28	; 40
+ 800:	30 f4       	brcc	.+12     	; 0x80e <yackpitch+0x3a>
+		ctcvalue = MAXCTC;
+ 802:	88 e2       	ldi	r24, 0x28	; 40
+ 804:	90 e0       	ldi	r25, 0x00	; 0
+ 806:	90 93 77 00 	sts	0x0077, r25	; 0x800077 <ctcvalue+0x1>
+ 80a:	80 93 76 00 	sts	0x0076, r24	; 0x800076 <ctcvalue>
+	
+	if (ctcvalue > MINCTC)
+ 80e:	80 91 76 00 	lds	r24, 0x0076	; 0x800076 <ctcvalue>
+ 812:	90 91 77 00 	lds	r25, 0x0077	; 0x800077 <ctcvalue+0x1>
+ 816:	8c 39       	cpi	r24, 0x9C	; 156
+ 818:	91 05       	cpc	r25, r1
+ 81a:	30 f0       	brcs	.+12     	; 0x828 <yackpitch+0x54>
+		ctcvalue = MINCTC;
+ 81c:	8b e9       	ldi	r24, 0x9B	; 155
+ 81e:	90 e0       	ldi	r25, 0x00	; 0
+ 820:	90 93 77 00 	sts	0x0077, r25	; 0x800077 <ctcvalue+0x1>
+ 824:	80 93 76 00 	sts	0x0076, r24	; 0x800076 <ctcvalue>
+	
+	volflags |= DIRTYFLAG; // Set the dirty flag	
+ 828:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ 82c:	84 60       	ori	r24, 0x04	; 4
+ 82e:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <volflags>
+ 832:	08 95       	ret
+
+00000834 <yackmode>:
+ 
+ */
+{
+
+	yackflags &= ~MODE;
+	yackflags |= mode;
+ 834:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <yackflags>
+ 838:	93 7f       	andi	r25, 0xF3	; 243
+ 83a:	89 2b       	or	r24, r25
+ 83c:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <yackflags>
+	
+	volflags |= DIRTYFLAG; // Set the dirty flag	
+ 840:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ 844:	84 60       	ori	r24, 0x04	; 4
+ 846:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <volflags>
+ 84a:	08 95       	ret
+
+0000084c <yackflag>:
+ @param flag A byte which indicate which flags are to be queried 
+ @return     0 if the flag(s) were clear, >0 if flag(s) were set
+ 
+ */
+{
+    return yackflags & flag;
+ 84c:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <yackflags>
+}
+ 850:	89 23       	and	r24, r25
+ 852:	08 95       	ret
+
+00000854 <yacktoggle>:
+ @return    TRUE if all was OK, FALSE if configuration lock prevented changes
+ 
+ */
+{
+    
+    yackflags ^= flag;      // Toggle the feature bit
+ 854:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <yackflags>
+ 858:	89 27       	eor	r24, r25
+ 85a:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <yackflags>
+    volflags |= DIRTYFLAG;  // Set the dirty flag	
+ 85e:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ 862:	84 60       	ori	r24, 0x04	; 4
+ 864:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <volflags>
+ 868:	08 95       	ret
+
+0000086a <yackdelay>:
+ This is used during the playback functions where active waiting is needed
+ 
+ @param n   number of dot durations to delay (dependent on current keying speed!
+ 
+ */
+{
+ 86a:	cf 93       	push	r28
+ 86c:	df 93       	push	r29
+ 86e:	c8 2f       	mov	r28, r24
+	
+	byte i=n;
+	byte x;
+	
+	while (i--)
+ 870:	cc 23       	and	r28, r28
+ 872:	49 f0       	breq	.+18     	; 0x886 <yackdelay+0x1c>
+	{
+		x=wpmcnt;
+ 874:	d0 91 74 00 	lds	r29, 0x0074	; 0x800074 <wpmcnt>
+		while (x--)    
+ 878:	dd 23       	and	r29, r29
+ 87a:	19 f0       	breq	.+6      	; 0x882 <yackdelay+0x18>
+			yackbeat();
+ 87c:	a4 df       	rcall	.-184    	; 0x7c6 <yackbeat>
+ 87e:	d1 50       	subi	r29, 0x01	; 1
+ 880:	fb cf       	rjmp	.-10     	; 0x878 <yackdelay+0xe>
+ 882:	c1 50       	subi	r28, 0x01	; 1
+ 884:	f5 cf       	rjmp	.-22     	; 0x870 <yackdelay+0x6>
+	}
+	
+}
+ 886:	df 91       	pop	r29
+ 888:	cf 91       	pop	r28
+ 88a:	08 95       	ret
+
+0000088c <yackfarns>:
+void yackfarns(void)
+/*! 
+ @brief     Produces an additional waiting delay for farnsworth mode.
+ 
+ */
+{
+ 88c:	cf 93       	push	r28
+ 88e:	df 93       	push	r29
+	
+    word i=farnsworth;
+ 890:	c0 91 72 00 	lds	r28, 0x0072	; 0x800072 <farnsworth>
+ 894:	d0 e0       	ldi	r29, 0x00	; 0
+	
+	while (i--)
+ 896:	20 97       	sbiw	r28, 0x00	; 0
+ 898:	21 f0       	breq	.+8      	; 0x8a2 <yackfarns+0x16>
+	{
+    	yackdelay(1);
+ 89a:	81 e0       	ldi	r24, 0x01	; 1
+ 89c:	e6 df       	rcall	.-52     	; 0x86a <yackdelay>
+ 89e:	21 97       	sbiw	r28, 0x01	; 1
+ 8a0:	fa cf       	rjmp	.-12     	; 0x896 <yackfarns+0xa>
+	}
+	
+}
+ 8a2:	df 91       	pop	r29
+ 8a4:	cf 91       	pop	r28
+ 8a6:	08 95       	ret
+
+000008a8 <yackplay>:
+ @brief     Key the TX / Sidetone for the duration of a dit or a dah
+ 
+ @param i   DIT or DAH
+ 
+ */
+{
+ 8a8:	cf 93       	push	r28
+ 8aa:	c8 2f       	mov	r28, r24
+	
+    key(DOWN); 
+ 8ac:	87 de       	rcall	.-754    	; 0x5bc <key.constprop.4>
+        }
+        
+    }
+    else // Passed parameter is FALSE
+    {
+        shdntimer=0;
+ 8ae:	10 92 6e 00 	sts	0x006E, r1	; 0x80006e <shdntimer.2031>
+ 8b2:	10 92 6f 00 	sts	0x006F, r1	; 0x80006f <shdntimer.2031+0x1>
+ 8b6:	10 92 70 00 	sts	0x0070, r1	; 0x800070 <shdntimer.2031+0x2>
+ 8ba:	10 92 71 00 	sts	0x0071, r1	; 0x800071 <shdntimer.2031+0x3>
+    
+    yackpower(FALSE); // Avoid powerdowns when keying
+    
+#endif
+    
+	switch (i)
+ 8be:	c1 30       	cpi	r28, 0x01	; 1
+ 8c0:	21 f0       	breq	.+8      	; 0x8ca <yackplay+0x22>
+ 8c2:	c2 30       	cpi	r28, 0x02	; 2
+ 8c4:	21 f4       	brne	.+8      	; 0x8ce <yackplay+0x26>
+	{
+		case DAH:
+			yackdelay(DAHLEN);
+ 8c6:	83 e0       	ldi	r24, 0x03	; 3
+ 8c8:	01 c0       	rjmp	.+2      	; 0x8cc <yackplay+0x24>
+			break;
+			
+		case DIT:
+			yackdelay(DITLEN);
+ 8ca:	81 e0       	ldi	r24, 0x01	; 1
+ 8cc:	ce df       	rcall	.-100    	; 0x86a <yackdelay>
+			break;
+	}
+    
+    key(UP);
+	
+}
+ 8ce:	cf 91       	pop	r28
+ 8d0:	58 ce       	rjmp	.-848    	; 0x582 <key.part.0>
+
+000008d2 <yackspeed>:
+ @param dir     UP (faster) or DOWN (slower)
+ 
+ */
+{
+    
+    if (mode == FARNSWORTH)
+ 8d2:	61 30       	cpi	r22, 0x01	; 1
+ 8d4:	91 f4       	brne	.+36     	; 0x8fa <yackspeed+0x28>
+    {
+        if ((dir == UP) && (farnsworth > 0))
+ 8d6:	81 30       	cpi	r24, 0x01	; 1
+ 8d8:	31 f4       	brne	.+12     	; 0x8e6 <yackspeed+0x14>
+ 8da:	80 91 72 00 	lds	r24, 0x0072	; 0x800072 <farnsworth>
+ 8de:	88 23       	and	r24, r24
+ 8e0:	29 f1       	breq	.+74     	; 0x92c <yackspeed+0x5a>
+            farnsworth--;
+ 8e2:	81 50       	subi	r24, 0x01	; 1
+ 8e4:	07 c0       	rjmp	.+14     	; 0x8f4 <yackspeed+0x22>
+        
+        if ((dir == DOWN) && (farnsworth < MAXFARN))
+ 8e6:	82 30       	cpi	r24, 0x02	; 2
+ 8e8:	09 f5       	brne	.+66     	; 0x92c <yackspeed+0x5a>
+ 8ea:	80 91 72 00 	lds	r24, 0x0072	; 0x800072 <farnsworth>
+ 8ee:	8f 3f       	cpi	r24, 0xFF	; 255
+ 8f0:	e9 f0       	breq	.+58     	; 0x92c <yackspeed+0x5a>
+            farnsworth++;
+ 8f2:	8f 5f       	subi	r24, 0xFF	; 255
+ 8f4:	80 93 72 00 	sts	0x0072, r24	; 0x800072 <farnsworth>
+ 8f8:	19 c0       	rjmp	.+50     	; 0x92c <yackspeed+0x5a>
+ 8fa:	90 91 73 00 	lds	r25, 0x0073	; 0x800073 <wpm>
+    }
+    else // WPMSPEED
+    {
+        if ((dir == UP) && (wpm < MAXWPM))
+ 8fe:	81 30       	cpi	r24, 0x01	; 1
+ 900:	21 f4       	brne	.+8      	; 0x90a <yackspeed+0x38>
+ 902:	92 33       	cpi	r25, 0x32	; 50
+ 904:	48 f4       	brcc	.+18     	; 0x918 <yackspeed+0x46>
+            wpm++;
+ 906:	9f 5f       	subi	r25, 0xFF	; 255
+ 908:	05 c0       	rjmp	.+10     	; 0x914 <yackspeed+0x42>
+        
+        if ((dir == DOWN) && (wpm > MINWPM))
+ 90a:	82 30       	cpi	r24, 0x02	; 2
+ 90c:	29 f4       	brne	.+10     	; 0x918 <yackspeed+0x46>
+ 90e:	96 30       	cpi	r25, 0x06	; 6
+ 910:	18 f0       	brcs	.+6      	; 0x918 <yackspeed+0x46>
+            wpm--;
+ 912:	91 50       	subi	r25, 0x01	; 1
+ 914:	90 93 73 00 	sts	0x0073, r25	; 0x800073 <wpm>
+        
+        wpmcnt=(1200/YACKBEAT)/wpm; // Calculate beats
+ 918:	60 91 73 00 	lds	r22, 0x0073	; 0x800073 <wpm>
+ 91c:	70 e0       	ldi	r23, 0x00	; 0
+ 91e:	80 ef       	ldi	r24, 0xF0	; 240
+ 920:	90 e0       	ldi	r25, 0x00	; 0
+ 922:	da d2       	rcall	.+1460   	; 0xed8 <__divmodhi4>
+ 924:	70 93 75 00 	sts	0x0075, r23	; 0x800075 <wpmcnt+0x1>
+ 928:	60 93 74 00 	sts	0x0074, r22	; 0x800074 <wpmcnt>
+
+	}
+	
+	volflags |= DIRTYFLAG; // Set the dirty flag	
+ 92c:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ 930:	84 60       	ori	r24, 0x04	; 4
+ 932:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <volflags>
+    
+    yackplay(DIT);
+ 936:	81 e0       	ldi	r24, 0x01	; 1
+ 938:	b7 df       	rcall	.-146    	; 0x8a8 <yackplay>
+    yackdelay(IEGLEN);	// Inter Element gap  
+ 93a:	81 e0       	ldi	r24, 0x01	; 1
+ 93c:	96 df       	rcall	.-212    	; 0x86a <yackdelay>
+    yackplay(DAH);
+ 93e:	82 e0       	ldi	r24, 0x02	; 2
+ 940:	b3 df       	rcall	.-154    	; 0x8a8 <yackplay>
+    yackdelay(ICGLEN);	// Inter Character gap  
+ 942:	83 e0       	ldi	r24, 0x03	; 3
+ 944:	92 df       	rcall	.-220    	; 0x86a <yackdelay>
+    yackfarns(); // Additional Farnsworth delay
+ 946:	a2 cf       	rjmp	.-188    	; 0x88c <yackfarns>
+
+00000948 <yackerror>:
+ 
+ The error prosign (8 dits) can not be encoded in our coding table. A call to this
+ function produces it..
+ 
+ */
+{
+ 948:	cf 93       	push	r28
+ 94a:	c8 e0       	ldi	r28, 0x08	; 8
+	byte i;
+	
+	for (i=0;i<8;i++)
+	{
+		yackplay(DIT);
+ 94c:	81 e0       	ldi	r24, 0x01	; 1
+ 94e:	ac df       	rcall	.-168    	; 0x8a8 <yackplay>
+		yackdelay(DITLEN);
+ 950:	81 e0       	ldi	r24, 0x01	; 1
+ 952:	8b df       	rcall	.-234    	; 0x86a <yackdelay>
+ 954:	c1 50       	subi	r28, 0x01	; 1
+ 
+ */
+{
+	byte i;
+	
+	for (i=0;i<8;i++)
+ 956:	d1 f7       	brne	.-12     	; 0x94c <yackerror+0x4>
+	{
+		yackplay(DIT);
+		yackdelay(DITLEN);
+	}
+	yackdelay(DAHLEN);
+ 958:	83 e0       	ldi	r24, 0x03	; 3
+	
+}
+ 95a:	cf 91       	pop	r28
+	for (i=0;i<8;i++)
+	{
+		yackplay(DIT);
+		yackdelay(DITLEN);
+	}
+	yackdelay(DAHLEN);
+ 95c:	86 cf       	rjmp	.-244    	; 0x86a <yackdelay>
+
+0000095e <yackctrlkey>:
+ @return        TRUE if a press of the command key is not yet handled. 
+ 
+ @callergraph
+ 
+ */
+{
+ 95e:	cf 93       	push	r28
+ 960:	df 93       	push	r29
+ 962:	d8 2f       	mov	r29, r24
+	
+	byte volbfr;
+	
+    volbfr = volflags; // Remember current volatile settings
+ 964:	c0 91 78 00 	lds	r28, 0x0078	; 0x800078 <volflags>
+    
+	if (!(BTNINP & (1<<BTNPIN))) // If command button is pressed
+ 968:	b2 99       	sbic	0x16, 2	; 22
+ 96a:	1f c0       	rjmp	.+62     	; 0x9aa <yackctrlkey+0x4c>
+	{
+        
+        volbfr |= CKLATCH; // Set control key latch
+ 96c:	c8 60       	ori	r28, 0x08	; 8
+		// We will now wait a short while and then busy wait until the key is
+		// released.
+		// Should we find that someone is keying the paddle, let him change
+		// the speed and pretend ctrl was never pressed in the first place..
+
+		yackinhibit(ON); // Stop keying, switch on sidetone.
+ 96e:	81 e0       	ldi	r24, 0x01	; 1
+ 970:	ff de       	rcall	.-514    	; 0x770 <yackinhibit>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 972:	83 ed       	ldi	r24, 0xD3	; 211
+ 974:	90 e3       	ldi	r25, 0x30	; 48
+ 976:	01 97       	sbiw	r24, 0x01	; 1
+ 978:	f1 f7       	brne	.-4      	; 0x976 <yackctrlkey+0x18>
+ 97a:	00 c0       	rjmp	.+0      	; 0x97c <yackctrlkey+0x1e>
+ 97c:	00 00       	nop
+		
+		_delay_ms(50);
+		
+		while(!(BTNINP & (1<<BTNPIN))) // Busy wait for release
+ 97e:	b2 99       	sbic	0x16, 2	; 22
+ 980:	0d c0       	rjmp	.+26     	; 0x99c <yackctrlkey+0x3e>
+		{
+            
+			if (!( KEYINP & (1<<DITPIN))) // Someone pressing DIT paddle
+ 982:	b3 99       	sbic	0x16, 3	; 22
+ 984:	04 c0       	rjmp	.+8      	; 0x98e <yackctrlkey+0x30>
+			{
+				yackspeed(DOWN,WPMSPEED);
+ 986:	60 e0       	ldi	r22, 0x00	; 0
+ 988:	82 e0       	ldi	r24, 0x02	; 2
+ 98a:	a3 df       	rcall	.-186    	; 0x8d2 <yackspeed>
+                volbfr &= ~(CKLATCH); // Ignore that control key was pressed
+ 98c:	c7 7f       	andi	r28, 0xF7	; 247
+			}	
+			
+			if (!( KEYINP & (1<<DAHPIN))) // Someone pressing DAH paddle
+ 98e:	b4 99       	sbic	0x16, 4	; 22
+ 990:	f6 cf       	rjmp	.-20     	; 0x97e <yackctrlkey+0x20>
+			{
+				yackspeed(UP,WPMSPEED);
+ 992:	60 e0       	ldi	r22, 0x00	; 0
+ 994:	81 e0       	ldi	r24, 0x01	; 1
+ 996:	9d df       	rcall	.-198    	; 0x8d2 <yackspeed>
+                volbfr &= ~(CKLATCH);
+ 998:	c7 7f       	andi	r28, 0xF7	; 247
+ 99a:	f1 cf       	rjmp	.-30     	; 0x97e <yackctrlkey+0x20>
+ 99c:	83 ed       	ldi	r24, 0xD3	; 211
+ 99e:	90 e3       	ldi	r25, 0x30	; 48
+ 9a0:	01 97       	sbiw	r24, 0x01	; 1
+ 9a2:	f1 f7       	brne	.-4      	; 0x9a0 <yackctrlkey+0x42>
+ 9a4:	00 c0       	rjmp	.+0      	; 0x9a6 <yackctrlkey+0x48>
+ 9a6:	00 00       	nop
+			
+		}
+        
+		_delay_ms(50); // Trailing edge debounce
+		
+        yacksave();	// In case we had a speed change	
+ 9a8:	6b de       	rcall	.-810    	; 0x680 <yacksave>
+		
+	}
+
+    volflags = volbfr; // Restore previous state
+
+    if (mode==TRUE) // Does caller want us to reset latch?
+ 9aa:	d1 30       	cpi	r29, 0x01	; 1
+ 9ac:	19 f0       	breq	.+6      	; 0x9b4 <yackctrlkey+0x56>
+		
+        yacksave();	// In case we had a speed change	
+		
+	}
+
+    volflags = volbfr; // Restore previous state
+ 9ae:	c0 93 78 00 	sts	0x0078, r28	; 0x800078 <volflags>
+ 9b2:	04 c0       	rjmp	.+8      	; 0x9bc <yackctrlkey+0x5e>
+
+    if (mode==TRUE) // Does caller want us to reset latch?
+    {
+        volflags &= ~(CKLATCH);
+ 9b4:	8c 2f       	mov	r24, r28
+ 9b6:	87 7f       	andi	r24, 0xF7	; 247
+ 9b8:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <volflags>
+    
+    //yacksave(); // In case we had a speed change (Does NOT work if command is here - moved immediately after button release debounce)
+    
+	return((volbfr&CKLATCH)!=0); // Tell caller if we had a ctrl button press
+	
+}
+ 9bc:	c3 fb       	bst	r28, 3
+ 9be:	88 27       	eor	r24, r24
+ 9c0:	80 f9       	bld	r24, 0
+ 9c2:	df 91       	pop	r29
+ 9c4:	cf 91       	pop	r28
+ 9c6:	08 95       	ret
+
+000009c8 <yacktune>:
+ 
+ This produces a solid keydown for TUNEDURATION seconds. After this the TX is unkeyed.
+ The same can be achieved by presing either the DIT or the DAH contact or the control key.
+ 
+*/
+{
+ 9c8:	cf 93       	push	r28
+ 9ca:	df 93       	push	r29
+	word timer = YACKSECS(TUNEDURATION);
+	
+	key(DOWN);
+ 9cc:	f7 dd       	rcall	.-1042   	; 0x5bc <key.constprop.4>
+ 9ce:	c0 ea       	ldi	r28, 0xA0	; 160
+ 9d0:	df e0       	ldi	r29, 0x0F	; 15
+	
+	while(timer && (KEYINP & (1<<DITPIN)) && (KEYINP & (1<<DAHPIN)) && !yackctrlkey(TRUE) )
+ 9d2:	b3 99       	sbic	0x16, 3	; 22
+ 9d4:	03 c0       	rjmp	.+6      	; 0x9dc <yacktune+0x14>
+		timer--;
+		yackbeat();
+	}
+	
+	key(UP);
+}
+ 9d6:	df 91       	pop	r29
+ 9d8:	cf 91       	pop	r28
+ 9da:	d3 cd       	rjmp	.-1114   	; 0x582 <key.part.0>
+{
+	word timer = YACKSECS(TUNEDURATION);
+	
+	key(DOWN);
+	
+	while(timer && (KEYINP & (1<<DITPIN)) && (KEYINP & (1<<DAHPIN)) && !yackctrlkey(TRUE) )
+ 9dc:	b4 9b       	sbis	0x16, 4	; 22
+ 9de:	fb cf       	rjmp	.-10     	; 0x9d6 <yacktune+0xe>
+ 9e0:	81 e0       	ldi	r24, 0x01	; 1
+ 9e2:	bd df       	rcall	.-134    	; 0x95e <yackctrlkey>
+ 9e4:	81 11       	cpse	r24, r1
+ 9e6:	f7 cf       	rjmp	.-18     	; 0x9d6 <yacktune+0xe>
+	{
+		timer--;
+		yackbeat();
+ 9e8:	ee de       	rcall	.-548    	; 0x7c6 <yackbeat>
+ 9ea:	21 97       	sbiw	r28, 0x01	; 1
+{
+	word timer = YACKSECS(TUNEDURATION);
+	
+	key(DOWN);
+	
+	while(timer && (KEYINP & (1<<DITPIN)) && (KEYINP & (1<<DAHPIN)) && !yackctrlkey(TRUE) )
+ 9ec:	91 f7       	brne	.-28     	; 0x9d2 <yacktune+0xa>
+ 9ee:	f3 cf       	rjmp	.-26     	; 0x9d6 <yacktune+0xe>
+
+000009f0 <yackchar>:
+ @param c   The character to send
+ 
+*/
+
+
+{
+ 9f0:	cf 93       	push	r28
+	byte	code=0x80; // 0x80 is an empty morse character (just eoc bit set)
+	byte 	i; // a counter
+	
+	// First we need to map the actual character to the encoded morse sequence in
+	// the array "morse"
+	if(c>='0' && c<='9') // Is it a numerical digit?
+ 9f2:	90 ed       	ldi	r25, 0xD0	; 208
+ 9f4:	98 0f       	add	r25, r24
+ 9f6:	9a 30       	cpi	r25, 0x0A	; 10
+ 9f8:	30 f4       	brcc	.+12     	; 0xa06 <yackchar+0x16>
+		code = pgm_read_byte(&morse[c-'0']); // Find it in the beginning of array
+ 9fa:	e8 2f       	mov	r30, r24
+ 9fc:	f0 e0       	ldi	r31, 0x00	; 0
+ 9fe:	e9 59       	subi	r30, 0x99	; 153
+ a00:	ff 4f       	sbci	r31, 0xFF	; 255
+ a02:	c4 91       	lpm	r28, Z
+ a04:	01 c0       	rjmp	.+2      	; 0xa08 <yackchar+0x18>
+ 
+*/
+
+
+{
+	byte	code=0x80; // 0x80 is an empty morse character (just eoc bit set)
+ a06:	c0 e8       	ldi	r28, 0x80	; 128
+	// First we need to map the actual character to the encoded morse sequence in
+	// the array "morse"
+	if(c>='0' && c<='9') // Is it a numerical digit?
+		code = pgm_read_byte(&morse[c-'0']); // Find it in the beginning of array
+    
+	if(c>='a' && c<='z') // Is it a character?
+ a08:	9f e9       	ldi	r25, 0x9F	; 159
+ a0a:	98 0f       	add	r25, r24
+ a0c:	9a 31       	cpi	r25, 0x1A	; 26
+ a0e:	28 f4       	brcc	.+10     	; 0xa1a <yackchar+0x2a>
+		code = pgm_read_byte(&morse[c-'a'+10]); // Find it from position 10
+ a10:	e8 2f       	mov	r30, r24
+ a12:	f0 e0       	ldi	r31, 0x00	; 0
+ a14:	e0 5c       	subi	r30, 0xC0	; 192
+ a16:	ff 4f       	sbci	r31, 0xFF	; 255
+ a18:	c4 91       	lpm	r28, Z
+	
+	if(c>='A' && c<='Z') // Is it a character in upper case?
+ a1a:	9f eb       	ldi	r25, 0xBF	; 191
+ a1c:	98 0f       	add	r25, r24
+ a1e:	9a 31       	cpi	r25, 0x1A	; 26
+ a20:	28 f4       	brcc	.+10     	; 0xa2c <yackchar+0x3c>
+		code = pgm_read_byte(&morse[c-'A'+10]); // Same as above
+ a22:	e8 2f       	mov	r30, r24
+ a24:	f0 e0       	ldi	r31, 0x00	; 0
+ a26:	e0 5a       	subi	r30, 0xA0	; 160
+ a28:	ff 4f       	sbci	r31, 0xFF	; 255
+ a2a:	c4 91       	lpm	r28, Z
+ 
+*/
+
+
+{
+	byte	code=0x80; // 0x80 is an empty morse character (just eoc bit set)
+ a2c:	20 e0       	ldi	r18, 0x00	; 0
+ a2e:	30 e0       	ldi	r19, 0x00	; 0
+	
+	// Last we need to handle special characters. There is a small char
+	// array "spechar" which contains the characters for the morse elements
+	// at the end of the "morse" array (see there!)
+	for(i=0;i<sizeof(spechar);i++) // Read through the array
+		if (c == pgm_read_byte(&spechar[i])) // Does it contain our character
+ a30:	f9 01       	movw	r30, r18
+ a32:	e1 58       	subi	r30, 0x81	; 129
+ a34:	ff 4f       	sbci	r31, 0xFF	; 255
+ a36:	e4 91       	lpm	r30, Z
+ a38:	8e 13       	cpse	r24, r30
+ a3a:	04 c0       	rjmp	.+8      	; 0xa44 <yackchar+0x54>
+			code = pgm_read_byte(&morse[i+36]); // Map it to morse code
+ a3c:	f9 01       	movw	r30, r18
+ a3e:	e5 54       	subi	r30, 0x45	; 69
+ a40:	ff 4f       	sbci	r31, 0xFF	; 255
+ a42:	c4 91       	lpm	r28, Z
+ a44:	2f 5f       	subi	r18, 0xFF	; 255
+ a46:	3f 4f       	sbci	r19, 0xFF	; 255
+		code = pgm_read_byte(&morse[c-'A'+10]); // Same as above
+	
+	// Last we need to handle special characters. There is a small char
+	// array "spechar" which contains the characters for the morse elements
+	// at the end of the "morse" array (see there!)
+	for(i=0;i<sizeof(spechar);i++) // Read through the array
+ a48:	28 31       	cpi	r18, 0x18	; 24
+ a4a:	31 05       	cpc	r19, r1
+ a4c:	89 f7       	brne	.-30     	; 0xa30 <yackchar+0x40>
+		if (c == pgm_read_byte(&spechar[i])) // Does it contain our character
+			code = pgm_read_byte(&morse[i+36]); // Map it to morse code
+	
+	if(c==' ') // Do they want us to transmit a space (a gap of 7 dots)
+ a4e:	80 32       	cpi	r24, 0x20	; 32
+ a50:	71 f4       	brne	.+28     	; 0xa6e <yackchar+0x7e>
+		yackdelay(IWGLEN-ICGLEN); // ICG was already played after previous char
+ a52:	84 e0       	ldi	r24, 0x04	; 4
+
+        yackfarns(); // Insert another gap for farnsworth keying
+
+	}
+	
+}
+ a54:	cf 91       	pop	r28
+	for(i=0;i<sizeof(spechar);i++) // Read through the array
+		if (c == pgm_read_byte(&spechar[i])) // Does it contain our character
+			code = pgm_read_byte(&morse[i+36]); // Map it to morse code
+	
+	if(c==' ') // Do they want us to transmit a space (a gap of 7 dots)
+		yackdelay(IWGLEN-ICGLEN); // ICG was already played after previous char
+ a56:	09 cf       	rjmp	.-494    	; 0x86a <yackdelay>
+	else
+	{
+  		while (code != 0x80) // Stop when EOC bit has reached MSB
+  		{
+			if (yackctrlkey(FALSE)) // Stop playing if someone pushes key
+ a58:	80 e0       	ldi	r24, 0x00	; 0
+ a5a:	81 df       	rcall	.-254    	; 0x95e <yackctrlkey>
+ a5c:	81 11       	cpse	r24, r1
+ a5e:	10 c0       	rjmp	.+32     	; 0xa80 <yackchar+0x90>
+				return;
+			
+     		if (code & 0x80) 	// MSB set ?
+ a60:	c7 ff       	sbrs	r28, 7
+ a62:	08 c0       	rjmp	.+16     	; 0xa74 <yackchar+0x84>
+       			yackplay(DAH);      // ..then play a dash
+ a64:	82 e0       	ldi	r24, 0x02	; 2
+     		else				// MSB cleared ?
+       			yackplay(DIT);		// .. then play a dot
+ a66:	20 df       	rcall	.-448    	; 0x8a8 <yackplay>
+			
+     		yackdelay(IEGLEN);	// Inter Element gap  
+ a68:	81 e0       	ldi	r24, 0x01	; 1
+ a6a:	ff de       	rcall	.-514    	; 0x86a <yackdelay>
+            
+     		code = code << 1;	// Shift code on position left (to next element)
+ a6c:	cc 0f       	add	r28, r28
+	
+	if(c==' ') // Do they want us to transmit a space (a gap of 7 dots)
+		yackdelay(IWGLEN-ICGLEN); // ICG was already played after previous char
+	else
+	{
+  		while (code != 0x80) // Stop when EOC bit has reached MSB
+ a6e:	c0 38       	cpi	r28, 0x80	; 128
+ a70:	99 f7       	brne	.-26     	; 0xa58 <yackchar+0x68>
+ a72:	02 c0       	rjmp	.+4      	; 0xa78 <yackchar+0x88>
+				return;
+			
+     		if (code & 0x80) 	// MSB set ?
+       			yackplay(DAH);      // ..then play a dash
+     		else				// MSB cleared ?
+       			yackplay(DIT);		// .. then play a dot
+ a74:	81 e0       	ldi	r24, 0x01	; 1
+ a76:	f7 cf       	rjmp	.-18     	; 0xa66 <yackchar+0x76>
+     		yackdelay(IEGLEN);	// Inter Element gap  
+            
+     		code = code << 1;	// Shift code on position left (to next element)
+  		}
+		
+  		yackdelay(ICGLEN - IEGLEN); // IEG was already played after element
+ a78:	82 e0       	ldi	r24, 0x02	; 2
+ a7a:	f7 de       	rcall	.-530    	; 0x86a <yackdelay>
+
+        yackfarns(); // Insert another gap for farnsworth keying
+
+	}
+	
+}
+ a7c:	cf 91       	pop	r28
+     		code = code << 1;	// Shift code on position left (to next element)
+  		}
+		
+  		yackdelay(ICGLEN - IEGLEN); // IEG was already played after element
+
+        yackfarns(); // Insert another gap for farnsworth keying
+ a7e:	06 cf       	rjmp	.-500    	; 0x88c <yackfarns>
+
+	}
+	
+}
+ a80:	cf 91       	pop	r28
+ a82:	08 95       	ret
+
+00000a84 <yackstring>:
+ and/or sidetone depending on feature bit settings.
+ 
+ @param p   Pointer to string location in FLASH 
+ 
+ */
+{
+ a84:	1f 93       	push	r17
+ a86:	cf 93       	push	r28
+ a88:	df 93       	push	r29
+ a8a:	ec 01       	movw	r28, r24
+	
+	char c;
+	
+	while ((c = pgm_read_byte(p++))&& !(yackctrlkey(TRUE)) )
+ a8c:	fe 01       	movw	r30, r28
+ a8e:	14 91       	lpm	r17, Z
+ a90:	11 23       	and	r17, r17
+ a92:	41 f0       	breq	.+16     	; 0xaa4 <yackstring+0x20>
+ a94:	81 e0       	ldi	r24, 0x01	; 1
+ a96:	63 df       	rcall	.-314    	; 0x95e <yackctrlkey>
+ a98:	21 96       	adiw	r28, 0x01	; 1
+ a9a:	81 11       	cpse	r24, r1
+ a9c:	03 c0       	rjmp	.+6      	; 0xaa4 <yackstring+0x20>
+		// While end of string in flash not reached and ctrl not pressed
+		yackchar(c);            // Play the read character
+ a9e:	81 2f       	mov	r24, r17
+ aa0:	a7 df       	rcall	.-178    	; 0x9f0 <yackchar>
+ aa2:	f4 cf       	rjmp	.-24     	; 0xa8c <yackstring+0x8>
+								// abort now if someone presses command key
+	
+}
+ aa4:	df 91       	pop	r29
+ aa6:	cf 91       	pop	r28
+ aa8:	1f 91       	pop	r17
+ aaa:	08 95       	ret
+
+00000aac <yacknumber>:
+ 
+ @param n   The number to send
+ 
+ */
+
+{
+ aac:	1f 93       	push	r17
+ aae:	cf 93       	push	r28
+ ab0:	df 93       	push	r29
+ ab2:	00 d0       	rcall	.+0      	; 0xab4 <yacknumber+0x8>
+ ab4:	00 d0       	rcall	.+0      	; 0xab6 <yacknumber+0xa>
+ ab6:	1f 92       	push	r1
+ ab8:	cd b7       	in	r28, 0x3d	; 61
+ aba:	de b7       	in	r29, 0x3e	; 62
+    
+    char buffer[5];
+    byte i = 0;
+ abc:	10 e0       	ldi	r17, 0x00	; 0
+	
+	while (n) // Until nothing left or control key pressed
+	{
+		buffer[i++] = n%10+'0'; // Store rest of division by 10
+ abe:	2a e0       	ldi	r18, 0x0A	; 10
+ ac0:	30 e0       	ldi	r19, 0x00	; 0
+{
+    
+    char buffer[5];
+    byte i = 0;
+	
+	while (n) // Until nothing left or control key pressed
+ ac2:	00 97       	sbiw	r24, 0x00	; 0
+ ac4:	d1 f0       	breq	.+52     	; 0xafa <yacknumber+0x4e>
+	{
+		buffer[i++] = n%10+'0'; // Store rest of division by 10
+ ac6:	e1 e0       	ldi	r30, 0x01	; 1
+ ac8:	f0 e0       	ldi	r31, 0x00	; 0
+ aca:	ec 0f       	add	r30, r28
+ acc:	fd 1f       	adc	r31, r29
+ ace:	e1 0f       	add	r30, r17
+ ad0:	f1 1d       	adc	r31, r1
+ ad2:	b9 01       	movw	r22, r18
+ ad4:	ed d1       	rcall	.+986    	; 0xeb0 <__udivmodhi4>
+ ad6:	80 5d       	subi	r24, 0xD0	; 208
+ ad8:	80 83       	st	Z, r24
+		n /= 10;                // Divide by 10
+ ada:	cb 01       	movw	r24, r22
+    char buffer[5];
+    byte i = 0;
+	
+	while (n) // Until nothing left or control key pressed
+	{
+		buffer[i++] = n%10+'0'; // Store rest of division by 10
+ adc:	1f 5f       	subi	r17, 0xFF	; 255
+ ade:	f1 cf       	rjmp	.-30     	; 0xac2 <yacknumber+0x16>
+		n /= 10;                // Divide by 10
+	}
+	
+    while (i)
+    {
+		if (yackctrlkey(TRUE)) {break;}
+ ae0:	81 e0       	ldi	r24, 0x01	; 1
+ ae2:	3d df       	rcall	.-390    	; 0x95e <yackctrlkey>
+ ae4:	81 11       	cpse	r24, r1
+ ae6:	0b c0       	rjmp	.+22     	; 0xafe <yacknumber+0x52>
+        yackchar(buffer[--i]);
+ ae8:	11 50       	subi	r17, 0x01	; 1
+ aea:	e1 e0       	ldi	r30, 0x01	; 1
+ aec:	f0 e0       	ldi	r31, 0x00	; 0
+ aee:	ec 0f       	add	r30, r28
+ af0:	fd 1f       	adc	r31, r29
+ af2:	e1 0f       	add	r30, r17
+ af4:	f1 1d       	adc	r31, r1
+ af6:	80 81       	ld	r24, Z
+ af8:	7b df       	rcall	.-266    	; 0x9f0 <yackchar>
+	{
+		buffer[i++] = n%10+'0'; // Store rest of division by 10
+		n /= 10;                // Divide by 10
+	}
+	
+    while (i)
+ afa:	11 11       	cpse	r17, r1
+ afc:	f1 cf       	rjmp	.-30     	; 0xae0 <yacknumber+0x34>
+    {
+		if (yackctrlkey(TRUE)) {break;}
+        yackchar(buffer[--i]);
+    }
+    
+    yackchar (' ');
+ afe:	80 e2       	ldi	r24, 0x20	; 32
+    
+}
+ b00:	0f 90       	pop	r0
+ b02:	0f 90       	pop	r0
+ b04:	0f 90       	pop	r0
+ b06:	0f 90       	pop	r0
+ b08:	0f 90       	pop	r0
+ b0a:	df 91       	pop	r29
+ b0c:	cf 91       	pop	r28
+ b0e:	1f 91       	pop	r17
+    {
+		if (yackctrlkey(TRUE)) {break;}
+        yackchar(buffer[--i]);
+    }
+    
+    yackchar (' ');
+ b10:	6f cf       	rjmp	.-290    	; 0x9f0 <yackchar>
+
+00000b12 <yackiambic>:
+ 
+ @param ctrl    ON if the keyer should recognize when a word ends. OFF if not.
+ @return        The character if one was recognized, /0 if not
+ 
+ */
+{
+ b12:	cf 93       	push	r28
+	
+	// If the FSM remains in idle state for another 4 dot times (7 dot times 
+	// altogether), we assume that the word has ended. A space char
+	// is transmitted in this case.
+	
+	if (timer) timer--; // Count down
+ b14:	20 91 6c 00 	lds	r18, 0x006C	; 0x80006c <timer.2200>
+ b18:	30 91 6d 00 	lds	r19, 0x006D	; 0x80006d <timer.2200+0x1>
+ b1c:	21 15       	cp	r18, r1
+ b1e:	31 05       	cpc	r19, r1
+ b20:	31 f0       	breq	.+12     	; 0xb2e <yackiambic+0x1c>
+ b22:	21 50       	subi	r18, 0x01	; 1
+ b24:	31 09       	sbc	r19, r1
+ b26:	30 93 6d 00 	sts	0x006D, r19	; 0x80006d <timer.2200+0x1>
+ b2a:	20 93 6c 00 	sts	0x006C, r18	; 0x80006c <timer.2200>
+	
+	if (ctrl == OFF) iwgflag = 0; // No space detection
+ b2e:	81 11       	cpse	r24, r1
+ b30:	02 c0       	rjmp	.+4      	; 0xb36 <yackiambic+0x24>
+ b32:	10 92 6b 00 	sts	0x006B, r1	; 0x80006b <iwgflag.2204>
+	
+	switch (fsms)
+ b36:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <fsms.2199>
+ b3a:	81 30       	cpi	r24, 0x01	; 1
+ b3c:	09 f4       	brne	.+2      	; 0xb40 <yackiambic+0x2e>
+ b3e:	bd c0       	rjmp	.+378    	; 0xcba <yackiambic+0x1a8>
+ b40:	20 f0       	brcs	.+8      	; 0xb4a <yackiambic+0x38>
+ b42:	82 30       	cpi	r24, 0x02	; 2
+ b44:	09 f4       	brne	.+2      	; 0xb48 <yackiambic+0x36>
+ b46:	da c0       	rjmp	.+436    	; 0xcfc <yackiambic+0x1ea>
+ b48:	ea c0       	rjmp	.+468    	; 0xd1e <yackiambic+0x20c>
+	{
+			
+		case IDLE:
+			
+			keylatch();
+ b4a:	ff dc       	rcall	.-1538   	; 0x54a <keylatch>
+           
+#ifdef POWERSAVE            
+            
+            yackpower(TRUE); // OK to go to sleep when here.
+ b4c:	81 e0       	ldi	r24, 0x01	; 1
+ b4e:	5b dd       	rcall	.-1354   	; 0x606 <yackpower>
+
+#endif            
+            
+            // Handle latching logic for various keyer modes
+            switch (yackflags & MODE)
+ b50:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <yackflags>
+ b54:	8c 70       	andi	r24, 0x0C	; 12
+ b56:	84 30       	cpi	r24, 0x04	; 4
+ b58:	49 f0       	breq	.+18     	; 0xb6c <yackiambic+0x5a>
+ b5a:	18 f4       	brcc	.+6      	; 0xb62 <yackiambic+0x50>
+ b5c:	88 23       	and	r24, r24
+ b5e:	31 f0       	breq	.+12     	; 0xb6c <yackiambic+0x5a>
+ b60:	29 c0       	rjmp	.+82     	; 0xbb4 <yackiambic+0xa2>
+ b62:	88 30       	cpi	r24, 0x08	; 8
+ b64:	71 f0       	breq	.+28     	; 0xb82 <yackiambic+0x70>
+ b66:	8c 30       	cpi	r24, 0x0C	; 12
+ b68:	e1 f0       	breq	.+56     	; 0xba2 <yackiambic+0x90>
+ b6a:	24 c0       	rjmp	.+72     	; 0xbb4 <yackiambic+0xa2>
+                    // When the paddle keys are squeezed, we need to ensure that
+                    // dots and dashes are alternating. To do that, whe delete
+                    // any latched paddle of the same kind that we just sent.
+                    // However, we only do this ONCE
+                    
+                    volflags &= ~lastsymbol;
+ b6c:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <lastsymbol.2201>
+ b70:	80 95       	com	r24
+ b72:	90 91 78 00 	lds	r25, 0x0078	; 0x800078 <volflags>
+ b76:	89 23       	and	r24, r25
+ b78:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <volflags>
+                    lastsymbol = 0;
+ b7c:	10 92 69 00 	sts	0x0069, r1	; 0x800069 <lastsymbol.2201>
+                    break;                    
+ b80:	19 c0       	rjmp	.+50     	; 0xbb4 <yackiambic+0xa2>
+                 
+                case ULTIMATIC:
+                    // Ultimatic logic: The last paddle to be active will be repeated indefinitely
+                    // In case the keyer is squeezed right out of idle mode, we just send a DAH 
+                    if ((volflags & SQUEEZED) == SQUEEZED) // Squeezed?
+ b82:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ b86:	98 2f       	mov	r25, r24
+ b88:	93 70       	andi	r25, 0x03	; 3
+ b8a:	93 30       	cpi	r25, 0x03	; 3
+ b8c:	39 f4       	brne	.+14     	; 0xb9c <yackiambic+0x8a>
+                    {
+                        if (ultimem)
+ b8e:	90 91 68 00 	lds	r25, 0x0068	; 0x800068 <ultimem.2205>
+ b92:	99 23       	and	r25, r25
+ b94:	61 f0       	breq	.+24     	; 0xbae <yackiambic+0x9c>
+                          volflags &= ~ultimem; // Opposite symbol from last one
+ b96:	90 95       	com	r25
+ b98:	89 23       	and	r24, r25
+ b9a:	0a c0       	rjmp	.+20     	; 0xbb0 <yackiambic+0x9e>
+                        else
+                          volflags &= ~DITLATCH; // Reset the DIT latch
+                    }
+                    else
+                    {
+                        ultimem = volflags & SQUEEZED; // Remember the last single key
+ b9c:	90 93 68 00 	sts	0x0068, r25	; 0x800068 <ultimem.2205>
+ ba0:	09 c0       	rjmp	.+18     	; 0xbb4 <yackiambic+0xa2>
+
+                    break;
+                            
+                case DAHPRIO:            
+                    // If both paddles pressed, DAH is given priority
+                    if ((volflags & SQUEEZED) == SQUEEZED)
+ ba2:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <volflags>
+ ba6:	98 2f       	mov	r25, r24
+ ba8:	93 70       	andi	r25, 0x03	; 3
+ baa:	93 30       	cpi	r25, 0x03	; 3
+ bac:	19 f4       	brne	.+6      	; 0xbb4 <yackiambic+0xa2>
+                    {
+                        volflags &= ~DITLATCH; // Reset the DIT latch
+ bae:	8e 7f       	andi	r24, 0xFE	; 254
+ bb0:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <volflags>
+            
+            
+			// The following handles the inter-character gap. When there are
+			// three (default) dot lengths of space after an element, the
+			// character is complete and can be returned to caller
+			if (timer == 0 && bcntr != 0) // Have we idled for 3 dots
+ bb4:	80 91 6c 00 	lds	r24, 0x006C	; 0x80006c <timer.2200>
+ bb8:	90 91 6d 00 	lds	r25, 0x006D	; 0x80006d <timer.2200+0x1>
+ bbc:	89 2b       	or	r24, r25
+ bbe:	09 f0       	breq	.+2      	; 0xbc2 <yackiambic+0xb0>
+ bc0:	49 c0       	rjmp	.+146    	; 0xc54 <yackiambic+0x142>
+ bc2:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <bcntr.2203>
+ bc6:	88 23       	and	r24, r24
+ bc8:	09 f4       	brne	.+2      	; 0xbcc <yackiambic+0xba>
+ bca:	3c c0       	rjmp	.+120    	; 0xc44 <yackiambic+0x132>
+				// and is there something to decode?
+			{
+				buffer = buffer << 1;	  // Make space for the termination bit
+				buffer |= 1;			  // The 1 on the right signals end
+				buffer = buffer << (7-bcntr); // Shift to left justify
+ bcc:	90 91 66 00 	lds	r25, 0x0066	; 0x800066 <buffer.2202>
+ bd0:	99 0f       	add	r25, r25
+ bd2:	91 60       	ori	r25, 0x01	; 1
+ bd4:	27 e0       	ldi	r18, 0x07	; 7
+ bd6:	30 e0       	ldi	r19, 0x00	; 0
+ bd8:	28 1b       	sub	r18, r24
+ bda:	31 09       	sbc	r19, r1
+ bdc:	01 c0       	rjmp	.+2      	; 0xbe0 <yackiambic+0xce>
+ bde:	99 0f       	add	r25, r25
+ be0:	2a 95       	dec	r18
+ be2:	ea f7       	brpl	.-6      	; 0xbde <yackiambic+0xcc>
+ be4:	20 e0       	ldi	r18, 0x00	; 0
+ be6:	30 e0       	ldi	r19, 0x00	; 0
+ be8:	82 2f       	mov	r24, r18
+	byte i;
+	
+	for(i=0;i<sizeof(morse);i++)
+	{
+		
+		if (pgm_read_byte(&morse[i]) == buffer)
+ bea:	f9 01       	movw	r30, r18
+ bec:	e9 56       	subi	r30, 0x69	; 105
+ bee:	ff 4f       	sbci	r31, 0xFF	; 255
+ bf0:	e4 91       	lpm	r30, Z
+ bf2:	9e 13       	cpse	r25, r30
+ bf4:	0d c0       	rjmp	.+26     	; 0xc10 <yackiambic+0xfe>
+		{
+			if (i < 10) return ('0' + i); 		// First 10 chars are digits
+ bf6:	2a 30       	cpi	r18, 0x0A	; 10
+ bf8:	10 f4       	brcc	.+4      	; 0xbfe <yackiambic+0xec>
+ bfa:	80 5d       	subi	r24, 0xD0	; 208
+ bfc:	0f c0       	rjmp	.+30     	; 0xc1c <yackiambic+0x10a>
+			if (i < 36) return ('A' + i - 10); 	// Then follow letters
+ bfe:	24 32       	cpi	r18, 0x24	; 36
+ c00:	10 f4       	brcc	.+4      	; 0xc06 <yackiambic+0xf4>
+ c02:	89 5c       	subi	r24, 0xC9	; 201
+ c04:	0b c0       	rjmp	.+22     	; 0xc1c <yackiambic+0x10a>
+			return (pgm_read_byte(&spechar[i - 36])); // Then special chars
+ c06:	f9 01       	movw	r30, r18
+ c08:	e5 5a       	subi	r30, 0xA5	; 165
+ c0a:	ff 4f       	sbci	r31, 0xFF	; 255
+ c0c:	84 91       	lpm	r24, Z
+ c0e:	06 c0       	rjmp	.+12     	; 0xc1c <yackiambic+0x10a>
+ c10:	2f 5f       	subi	r18, 0xFF	; 255
+ c12:	3f 4f       	sbci	r19, 0xFF	; 255
+ 
+ */
+{
+	byte i;
+	
+	for(i=0;i<sizeof(morse);i++)
+ c14:	2c 33       	cpi	r18, 0x3C	; 60
+ c16:	31 05       	cpc	r19, r1
+ c18:	39 f7       	brne	.-50     	; 0xbe8 <yackiambic+0xd6>
+			return (pgm_read_byte(&spechar[i - 36])); // Then special chars
+		}
+		
+	}
+	
+	return '\0';
+ c1a:	80 e0       	ldi	r24, 0x00	; 0
+			{
+				buffer = buffer << 1;	  // Make space for the termination bit
+				buffer |= 1;			  // The 1 on the right signals end
+				buffer = buffer << (7-bcntr); // Shift to left justify
+				retchar = morsechar(buffer); // Attempt decoding
+				buffer = bcntr = 0;			// Clear buffer
+ c1c:	10 92 67 00 	sts	0x0067, r1	; 0x800067 <bcntr.2203>
+ c20:	10 92 66 00 	sts	0x0066, r1	; 0x800066 <buffer.2202>
+				timer = (IWGLEN - ICGLEN) * wpmcnt;	// If 4 further dots of gap,
+ c24:	20 91 74 00 	lds	r18, 0x0074	; 0x800074 <wpmcnt>
+ c28:	30 91 75 00 	lds	r19, 0x0075	; 0x800075 <wpmcnt+0x1>
+ c2c:	22 0f       	add	r18, r18
+ c2e:	33 1f       	adc	r19, r19
+ c30:	22 0f       	add	r18, r18
+ c32:	33 1f       	adc	r19, r19
+ c34:	30 93 6d 00 	sts	0x006D, r19	; 0x80006d <timer.2200+0x1>
+ c38:	20 93 6c 00 	sts	0x006C, r18	; 0x80006c <timer.2200>
+				// this might be a Word gap.
+				iwgflag = 1;                // Signal we are waiting for IWG                          
+ c3c:	91 e0       	ldi	r25, 0x01	; 1
+ c3e:	90 93 6b 00 	sts	0x006B, r25	; 0x80006b <iwgflag.2204>
+				return (retchar);			// and return decoded char
+ c42:	6e c0       	rjmp	.+220    	; 0xd20 <yackiambic+0x20e>
+			}
+			
+			// This handles the Inter-word gap. Already 3 dots have been
+			// waited for, if 4 more follow, interpret this as a word end
+			if (timer == 0 && iwgflag) // Have we idled for 4+3 = 7 dots?
+ c44:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <iwgflag.2204>
+ c48:	88 23       	and	r24, r24
+ c4a:	21 f0       	breq	.+8      	; 0xc54 <yackiambic+0x142>
+			{
+				iwgflag = 0;   // Clear Interword Gap flag
+ c4c:	10 92 6b 00 	sts	0x006B, r1	; 0x80006b <iwgflag.2204>
+				return (' ');  // And return a space
+ c50:	80 e2       	ldi	r24, 0x20	; 32
+ c52:	66 c0       	rjmp	.+204    	; 0xd20 <yackiambic+0x20e>
+			}
+			
+			// Now evaluate the latch and determine what to send next
+			if ( volflags & (DITLATCH | DAHLATCH)) // Anything in the latch?
+ c54:	c0 91 78 00 	lds	r28, 0x0078	; 0x800078 <volflags>
+ c58:	8c 2f       	mov	r24, r28
+ c5a:	83 70       	andi	r24, 0x03	; 3
+ c5c:	09 f4       	brne	.+2      	; 0xc60 <yackiambic+0x14e>
+ c5e:	5f c0       	rjmp	.+190    	; 0xd1e <yackiambic+0x20c>
+			{
+				iwgflag = 0; // No interword gap if dit or dah
+ c60:	10 92 6b 00 	sts	0x006B, r1	; 0x80006b <iwgflag.2204>
+                bcntr++;	// Count that we will send something now
+ c64:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <bcntr.2203>
+ c68:	8f 5f       	subi	r24, 0xFF	; 255
+ c6a:	80 93 67 00 	sts	0x0067, r24	; 0x800067 <bcntr.2203>
+				buffer = buffer << 1; // Make space for the new character
+ c6e:	20 91 66 00 	lds	r18, 0x0066	; 0x800066 <buffer.2202>
+ c72:	22 0f       	add	r18, r18
+ c74:	20 93 66 00 	sts	0x0066, r18	; 0x800066 <buffer.2202>
+ c78:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <wpmcnt>
+ c7c:	90 91 75 00 	lds	r25, 0x0075	; 0x800075 <wpmcnt+0x1>
+				
+				if (volflags & DITLATCH) // Is it a dit?
+ c80:	c0 ff       	sbrs	r28, 0
+ c82:	08 c0       	rjmp	.+16     	; 0xc94 <yackiambic+0x182>
+				{
+					timer	= DITLEN * wpmcnt; // Duration = one dot time
+ c84:	90 93 6d 00 	sts	0x006D, r25	; 0x80006d <timer.2200+0x1>
+ c88:	80 93 6c 00 	sts	0x006C, r24	; 0x80006c <timer.2200>
+					lastsymbol = DITLATCH; // Remember what we sent
+ c8c:	81 e0       	ldi	r24, 0x01	; 1
+ c8e:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <lastsymbol.2201>
+ c92:	0d c0       	rjmp	.+26     	; 0xcae <yackiambic+0x19c>
+				}
+				else // must be a DAH then..
+				{
+					timer	= DAHLEN * wpmcnt; // Duration = one dash time
+ c94:	63 e0       	ldi	r22, 0x03	; 3
+ c96:	70 e0       	ldi	r23, 0x00	; 0
+ c98:	fa d0       	rcall	.+500    	; 0xe8e <__mulhi3>
+ c9a:	90 93 6d 00 	sts	0x006D, r25	; 0x80006d <timer.2200+0x1>
+ c9e:	80 93 6c 00 	sts	0x006C, r24	; 0x80006c <timer.2200>
+					lastsymbol = DAHLATCH; // Remember
+ ca2:	82 e0       	ldi	r24, 0x02	; 2
+ ca4:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <lastsymbol.2201>
+					buffer |= 1; // set LSB to remember dash
+ ca8:	21 60       	ori	r18, 0x01	; 1
+ caa:	20 93 66 00 	sts	0x0066, r18	; 0x800066 <buffer.2202>
+				}
+				
+				key(DOWN); // Switch on the side tone and TX
+ cae:	86 dc       	rcall	.-1780   	; 0x5bc <key.constprop.4>
+				volflags &= ~(DITLATCH | DAHLATCH); // Reset both latches
+ cb0:	cc 7f       	andi	r28, 0xFC	; 252
+ cb2:	c0 93 78 00 	sts	0x0078, r28	; 0x800078 <volflags>
+				
+				fsms 	= KEYED; // Change FSM state
+ cb6:	81 e0       	ldi	r24, 0x01	; 1
+ cb8:	1e c0       	rjmp	.+60     	; 0xcf6 <yackiambic+0x1e4>
+        }
+        
+    }
+    else // Passed parameter is FALSE
+    {
+        shdntimer=0;
+ cba:	10 92 6e 00 	sts	0x006E, r1	; 0x80006e <shdntimer.2031>
+ cbe:	10 92 6f 00 	sts	0x006F, r1	; 0x80006f <shdntimer.2031+0x1>
+ cc2:	10 92 70 00 	sts	0x0070, r1	; 0x800070 <shdntimer.2031+0x2>
+ cc6:	10 92 71 00 	sts	0x0071, r1	; 0x800071 <shdntimer.2031+0x3>
+ 			
+            yackpower(FALSE); // can not go to sleep when keyed
+
+#endif
+            
+			if ((yackflags & MODE) == IAMBICB) // If we are in IAMBIC B mode
+ cca:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <yackflags>
+ cce:	8c 70       	andi	r24, 0x0C	; 12
+ cd0:	84 30       	cpi	r24, 0x04	; 4
+ cd2:	09 f4       	brne	.+2      	; 0xcd6 <yackiambic+0x1c4>
+				keylatch();                      // then latch here already 
+ cd4:	3a dc       	rcall	.-1932   	; 0x54a <keylatch>
+			
+			if(timer == 0) // Done with sounding our element?
+ cd6:	80 91 6c 00 	lds	r24, 0x006C	; 0x80006c <timer.2200>
+ cda:	90 91 6d 00 	lds	r25, 0x006D	; 0x80006d <timer.2200+0x1>
+ cde:	89 2b       	or	r24, r25
+ ce0:	f1 f4       	brne	.+60     	; 0xd1e <yackiambic+0x20c>
+ ce2:	4f dc       	rcall	.-1890   	; 0x582 <key.part.0>
+			{
+				key(UP); // Then cancel the side tone
+				timer	= IEGLEN * wpmcnt; // One dot time for the gap
+ ce4:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <wpmcnt>
+ ce8:	90 91 75 00 	lds	r25, 0x0075	; 0x800075 <wpmcnt+0x1>
+ cec:	90 93 6d 00 	sts	0x006D, r25	; 0x80006d <timer.2200+0x1>
+ cf0:	80 93 6c 00 	sts	0x006C, r24	; 0x80006c <timer.2200>
+				fsms	= IEG; // Change FSM state
+ cf4:	82 e0       	ldi	r24, 0x02	; 2
+ cf6:	80 93 6a 00 	sts	0x006A, r24	; 0x80006a <fsms.2199>
+ cfa:	11 c0       	rjmp	.+34     	; 0xd1e <yackiambic+0x20c>
+			break;
+			
+			
+		case IEG:
+			
+			keylatch();	// Latch any paddle movements (both A and B)
+ cfc:	26 dc       	rcall	.-1972   	; 0x54a <keylatch>
+			
+			if(timer == 0) // End of gap reached?
+ cfe:	80 91 6c 00 	lds	r24, 0x006C	; 0x80006c <timer.2200>
+ d02:	90 91 6d 00 	lds	r25, 0x006D	; 0x80006d <timer.2200+0x1>
+ d06:	89 2b       	or	r24, r25
+ d08:	51 f4       	brne	.+20     	; 0xd1e <yackiambic+0x20c>
+			{
+				fsms	= IDLE; // Change FSM state
+ d0a:	10 92 6a 00 	sts	0x006A, r1	; 0x80006a <fsms.2199>
+				// The following timer determines what the IDLE state
+                // accepts as character. Anything longer than 2 dots as gap will be
+                // accepted for a character end.
+				timer	= (ICGLEN - IEGLEN -1) * wpmcnt; 
+ d0e:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <wpmcnt>
+ d12:	90 91 75 00 	lds	r25, 0x0075	; 0x800075 <wpmcnt+0x1>
+ d16:	90 93 6d 00 	sts	0x006D, r25	; 0x80006d <timer.2200+0x1>
+ d1a:	80 93 6c 00 	sts	0x006C, r24	; 0x80006c <timer.2200>
+			}
+			break;
+			
+	}
+	
+	return '\0'; // Nothing to return if not returned in above routine
+ d1e:	80 e0       	ldi	r24, 0x00	; 0
+	
+}
+ d20:	cf 91       	pop	r28
+ d22:	08 95       	ret
+
+00000d24 <yackmessage>:
+ d24:	ef 92       	push	r14
+ d26:	ff 92       	push	r15
+ d28:	0f 93       	push	r16
+ d2a:	1f 93       	push	r17
+ d2c:	cf 93       	push	r28
+ d2e:	df 93       	push	r29
+ d30:	cd b7       	in	r28, 0x3d	; 61
+ d32:	de b7       	in	r29, 0x3e	; 62
+ d34:	c4 56       	subi	r28, 0x64	; 100
+ d36:	d1 09       	sbc	r29, r1
+ d38:	0f b6       	in	r0, 0x3f	; 63
+ d3a:	f8 94       	cli
+ d3c:	de bf       	out	0x3e, r29	; 62
+ d3e:	0f be       	out	0x3f, r0	; 63
+ d40:	cd bf       	out	0x3d, r28	; 61
+ d42:	06 2f       	mov	r16, r22
+ d44:	81 30       	cpi	r24, 0x01	; 1
+ d46:	09 f0       	breq	.+2      	; 0xd4a <yackmessage+0x26>
+ d48:	50 c0       	rjmp	.+160    	; 0xdea <yackmessage+0xc6>
+ d4a:	10 e0       	ldi	r17, 0x00	; 0
+ d4c:	98 ee       	ldi	r25, 0xE8	; 232
+ d4e:	e9 2e       	mov	r14, r25
+ d50:	93 e0       	ldi	r25, 0x03	; 3
+ d52:	f9 2e       	mov	r15, r25
+ d54:	81 e0       	ldi	r24, 0x01	; 1
+ d56:	03 de       	rcall	.-1018   	; 0x95e <yackctrlkey>
+ d58:	81 11       	cpse	r24, r1
+ d5a:	79 c0       	rjmp	.+242    	; 0xe4e <yackmessage+0x12a>
+ d5c:	81 e0       	ldi	r24, 0x01	; 1
+ d5e:	d9 de       	rcall	.-590    	; 0xb12 <yackiambic>
+ d60:	81 11       	cpse	r24, r1
+ d62:	04 c0       	rjmp	.+8      	; 0xd6c <yackmessage+0x48>
+ d64:	81 e0       	ldi	r24, 0x01	; 1
+ d66:	e8 1a       	sub	r14, r24
+ d68:	f1 08       	sbc	r15, r1
+ d6a:	0c c0       	rjmp	.+24     	; 0xd84 <yackmessage+0x60>
+ d6c:	e1 e0       	ldi	r30, 0x01	; 1
+ d6e:	f0 e0       	ldi	r31, 0x00	; 0
+ d70:	ec 0f       	add	r30, r28
+ d72:	fd 1f       	adc	r31, r29
+ d74:	e1 0f       	add	r30, r17
+ d76:	f1 1d       	adc	r31, r1
+ d78:	80 83       	st	Z, r24
+ d7a:	1f 5f       	subi	r17, 0xFF	; 255
+ d7c:	88 ee       	ldi	r24, 0xE8	; 232
+ d7e:	e8 2e       	mov	r14, r24
+ d80:	83 e0       	ldi	r24, 0x03	; 3
+ d82:	f8 2e       	mov	r15, r24
+ d84:	14 36       	cpi	r17, 0x64	; 100
+ d86:	10 f0       	brcs	.+4      	; 0xd8c <yackmessage+0x68>
+ d88:	df dd       	rcall	.-1090   	; 0x948 <yackerror>
+ d8a:	10 e0       	ldi	r17, 0x00	; 0
+ d8c:	1c dd       	rcall	.-1480   	; 0x7c6 <yackbeat>
+ d8e:	e1 14       	cp	r14, r1
+ d90:	f1 04       	cpc	r15, r1
+ d92:	01 f7       	brne	.-64     	; 0xd54 <yackmessage+0x30>
+ d94:	11 23       	and	r17, r17
+ d96:	39 f1       	breq	.+78     	; 0xde6 <yackmessage+0xc2>
+ d98:	11 50       	subi	r17, 0x01	; 1
+ d9a:	e1 e0       	ldi	r30, 0x01	; 1
+ d9c:	f0 e0       	ldi	r31, 0x00	; 0
+ d9e:	ec 0f       	add	r30, r28
+ da0:	fd 1f       	adc	r31, r29
+ da2:	e1 0f       	add	r30, r17
+ da4:	f1 1d       	adc	r31, r1
+ da6:	10 82       	st	Z, r1
+ da8:	01 30       	cpi	r16, 0x01	; 1
+ daa:	29 f4       	brne	.+10     	; 0xdb6 <yackmessage+0x92>
+ dac:	44 e6       	ldi	r20, 0x64	; 100
+ dae:	50 e0       	ldi	r21, 0x00	; 0
+ db0:	6c e2       	ldi	r22, 0x2C	; 44
+ db2:	71 e0       	ldi	r23, 0x01	; 1
+ db4:	06 c0       	rjmp	.+12     	; 0xdc2 <yackmessage+0x9e>
+ db6:	02 30       	cpi	r16, 0x02	; 2
+ db8:	41 f4       	brne	.+16     	; 0xdca <yackmessage+0xa6>
+ dba:	44 e6       	ldi	r20, 0x64	; 100
+ dbc:	50 e0       	ldi	r21, 0x00	; 0
+ dbe:	68 ec       	ldi	r22, 0xC8	; 200
+ dc0:	70 e0       	ldi	r23, 0x00	; 0
+ dc2:	ce 01       	movw	r24, r28
+ dc4:	01 96       	adiw	r24, 0x01	; 1
+ dc6:	b8 d0       	rcall	.+368    	; 0xf38 <eeprom_write_block>
+ dc8:	42 c0       	rjmp	.+132    	; 0xe4e <yackmessage+0x12a>
+ dca:	03 30       	cpi	r16, 0x03	; 3
+ dcc:	29 f4       	brne	.+10     	; 0xdd8 <yackmessage+0xb4>
+ dce:	44 e6       	ldi	r20, 0x64	; 100
+ dd0:	50 e0       	ldi	r21, 0x00	; 0
+ dd2:	64 e6       	ldi	r22, 0x64	; 100
+ dd4:	70 e0       	ldi	r23, 0x00	; 0
+ dd6:	f5 cf       	rjmp	.-22     	; 0xdc2 <yackmessage+0x9e>
+ dd8:	04 30       	cpi	r16, 0x04	; 4
+ dda:	c9 f5       	brne	.+114    	; 0xe4e <yackmessage+0x12a>
+ ddc:	44 e6       	ldi	r20, 0x64	; 100
+ dde:	50 e0       	ldi	r21, 0x00	; 0
+ de0:	60 e0       	ldi	r22, 0x00	; 0
+ de2:	70 e0       	ldi	r23, 0x00	; 0
+ de4:	ee cf       	rjmp	.-36     	; 0xdc2 <yackmessage+0x9e>
+ de6:	b0 dd       	rcall	.-1184   	; 0x948 <yackerror>
+ de8:	32 c0       	rjmp	.+100    	; 0xe4e <yackmessage+0x12a>
+ dea:	82 30       	cpi	r24, 0x02	; 2
+ dec:	81 f5       	brne	.+96     	; 0xe4e <yackmessage+0x12a>
+ dee:	61 30       	cpi	r22, 0x01	; 1
+ df0:	29 f4       	brne	.+10     	; 0xdfc <yackmessage+0xd8>
+ df2:	44 e6       	ldi	r20, 0x64	; 100
+ df4:	50 e0       	ldi	r21, 0x00	; 0
+ df6:	6c e2       	ldi	r22, 0x2C	; 44
+ df8:	71 e0       	ldi	r23, 0x01	; 1
+ dfa:	14 c0       	rjmp	.+40     	; 0xe24 <yackmessage+0x100>
+ dfc:	62 30       	cpi	r22, 0x02	; 2
+ dfe:	29 f4       	brne	.+10     	; 0xe0a <yackmessage+0xe6>
+ e00:	44 e6       	ldi	r20, 0x64	; 100
+ e02:	50 e0       	ldi	r21, 0x00	; 0
+ e04:	68 ec       	ldi	r22, 0xC8	; 200
+ e06:	70 e0       	ldi	r23, 0x00	; 0
+ e08:	0d c0       	rjmp	.+26     	; 0xe24 <yackmessage+0x100>
+ e0a:	63 30       	cpi	r22, 0x03	; 3
+ e0c:	29 f4       	brne	.+10     	; 0xe18 <yackmessage+0xf4>
+ e0e:	44 e6       	ldi	r20, 0x64	; 100
+ e10:	50 e0       	ldi	r21, 0x00	; 0
+ e12:	64 e6       	ldi	r22, 0x64	; 100
+ e14:	70 e0       	ldi	r23, 0x00	; 0
+ e16:	06 c0       	rjmp	.+12     	; 0xe24 <yackmessage+0x100>
+ e18:	64 30       	cpi	r22, 0x04	; 4
+ e1a:	39 f4       	brne	.+14     	; 0xe2a <yackmessage+0x106>
+ e1c:	44 e6       	ldi	r20, 0x64	; 100
+ e1e:	50 e0       	ldi	r21, 0x00	; 0
+ e20:	60 e0       	ldi	r22, 0x00	; 0
+ e22:	70 e0       	ldi	r23, 0x00	; 0
+ e24:	ce 01       	movw	r24, r28
+ e26:	01 96       	adiw	r24, 0x01	; 1
+ e28:	6a d0       	rcall	.+212    	; 0xefe <eeprom_read_block>
+ e2a:	10 e0       	ldi	r17, 0x00	; 0
+ e2c:	e1 e0       	ldi	r30, 0x01	; 1
+ e2e:	f0 e0       	ldi	r31, 0x00	; 0
+ e30:	ec 0f       	add	r30, r28
+ e32:	fd 1f       	adc	r31, r29
+ e34:	e1 0f       	add	r30, r17
+ e36:	f1 1d       	adc	r31, r1
+ e38:	00 81       	ld	r16, Z
+ e3a:	00 23       	and	r16, r16
+ e3c:	41 f0       	breq	.+16     	; 0xe4e <yackmessage+0x12a>
+ e3e:	80 e0       	ldi	r24, 0x00	; 0
+ e40:	8e dd       	rcall	.-1252   	; 0x95e <yackctrlkey>
+ e42:	81 11       	cpse	r24, r1
+ e44:	04 c0       	rjmp	.+8      	; 0xe4e <yackmessage+0x12a>
+ e46:	80 2f       	mov	r24, r16
+ e48:	d3 dd       	rcall	.-1114   	; 0x9f0 <yackchar>
+ e4a:	1f 5f       	subi	r17, 0xFF	; 255
+ e4c:	ef cf       	rjmp	.-34     	; 0xe2c <yackmessage+0x108>
+ e4e:	cc 59       	subi	r28, 0x9C	; 156
+ e50:	df 4f       	sbci	r29, 0xFF	; 255
+ e52:	0f b6       	in	r0, 0x3f	; 63
+ e54:	f8 94       	cli
+ e56:	de bf       	out	0x3e, r29	; 62
+ e58:	0f be       	out	0x3f, r0	; 63
+ e5a:	cd bf       	out	0x3d, r28	; 61
+ e5c:	df 91       	pop	r29
+ e5e:	cf 91       	pop	r28
+ e60:	1f 91       	pop	r17
+ e62:	0f 91       	pop	r16
+ e64:	ff 90       	pop	r15
+ e66:	ef 90       	pop	r14
+ e68:	08 95       	ret
+
+00000e6a <main>:
+ 
+ @return Not relevant
+*/
+{
+	
+	yackinit(); 					// Initialize YACK hardware
+ e6a:	48 dc       	rcall	.-1904   	; 0x6fc <yackinit>
+	
+	yackinhibit(ON);  //side tone greeting to confirm the unit is alive and kicking
+ e6c:	81 e0       	ldi	r24, 0x01	; 1
+ e6e:	80 dc       	rcall	.-1792   	; 0x770 <yackinhibit>
+	yackstring(imok);
+ e70:	82 e7       	ldi	r24, 0x72	; 114
+ e72:	90 e0       	ldi	r25, 0x00	; 0
+ e74:	07 de       	rcall	.-1010   	; 0xa84 <yackstring>
+	yackinhibit(OFF);
+ e76:	80 e0       	ldi	r24, 0x00	; 0
+ e78:	7b dc       	rcall	.-1802   	; 0x770 <yackinhibit>
+	
+	while(1) // Endless core loop of the keyer app
+	{
+		
+		if (yackctrlkey(TRUE)) // If command key pressed, go to command mode
+ e7a:	81 e0       	ldi	r24, 0x01	; 1
+ e7c:	70 dd       	rcall	.-1312   	; 0x95e <yackctrlkey>
+ e7e:	81 11       	cpse	r24, r1
+			commandmode();
+ e80:	ba da       	rcall	.-2700   	; 0x3f6 <commandmode>
+		
+       	yackbeat();
+ e82:	a1 dc       	rcall	.-1726   	; 0x7c6 <yackbeat>
+		beacon(PLAY); // Play beacon if requested
+ e84:	82 e0       	ldi	r24, 0x02	; 2
+ e86:	1b da       	rcall	.-3018   	; 0x2be <beacon>
+       	yackiambic(OFF);
+ e88:	80 e0       	ldi	r24, 0x00	; 0
+ e8a:	43 de       	rcall	.-890    	; 0xb12 <yackiambic>
+        
+	}
+ e8c:	f6 cf       	rjmp	.-20     	; 0xe7a <main+0x10>
+
+00000e8e <__mulhi3>:
+ e8e:	00 24       	eor	r0, r0
+ e90:	55 27       	eor	r21, r21
+ e92:	04 c0       	rjmp	.+8      	; 0xe9c <__mulhi3+0xe>
+ e94:	08 0e       	add	r0, r24
+ e96:	59 1f       	adc	r21, r25
+ e98:	88 0f       	add	r24, r24
+ e9a:	99 1f       	adc	r25, r25
+ e9c:	00 97       	sbiw	r24, 0x00	; 0
+ e9e:	29 f0       	breq	.+10     	; 0xeaa <__mulhi3+0x1c>
+ ea0:	76 95       	lsr	r23
+ ea2:	67 95       	ror	r22
+ ea4:	b8 f3       	brcs	.-18     	; 0xe94 <__mulhi3+0x6>
+ ea6:	71 05       	cpc	r23, r1
+ ea8:	b9 f7       	brne	.-18     	; 0xe98 <__mulhi3+0xa>
+ eaa:	80 2d       	mov	r24, r0
+ eac:	95 2f       	mov	r25, r21
+ eae:	08 95       	ret
+
+00000eb0 <__udivmodhi4>:
+ eb0:	aa 1b       	sub	r26, r26
+ eb2:	bb 1b       	sub	r27, r27
+ eb4:	51 e1       	ldi	r21, 0x11	; 17
+ eb6:	07 c0       	rjmp	.+14     	; 0xec6 <__udivmodhi4_ep>
+
+00000eb8 <__udivmodhi4_loop>:
+ eb8:	aa 1f       	adc	r26, r26
+ eba:	bb 1f       	adc	r27, r27
+ ebc:	a6 17       	cp	r26, r22
+ ebe:	b7 07       	cpc	r27, r23
+ ec0:	10 f0       	brcs	.+4      	; 0xec6 <__udivmodhi4_ep>
+ ec2:	a6 1b       	sub	r26, r22
+ ec4:	b7 0b       	sbc	r27, r23
+
+00000ec6 <__udivmodhi4_ep>:
+ ec6:	88 1f       	adc	r24, r24
+ ec8:	99 1f       	adc	r25, r25
+ eca:	5a 95       	dec	r21
+ ecc:	a9 f7       	brne	.-22     	; 0xeb8 <__udivmodhi4_loop>
+ ece:	80 95       	com	r24
+ ed0:	90 95       	com	r25
+ ed2:	bc 01       	movw	r22, r24
+ ed4:	cd 01       	movw	r24, r26
+ ed6:	08 95       	ret
+
+00000ed8 <__divmodhi4>:
+ ed8:	97 fb       	bst	r25, 7
+ eda:	07 2e       	mov	r0, r23
+ edc:	16 f4       	brtc	.+4      	; 0xee2 <__divmodhi4+0xa>
+ ede:	00 94       	com	r0
+ ee0:	06 d0       	rcall	.+12     	; 0xeee <__divmodhi4_neg1>
+ ee2:	77 fd       	sbrc	r23, 7
+ ee4:	08 d0       	rcall	.+16     	; 0xef6 <__divmodhi4_neg2>
+ ee6:	e4 df       	rcall	.-56     	; 0xeb0 <__udivmodhi4>
+ ee8:	07 fc       	sbrc	r0, 7
+ eea:	05 d0       	rcall	.+10     	; 0xef6 <__divmodhi4_neg2>
+ eec:	3e f4       	brtc	.+14     	; 0xefc <__divmodhi4_exit>
+
+00000eee <__divmodhi4_neg1>:
+ eee:	90 95       	com	r25
+ ef0:	81 95       	neg	r24
+ ef2:	9f 4f       	sbci	r25, 0xFF	; 255
+ ef4:	08 95       	ret
+
+00000ef6 <__divmodhi4_neg2>:
+ ef6:	70 95       	com	r23
+ ef8:	61 95       	neg	r22
+ efa:	7f 4f       	sbci	r23, 0xFF	; 255
+
+00000efc <__divmodhi4_exit>:
+ efc:	08 95       	ret
+
+00000efe <eeprom_read_block>:
+ efe:	dc 01       	movw	r26, r24
+ f00:	cb 01       	movw	r24, r22
+
+00000f02 <eeprom_read_blraw>:
+ f02:	fc 01       	movw	r30, r24
+ f04:	e1 99       	sbic	0x1c, 1	; 28
+ f06:	fe cf       	rjmp	.-4      	; 0xf04 <eeprom_read_blraw+0x2>
+ f08:	06 c0       	rjmp	.+12     	; 0xf16 <eeprom_read_blraw+0x14>
+ f0a:	ff bb       	out	0x1f, r31	; 31
+ f0c:	ee bb       	out	0x1e, r30	; 30
+ f0e:	e0 9a       	sbi	0x1c, 0	; 28
+ f10:	31 96       	adiw	r30, 0x01	; 1
+ f12:	0d b2       	in	r0, 0x1d	; 29
+ f14:	0d 92       	st	X+, r0
+ f16:	41 50       	subi	r20, 0x01	; 1
+ f18:	50 40       	sbci	r21, 0x00	; 0
+ f1a:	b8 f7       	brcc	.-18     	; 0xf0a <eeprom_read_blraw+0x8>
+ f1c:	08 95       	ret
+
+00000f1e <eeprom_read_byte>:
+ f1e:	e1 99       	sbic	0x1c, 1	; 28
+ f20:	fe cf       	rjmp	.-4      	; 0xf1e <eeprom_read_byte>
+ f22:	9f bb       	out	0x1f, r25	; 31
+ f24:	8e bb       	out	0x1e, r24	; 30
+ f26:	e0 9a       	sbi	0x1c, 0	; 28
+ f28:	99 27       	eor	r25, r25
+ f2a:	8d b3       	in	r24, 0x1d	; 29
+ f2c:	08 95       	ret
+
+00000f2e <eeprom_read_word>:
+ f2e:	a8 e1       	ldi	r26, 0x18	; 24
+ f30:	b0 e0       	ldi	r27, 0x00	; 0
+ f32:	42 e0       	ldi	r20, 0x02	; 2
+ f34:	50 e0       	ldi	r21, 0x00	; 0
+ f36:	e5 cf       	rjmp	.-54     	; 0xf02 <eeprom_read_blraw>
+
+00000f38 <eeprom_write_block>:
+ f38:	dc 01       	movw	r26, r24
+ f3a:	cb 01       	movw	r24, r22
+ f3c:	02 c0       	rjmp	.+4      	; 0xf42 <eeprom_write_block+0xa>
+ f3e:	2d 91       	ld	r18, X+
+ f40:	05 d0       	rcall	.+10     	; 0xf4c <eeprom_write_r18>
+ f42:	41 50       	subi	r20, 0x01	; 1
+ f44:	50 40       	sbci	r21, 0x00	; 0
+ f46:	d8 f7       	brcc	.-10     	; 0xf3e <eeprom_write_block+0x6>
+ f48:	08 95       	ret
+
+00000f4a <eeprom_write_byte>:
+ f4a:	26 2f       	mov	r18, r22
+
+00000f4c <eeprom_write_r18>:
+ f4c:	e1 99       	sbic	0x1c, 1	; 28
+ f4e:	fe cf       	rjmp	.-4      	; 0xf4c <eeprom_write_r18>
+ f50:	1c ba       	out	0x1c, r1	; 28
+ f52:	9f bb       	out	0x1f, r25	; 31
+ f54:	8e bb       	out	0x1e, r24	; 30
+ f56:	2d bb       	out	0x1d, r18	; 29
+ f58:	0f b6       	in	r0, 0x3f	; 63
+ f5a:	f8 94       	cli
+ f5c:	e2 9a       	sbi	0x1c, 2	; 28
+ f5e:	e1 9a       	sbi	0x1c, 1	; 28
+ f60:	0f be       	out	0x3f, r0	; 63
+ f62:	01 96       	adiw	r24, 0x01	; 1
+ f64:	08 95       	ret
+
+00000f66 <eeprom_write_word>:
+ f66:	f1 df       	rcall	.-30     	; 0xf4a <eeprom_write_byte>
+ f68:	27 2f       	mov	r18, r23
+ f6a:	f0 cf       	rjmp	.-32     	; 0xf4c <eeprom_write_r18>
+
+00000f6c <_exit>:
+ f6c:	f8 94       	cli
+
+00000f6e <__stop_program>:
+ f6e:	ff cf       	rjmp	.-2      	; 0xf6e <__stop_program>

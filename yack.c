@@ -1132,13 +1132,8 @@ void yackmessage(byte function, byte msgnr)
 		if (yackctrlkey(FALSE)) {return;} //Break immediately if command key pressed
 			yackchar(c); // play it back 
 		}
-		
 	}
-	
 }
-
-
-
 
 char yackiambic(byte ctrl)
 /*! 
@@ -1329,5 +1324,3 @@ char yackiambic(byte ctrl)
 	return '\0'; // Nothing to return if not returned in above routine
 	
 }
-
-
