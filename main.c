@@ -376,7 +376,7 @@ void commandmode(void)
 	
 	yackinhibit(ON); 		// Sidetone = on, Keyer = off
 	
-	yackchar('?'); 			// Play Greeting
+	//yackchar('?'); 			// Play Greeting (removed, since we have the LED to indicate)
 	
     timer = YACKSECS(DEFTIMEOUT); // Time out after 10 seconds
     
@@ -557,7 +557,7 @@ void commandmode(void)
 	}
         
         
-	yackstring(prgx); 			// Sign off
+	//yackstring(prgx); 			// Sign off (removed, since we have the LED to indicate)
 
 	yackinhibit(OFF);		// Back to normal mode
 	

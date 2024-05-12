@@ -32,7 +32,7 @@
 // Definition of where the transceiver keyer line is connected
 #define		OUTDDR			DDRB
 #define		OUTPORT			PORTB
-#define		OUTPIN			0
+#define		OUTPIN			5
 
 // Definition of where the sidetone output is connected (beware,
 // this is chip dependent and can not just be changed at will)
@@ -45,6 +45,11 @@
 #define		BTNPORT			PORTB
 #define		BTNINP			PINB
 #define		BTNPIN			2
+
+// Definition of where the command mode indication light is connected
+#define     CMDDDR          DDRB
+#define     CMDPORT         PORTB
+#define     CMDPIN          0
 
 
 // The following defines the meaning of status bits in the yackflags and volflags 

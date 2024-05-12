@@ -949,303 +949,300 @@
  792 02f0 81E0      		ldi r24,lo8(1)
  793 02f2 00D0      		rcall yackinhibit
  378:main.c        **** 	
- 379:main.c        **** 	yackchar('?'); 			// Play Greeting
- 795               	.LM100:
- 796 02f4 8FE3      		ldi r24,lo8(63)
- 797 02f6 00D0      		rcall yackchar
+ 379:main.c        **** 	//yackchar('?'); 			// Play Greeting (removed, since we have the LED to indicate)
  380:main.c        **** 	
  381:main.c        ****     timer = YACKSECS(DEFTIMEOUT); // Time out after 10 seconds
- 799               	.LM101:
- 800 02f8 08EE      		ldi r16,lo8(-24)
- 801 02fa 13E0      		ldi r17,lo8(3)
- 802               	.L70:
+ 795               	.LM100:
+ 796 02f4 08EE      		ldi r16,lo8(-24)
+ 797 02f6 13E0      		ldi r17,lo8(3)
+ 798               	.L70:
  382:main.c        ****     
  383:main.c        ****     while ((yackctrlkey(TRUE)==0) && (timer-- > 0))
- 804               	.LM102:
- 805 02fc 81E0      		ldi r24,lo8(1)
- 806 02fe 00D0      		rcall yackctrlkey
- 807 0300 8111      		cpse r24,__zero_reg__
- 808 0302 00C0      		rjmp .L105
- 810               	.LM103:
- 811 0304 0115      		cp r16,__zero_reg__
- 812 0306 1105      		cpc r17,__zero_reg__
- 813 0308 01F4      		brne .+2
- 814 030a 00C0      		rjmp .L105
+ 800               	.LM101:
+ 801 02f8 81E0      		ldi r24,lo8(1)
+ 802 02fa 00D0      		rcall yackctrlkey
+ 803 02fc 8111      		cpse r24,__zero_reg__
+ 804 02fe 00C0      		rjmp .L105
+ 806               	.LM102:
+ 807 0300 0115      		cp r16,__zero_reg__
+ 808 0302 1105      		cpc r17,__zero_reg__
+ 809 0304 01F4      		brne .+2
+ 810 0306 00C0      		rjmp .L105
  384:main.c        **** 	{
  385:main.c        **** 		
  386:main.c        **** 		c=yackiambic(OFF);
- 816               	.LM104:
- 817 030c 80E0      		ldi r24,0
- 818 030e 00D0      		rcall yackiambic
- 819 0310 C82F      		mov r28,r24
+ 812               	.LM103:
+ 813 0308 80E0      		ldi r24,0
+ 814 030a 00D0      		rcall yackiambic
+ 815 030c C82F      		mov r28,r24
  387:main.c        ****         if (c) timer = YACKSECS(DEFTIMEOUT); // Reset timeout if character read
- 821               	.LM105:
- 822 0312 8111      		cpse r24,__zero_reg__
- 823 0314 00C0      		rjmp .L107
+ 817               	.LM104:
+ 818 030e 8111      		cpse r24,__zero_reg__
+ 819 0310 00C0      		rjmp .L107
  383:main.c        **** 	{
- 825               	.LM106:
- 826 0316 0150      		subi r16,1
- 827 0318 1109      		sbc r17,__zero_reg__
- 828 031a 00C0      		rjmp .L71
- 829               	.L107:
- 831               	.LM107:
- 832 031c 08EE      		ldi r16,lo8(-24)
- 833 031e 13E0      		ldi r17,lo8(3)
- 834               	.L71:
+ 821               	.LM105:
+ 822 0312 0150      		subi r16,1
+ 823 0314 1109      		sbc r17,__zero_reg__
+ 824 0316 00C0      		rjmp .L71
+ 825               	.L107:
+ 827               	.LM106:
+ 828 0318 08EE      		ldi r16,lo8(-24)
+ 829 031a 13E0      		ldi r17,lo8(3)
+ 830               	.L71:
  388:main.c        ****         
  389:main.c        **** 		yackbeat();
- 836               	.LM108:
- 837 0320 00D0      		rcall yackbeat
+ 832               	.LM107:
+ 833 031c 00D0      		rcall yackbeat
  390:main.c        ****         
  391:main.c        ****         lfsr(255);          // Keep seeding the LFSR so we get different callsigns
- 839               	.LM109:
- 840 0322 8FEF      		ldi r24,lo8(-1)
- 841 0324 00D0      		rcall lfsr
+ 835               	.LM108:
+ 836 031e 8FEF      		ldi r24,lo8(-1)
+ 837 0320 00D0      		rcall lfsr
  392:main.c        **** 		
  393:main.c        ****         if (!yackflag(CONFLOCK)) // No Configuration lock?
- 843               	.LM110:
- 844 0326 82E0      		ldi r24,lo8(2)
- 845 0328 00D0      		rcall yackflag
- 846 032a 8111      		cpse r24,__zero_reg__
- 847 032c 00C0      		rjmp .L72
+ 839               	.LM109:
+ 840 0322 82E0      		ldi r24,lo8(2)
+ 841 0324 00D0      		rcall yackflag
+ 842 0326 8111      		cpse r24,__zero_reg__
+ 843 0328 00C0      		rjmp .L72
  394:main.c        ****         {    
  395:main.c        ****             switch (c) // These are the lockable configuration commands
- 849               	.LM111:
- 850 032e 8C2F      		mov r24,r28
- 851 0330 90E0      		ldi r25,0
- 852 0332 FC01      		movw r30,r24
- 853 0334 F197      		sbiw r30,49
- 854 0336 EA32      		cpi r30,42
- 855 0338 F105      		cpc r31,__zero_reg__
- 856 033a 00F4      		brsh .L72
- 857 033c E050      		subi r30,lo8(-(gs(.L74)))
- 858 033e F040      		sbci r31,hi8(-(gs(.L74)))
- 859 0340 0994      		ijmp
- 860               		.section	.progmem.gcc_sw_table,"ax",@progbits
- 861               		.p2align	1
- 862               	.L74:
- 863 0000 00C0      		rjmp .L73
- 864 0002 00C0      		rjmp .L75
- 865 0004 00C0      		rjmp .L76
- 866 0006 00C0      		rjmp .L77
- 867 0008 00C0      		rjmp .L72
- 868 000a 00C0      		rjmp .L72
- 869 000c 00C0      		rjmp .L72
- 870 000e 00C0      		rjmp .L72
- 871 0010 00C0      		rjmp .L72
- 872 0012 00C0      		rjmp .L72
- 873 0014 00C0      		rjmp .L72
- 874 0016 00C0      		rjmp .L72
- 875 0018 00C0      		rjmp .L72
- 876 001a 00C0      		rjmp .L72
- 877 001c 00C0      		rjmp .L72
- 878 001e 00C0      		rjmp .L72
- 879 0020 00C0      		rjmp .L78
- 880 0022 00C0      		rjmp .L79
- 881 0024 00C0      		rjmp .L72
- 882 0026 00C0      		rjmp .L80
- 883 0028 00C0      		rjmp .L72
- 884 002a 00C0      		rjmp .L81
- 885 002c 00C0      		rjmp .L72
- 886 002e 00C0      		rjmp .L72
- 887 0030 00C0      		rjmp .L72
- 888 0032 00C0      		rjmp .L72
- 889 0034 00C0      		rjmp .L82
- 890 0036 00C0      		rjmp .L83
- 891 0038 00C0      		rjmp .L72
- 892 003a 00C0      		rjmp .L84
- 893 003c 00C0      		rjmp .L72
- 894 003e 00C0      		rjmp .L72
- 895 0040 00C0      		rjmp .L72
- 896 0042 00C0      		rjmp .L85
- 897 0044 00C0      		rjmp .L86
- 898 0046 00C0      		rjmp .L72
- 899 0048 00C0      		rjmp .L72
- 900 004a 00C0      		rjmp .L72
- 901 004c 00C0      		rjmp .L72
- 902 004e 00C0      		rjmp .L87
- 903 0050 00C0      		rjmp .L72
- 904 0052 00C0      		rjmp .L88
- 905               		.text
- 906               	.L85:
+ 845               	.LM110:
+ 846 032a 8C2F      		mov r24,r28
+ 847 032c 90E0      		ldi r25,0
+ 848 032e FC01      		movw r30,r24
+ 849 0330 F197      		sbiw r30,49
+ 850 0332 EA32      		cpi r30,42
+ 851 0334 F105      		cpc r31,__zero_reg__
+ 852 0336 00F4      		brsh .L72
+ 853 0338 E050      		subi r30,lo8(-(gs(.L74)))
+ 854 033a F040      		sbci r31,hi8(-(gs(.L74)))
+ 855 033c 0994      		ijmp
+ 856               		.section	.progmem.gcc_sw_table,"ax",@progbits
+ 857               		.p2align	1
+ 858               	.L74:
+ 859 0000 00C0      		rjmp .L73
+ 860 0002 00C0      		rjmp .L75
+ 861 0004 00C0      		rjmp .L76
+ 862 0006 00C0      		rjmp .L77
+ 863 0008 00C0      		rjmp .L72
+ 864 000a 00C0      		rjmp .L72
+ 865 000c 00C0      		rjmp .L72
+ 866 000e 00C0      		rjmp .L72
+ 867 0010 00C0      		rjmp .L72
+ 868 0012 00C0      		rjmp .L72
+ 869 0014 00C0      		rjmp .L72
+ 870 0016 00C0      		rjmp .L72
+ 871 0018 00C0      		rjmp .L72
+ 872 001a 00C0      		rjmp .L72
+ 873 001c 00C0      		rjmp .L72
+ 874 001e 00C0      		rjmp .L72
+ 875 0020 00C0      		rjmp .L78
+ 876 0022 00C0      		rjmp .L79
+ 877 0024 00C0      		rjmp .L72
+ 878 0026 00C0      		rjmp .L80
+ 879 0028 00C0      		rjmp .L72
+ 880 002a 00C0      		rjmp .L81
+ 881 002c 00C0      		rjmp .L72
+ 882 002e 00C0      		rjmp .L72
+ 883 0030 00C0      		rjmp .L72
+ 884 0032 00C0      		rjmp .L72
+ 885 0034 00C0      		rjmp .L82
+ 886 0036 00C0      		rjmp .L83
+ 887 0038 00C0      		rjmp .L72
+ 888 003a 00C0      		rjmp .L84
+ 889 003c 00C0      		rjmp .L72
+ 890 003e 00C0      		rjmp .L72
+ 891 0040 00C0      		rjmp .L72
+ 892 0042 00C0      		rjmp .L85
+ 893 0044 00C0      		rjmp .L86
+ 894 0046 00C0      		rjmp .L72
+ 895 0048 00C0      		rjmp .L72
+ 896 004a 00C0      		rjmp .L72
+ 897 004c 00C0      		rjmp .L72
+ 898 004e 00C0      		rjmp .L87
+ 899 0050 00C0      		rjmp .L72
+ 900 0052 00C0      		rjmp .L88
+ 901               		.text
+ 902               	.L85:
  396:main.c        ****             {
  397:main.c        ****                     
  398:main.c        ****                 case	'R': // Reset
  399:main.c        ****                     yackreset();
- 908               	.LM112:
- 909 0342 00D0      		rcall yackreset
+ 904               	.LM111:
+ 905 033e 00D0      		rcall yackreset
  400:main.c        ****                     c = TRUE;
  401:main.c        ****                     break;
- 911               	.LM113:
- 912 0344 00C0      		rjmp .L89
- 913               	.L78:
+ 907               	.LM112:
+ 908 0340 00C0      		rjmp .L89
+ 909               	.L78:
  402:main.c        ****                     
  403:main.c        ****                 case	'A': // IAMBIC A
  404:main.c        ****                     yackmode(IAMBICA);
- 915               	.LM114:
- 916 0346 80E0      		ldi r24,0
- 917 0348 00C0      		rjmp .L116
- 918               	.L79:
+ 911               	.LM113:
+ 912 0342 80E0      		ldi r24,0
+ 913 0344 00C0      		rjmp .L116
+ 914               	.L79:
  405:main.c        ****                     c = TRUE;
  406:main.c        ****                     break;
  407:main.c        ****                     
  408:main.c        ****                 case	'B': // IAMBIC B
  409:main.c        ****                     yackmode(IAMBICB);
- 920               	.LM115:
- 921 034a 84E0      		ldi r24,lo8(4)
- 922 034c 00C0      		rjmp .L116
- 923               	.L83:
+ 916               	.LM114:
+ 917 0346 84E0      		ldi r24,lo8(4)
+ 918 0348 00C0      		rjmp .L116
+ 919               	.L83:
  410:main.c        ****                     c = TRUE;
  411:main.c        ****                     break;
  412:main.c        **** 
  413:main.c        ****                 case	'L': // ULTIMATIC
  414:main.c        ****                     yackmode(ULTIMATIC);
- 925               	.LM116:
- 926 034e 88E0      		ldi r24,lo8(8)
- 927 0350 00C0      		rjmp .L116
- 928               	.L80:
+ 921               	.LM115:
+ 922 034a 88E0      		ldi r24,lo8(8)
+ 923 034c 00C0      		rjmp .L116
+ 924               	.L80:
  415:main.c        ****                     c = TRUE;
  416:main.c        ****                     break;
  417:main.c        ****                     
  418:main.c        ****                 case    'D': // DAHPRIO
  419:main.c        ****                     yackmode(DAHPRIO);
- 930               	.LM117:
- 931 0352 8CE0      		ldi r24,lo8(12)
- 932               	.L116:
- 933 0354 00D0      		rcall yackmode
+ 926               	.LM116:
+ 927 034e 8CE0      		ldi r24,lo8(12)
+ 928               	.L116:
+ 929 0350 00D0      		rcall yackmode
  420:main.c        ****                     c = TRUE;
  421:main.c        ****                     break;
- 935               	.LM118:
- 936 0356 00C0      		rjmp .L89
- 937               	.L87:
+ 931               	.LM117:
+ 932 0352 00C0      		rjmp .L89
+ 933               	.L87:
  422:main.c        ****                     
  423:main.c        ****                 case	'X': // Paddle swapping
  424:main.c        ****                     yacktoggle(PDLSWAP);
- 939               	.LM119:
- 940 0358 80E8      		ldi r24,lo8(-128)
- 941 035a 00C0      		rjmp .L115
- 942               	.L86:
+ 935               	.LM118:
+ 936 0354 80E8      		ldi r24,lo8(-128)
+ 937 0356 00C0      		rjmp .L115
+ 938               	.L86:
  425:main.c        ****                     c = TRUE;
  426:main.c        ****                     break;
  427:main.c        ****                     
  428:main.c        ****                 case    'S': // Sidetone toggle
  429:main.c        ****                     yacktoggle(SIDETONE);
- 944               	.LM120:
- 945 035c 80E1      		ldi r24,lo8(16)
- 946 035e 00C0      		rjmp .L115
- 947               	.L82:
+ 940               	.LM119:
+ 941 0358 80E1      		ldi r24,lo8(16)
+ 942 035a 00C0      		rjmp .L115
+ 943               	.L82:
  430:main.c        ****                     c = TRUE;
  431:main.c        ****                     break;
  432:main.c        ****                     
  433:main.c        ****                 case    'K': // TX keying toggle
  434:main.c        ****                     yacktoggle(TXKEY);
- 949               	.LM121:
- 950 0360 80E2      		ldi r24,lo8(32)
- 951 0362 00C0      		rjmp .L115
- 952               	.L88:
+ 945               	.LM120:
+ 946 035c 80E2      		ldi r24,lo8(32)
+ 947 035e 00C0      		rjmp .L115
+ 948               	.L88:
  435:main.c        ****                     c = TRUE;
  436:main.c        ****                     break;
  437:main.c        ****                     
  438:main.c        ****                 case    'Z': // Farnsworth pause
  439:main.c        ****                     setfarns();
- 954               	.LM122:
- 955 0364 00D0      		rcall setfarns
+ 950               	.LM121:
+ 951 0360 00D0      		rcall setfarns
  440:main.c        ****                     c = TRUE;
  441:main.c        ****                     break;
- 957               	.LM123:
- 958 0366 00C0      		rjmp .L89
- 959               	.L81:
+ 953               	.LM122:
+ 954 0362 00C0      		rjmp .L89
+ 955               	.L81:
  442:main.c        ****                         
  443:main.c        ****                 case    'F': // TX level inverter toggle
  444:main.c        ****                     yacktoggle(TXINV);
- 961               	.LM124:
- 962 0368 80E4      		ldi r24,lo8(64)
- 963 036a 00C0      		rjmp .L115
- 964               	.L73:
+ 957               	.LM123:
+ 958 0364 80E4      		ldi r24,lo8(64)
+ 959 0366 00C0      		rjmp .L115
+ 960               	.L73:
  445:main.c        ****                     c = TRUE;
  446:main.c        ****                     break;
  447:main.c        ****                     
  448:main.c        ****                 case	'1': // Record Macro 1
  449:main.c        ****                     yackchar('1');
- 966               	.LM125:
- 967 036c 81E3      		ldi r24,lo8(49)
- 968 036e 00D0      		rcall yackchar
+ 962               	.LM124:
+ 963 0368 81E3      		ldi r24,lo8(49)
+ 964 036a 00D0      		rcall yackchar
  450:main.c        ****                     yackmessage(RECORD,1); 
- 970               	.LM126:
- 971 0370 61E0      		ldi r22,lo8(1)
- 972 0372 00C0      		rjmp .L114
- 973               	.L75:
+ 966               	.LM125:
+ 967 036c 61E0      		ldi r22,lo8(1)
+ 968 036e 00C0      		rjmp .L114
+ 969               	.L75:
  451:main.c        ****                     c = TRUE;
  452:main.c        ****                     break;
  453:main.c        ****                     
  454:main.c        ****                 case	'2': // Record Macro 2
  455:main.c        ****                     yackchar('2');
- 975               	.LM127:
- 976 0374 82E3      		ldi r24,lo8(50)
- 977 0376 00D0      		rcall yackchar
+ 971               	.LM126:
+ 972 0370 82E3      		ldi r24,lo8(50)
+ 973 0372 00D0      		rcall yackchar
  456:main.c        ****                     yackmessage(RECORD,2); 
- 979               	.LM128:
- 980 0378 62E0      		ldi r22,lo8(2)
- 981 037a 00C0      		rjmp .L114
- 982               	.L76:
+ 975               	.LM127:
+ 976 0374 62E0      		ldi r22,lo8(2)
+ 977 0376 00C0      		rjmp .L114
+ 978               	.L76:
  457:main.c        ****                     c = TRUE;
  458:main.c        ****                     break;
  459:main.c        **** 					
  460:main.c        **** 				case	'3': // Record Macro 3
  461:main.c        ****                     yackchar('3');
- 984               	.LM129:
- 985 037c 83E3      		ldi r24,lo8(51)
- 986 037e 00D0      		rcall yackchar
+ 980               	.LM128:
+ 981 0378 83E3      		ldi r24,lo8(51)
+ 982 037a 00D0      		rcall yackchar
  462:main.c        ****                     yackmessage(RECORD,3); 
- 988               	.LM130:
- 989 0380 63E0      		ldi r22,lo8(3)
- 990 0382 00C0      		rjmp .L114
- 991               	.L77:
+ 984               	.LM129:
+ 985 037c 63E0      		ldi r22,lo8(3)
+ 986 037e 00C0      		rjmp .L114
+ 987               	.L77:
  463:main.c        ****                     c = TRUE;
  464:main.c        ****                     break;
  465:main.c        **** 
  466:main.c        **** 				case	'4': // Record Macro 4
  467:main.c        ****                     yackchar('4');
- 993               	.LM131:
- 994 0384 84E3      		ldi r24,lo8(52)
- 995 0386 00D0      		rcall yackchar
+ 989               	.LM130:
+ 990 0380 84E3      		ldi r24,lo8(52)
+ 991 0382 00D0      		rcall yackchar
  468:main.c        ****                     yackmessage(RECORD,4); 
- 997               	.LM132:
- 998 0388 64E0      		ldi r22,lo8(4)
- 999               	.L114:
- 1000 038a 81E0      		ldi r24,lo8(1)
- 1001 038c 00D0      		rcall yackmessage
+ 993               	.LM131:
+ 994 0384 64E0      		ldi r22,lo8(4)
+ 995               	.L114:
+ 996 0386 81E0      		ldi r24,lo8(1)
+ 997 0388 00D0      		rcall yackmessage
  469:main.c        ****                     c = TRUE;
  470:main.c        ****                     break;	
- 1003               	.LM133:
- 1004 038e 00C0      		rjmp .L89
- 1005               	.L84:
+ 999               	.LM132:
+ 1000 038a 00C0      		rjmp .L89
+ 1001               	.L84:
  471:main.c        ****                     
  472:main.c        ****                 case	'N': // Automatic Beacon
  473:main.c        ****                     beacon(RECORD);
- 1007               	.LM134:
- 1008 0390 81E0      		ldi r24,lo8(1)
- 1009 0392 00D0      		rcall beacon
+ 1003               	.LM133:
+ 1004 038c 81E0      		ldi r24,lo8(1)
+ 1005 038e 00D0      		rcall beacon
  474:main.c        ****                     c = TRUE;
  475:main.c        ****                     break;
- 1011               	.LM135:
- 1012 0394 00C0      		rjmp .L89
- 1013               	.L72:
+ 1007               	.LM134:
+ 1008 0390 00C0      		rjmp .L89
+ 1009               	.L72:
  476:main.c        ****                     
  477:main.c        ****             }
  478:main.c        ****             
  479:main.c        ****         }
  480:main.c        ****         
  481:main.c        ****         switch (c) // Commands that can be used anytime
- 1015               	.LM136:
- 1016 0396 CD34      		cpi r28,lo8(77)
- 1017 0398 01F0      		breq .L91
- 1018 039a 00F4      		brsh .L92
- 1019 039c C334      		cpi r28,lo8(67)
- 1020 039e 01F0      		breq .L93
- 1021 03a0 00F4      		brsh .L94
- 1022 03a2 C033      		cpi r28,lo8(48)
- 1023 03a4 01F4      		brne .L90
+ 1011               	.LM135:
+ 1012 0392 CD34      		cpi r28,lo8(77)
+ 1013 0394 01F0      		breq .L91
+ 1014 0396 00F4      		brsh .L92
+ 1015 0398 C334      		cpi r28,lo8(67)
+ 1016 039a 01F0      		breq .L93
+ 1017 039c 00F4      		brsh .L94
+ 1018 039e C033      		cpi r28,lo8(48)
+ 1019 03a0 01F4      		brne .L90
  482:main.c        ****         {
  483:main.c        ****                 
  484:main.c        ****             case    'V': // Version
@@ -1273,16 +1270,16 @@
  506:main.c        ****                 
  507:main.c        ****             case    '0': // Lock changes
  508:main.c        ****                 yacktoggle(CONFLOCK);
- 1025               	.LM137:
- 1026 03a6 82E0      		ldi r24,lo8(2)
- 1027 03a8 00C0      		rjmp .L115
- 1028               	.L94:
+ 1021               	.LM136:
+ 1022 03a2 82E0      		ldi r24,lo8(2)
+ 1023 03a4 00C0      		rjmp .L115
+ 1024               	.L94:
  481:main.c        ****         {
- 1030               	.LM138:
- 1031 03aa C534      		cpi r28,lo8(69)
- 1032 03ac 01F0      		breq .L96
- 1033 03ae C934      		cpi r28,lo8(73)
- 1034 03b0 01F4      		brne .L90
+ 1026               	.LM137:
+ 1027 03a6 C534      		cpi r28,lo8(69)
+ 1028 03a8 01F0      		breq .L96
+ 1029 03aa C934      		cpi r28,lo8(73)
+ 1030 03ac 01F4      		brne .L90
  509:main.c        ****                 c = TRUE;
  510:main.c        ****                 break;
  511:main.c        ****                 
@@ -1295,43 +1292,43 @@
  518:main.c        ****                 
  519:main.c        ****             case	'I': // Playback Macro 2
  520:main.c        ****                 yackinhibit(OFF);
- 1036               	.LM139:
- 1037 03b2 80E0      		ldi r24,0
- 1038 03b4 00D0      		rcall yackinhibit
+ 1032               	.LM138:
+ 1033 03ae 80E0      		ldi r24,0
+ 1034 03b0 00D0      		rcall yackinhibit
  521:main.c        ****                 yackmessage(PLAY,2);
- 1040               	.LM140:
- 1041 03b6 62E0      		ldi r22,lo8(2)
- 1042 03b8 00C0      		rjmp .L118
- 1043               	.L92:
+ 1036               	.LM139:
+ 1037 03b2 62E0      		ldi r22,lo8(2)
+ 1038 03b4 00C0      		rjmp .L117
+ 1039               	.L92:
  481:main.c        ****         {
- 1045               	.LM141:
- 1046 03ba C535      		cpi r28,lo8(85)
- 1047 03bc 01F0      		breq .L98
- 1048 03be 00F4      		brsh .L99
- 1049 03c0 C035      		cpi r28,lo8(80)
- 1050 03c2 01F0      		breq .L100
- 1051 03c4 C435      		cpi r28,lo8(84)
- 1052 03c6 01F4      		brne .L90
+ 1041               	.LM140:
+ 1042 03b6 C535      		cpi r28,lo8(85)
+ 1043 03b8 01F0      		breq .L98
+ 1044 03ba 00F4      		brsh .L99
+ 1045 03bc C035      		cpi r28,lo8(80)
+ 1046 03be 01F0      		breq .L100
+ 1047 03c0 C435      		cpi r28,lo8(84)
+ 1048 03c2 01F4      		brne .L90
  522:main.c        ****                 yackinhibit(OFF); // Go to normal mode after playing saved message;
  523:main.c        ****                 c = FALSE;
  524:main.c        ****                 return;
  525:main.c        **** 				
  526:main.c        **** 			case	'T': // Playback Macro 3
  527:main.c        ****                 yackinhibit(OFF);
- 1054               	.LM142:
- 1055 03c8 80E0      		ldi r24,0
- 1056 03ca 00D0      		rcall yackinhibit
+ 1050               	.LM141:
+ 1051 03c4 80E0      		ldi r24,0
+ 1052 03c6 00D0      		rcall yackinhibit
  528:main.c        ****                 yackmessage(PLAY,3);
- 1058               	.LM143:
- 1059 03cc 63E0      		ldi r22,lo8(3)
- 1060 03ce 00C0      		rjmp .L118
- 1061               	.L99:
+ 1054               	.LM142:
+ 1055 03c8 63E0      		ldi r22,lo8(3)
+ 1056 03ca 00C0      		rjmp .L117
+ 1057               	.L99:
  481:main.c        ****         {
- 1063               	.LM144:
- 1064 03d0 C635      		cpi r28,lo8(86)
- 1065 03d2 01F0      		breq .L102
- 1066 03d4 C735      		cpi r28,lo8(87)
- 1067 03d6 01F4      		brne .L90
+ 1059               	.LM143:
+ 1060 03cc C635      		cpi r28,lo8(86)
+ 1061 03ce 01F0      		breq .L102
+ 1062 03d0 C735      		cpi r28,lo8(87)
+ 1063 03d2 01F4      		brne .L90
  529:main.c        ****                 yackinhibit(OFF); // Go to normal mode after playing saved message;
  530:main.c        ****                 c = FALSE;
  531:main.c        ****                 return;
@@ -1345,145 +1342,140 @@
  539:main.c        ****                 
  540:main.c        ****             case    'W': // Query WPM
  541:main.c        ****                 yacknumber(yackwpm());
- 1069               	.LM145:
- 1070 03d8 00D0      		rcall yackwpm
- 1071 03da 00D0      		rcall yacknumber
+ 1065               	.LM144:
+ 1066 03d4 00D0      		rcall yackwpm
+ 1067 03d6 00D0      		rcall yacknumber
  542:main.c        ****                 c = TRUE;
  543:main.c        ****                 break;
- 1073               	.LM146:
- 1074 03dc 00C0      		rjmp .L89
- 1075               	.L102:
+ 1069               	.LM145:
+ 1070 03d8 00C0      		rjmp .L89
+ 1071               	.L102:
  485:main.c        ****                 c = TRUE;
- 1077               	.LM147:
- 1078 03de 80E0      		ldi r24,lo8(vers)
- 1079 03e0 90E0      		ldi r25,hi8(vers)
- 1080 03e2 00D0      		rcall yackstring
+ 1073               	.LM146:
+ 1074 03da 80E0      		ldi r24,lo8(vers)
+ 1075 03dc 90E0      		ldi r25,hi8(vers)
+ 1076 03de 00D0      		rcall yackstring
  487:main.c        ****     
- 1082               	.LM148:
- 1083 03e4 00C0      		rjmp .L89
- 1084               	.L100:
+ 1078               	.LM147:
+ 1079 03e0 00C0      		rjmp .L89
+ 1080               	.L100:
  491:main.c        ****                 c = TRUE;
- 1086               	.LM149:
- 1087 03e6 00D0      		rcall pitch
+ 1082               	.LM148:
+ 1083 03e2 00D0      		rcall pitch
  493:main.c        ****                 
- 1089               	.LM150:
- 1090 03e8 00C0      		rjmp .L89
- 1091               	.L98:
+ 1085               	.LM149:
+ 1086 03e4 00C0      		rjmp .L89
+ 1087               	.L98:
  496:main.c        ****                 yacktune();
- 1093               	.LM151:
- 1094 03ea 80E0      		ldi r24,0
- 1095 03ec 00D0      		rcall yackinhibit
+ 1089               	.LM150:
+ 1090 03e6 80E0      		ldi r24,0
+ 1091 03e8 00D0      		rcall yackinhibit
  497:main.c        ****                 yackinhibit(ON); 
- 1097               	.LM152:
- 1098 03ee 00D0      		rcall yacktune
+ 1093               	.LM151:
+ 1094 03ea 00D0      		rcall yacktune
  498:main.c        ****                 c = TRUE;
- 1100               	.LM153:
- 1101 03f0 81E0      		ldi r24,lo8(1)
- 1102 03f2 00D0      		rcall yackinhibit
+ 1096               	.LM152:
+ 1097 03ec 81E0      		ldi r24,lo8(1)
+ 1098 03ee 00D0      		rcall yackinhibit
  500:main.c        ****                 
- 1104               	.LM154:
- 1105 03f4 00C0      		rjmp .L89
- 1106               	.L93:
+ 1100               	.LM153:
+ 1101 03f0 00C0      		rjmp .L89
+ 1102               	.L93:
  503:main.c        ****                 c = TRUE;
- 1108               	.LM155:
- 1109 03f6 00D0      		rcall cstrain
+ 1104               	.LM154:
+ 1105 03f2 00D0      		rcall cstrain
  505:main.c        ****                 
- 1111               	.LM156:
- 1112 03f8 00C0      		rjmp .L89
- 1113               	.L115:
+ 1107               	.LM155:
+ 1108 03f4 00C0      		rjmp .L89
+ 1109               	.L115:
  508:main.c        ****                 c = TRUE;
- 1115               	.LM157:
- 1116 03fa 00D0      		rcall yacktoggle
+ 1111               	.LM156:
+ 1112 03f6 00D0      		rcall yacktoggle
  510:main.c        ****                 
- 1118               	.LM158:
- 1119 03fc 00C0      		rjmp .L89
- 1120               	.L96:
+ 1114               	.LM157:
+ 1115 03f8 00C0      		rjmp .L89
+ 1116               	.L96:
  513:main.c        ****                 yackmessage(PLAY,1);
- 1122               	.LM159:
- 1123 03fe 80E0      		ldi r24,0
- 1124 0400 00D0      		rcall yackinhibit
+ 1118               	.LM158:
+ 1119 03fa 80E0      		ldi r24,0
+ 1120 03fc 00D0      		rcall yackinhibit
  514:main.c        ****                 yackinhibit(OFF); // Go to normal mode after playing saved message
- 1126               	.LM160:
- 1127 0402 61E0      		ldi r22,lo8(1)
- 1128 0404 00C0      		rjmp .L118
- 1129               	.L91:
+ 1122               	.LM159:
+ 1123 03fe 61E0      		ldi r22,lo8(1)
+ 1124 0400 00C0      		rjmp .L117
+ 1125               	.L91:
  534:main.c        ****                 yackmessage(PLAY,4);
- 1131               	.LM161:
- 1132 0406 80E0      		ldi r24,0
- 1133 0408 00D0      		rcall yackinhibit
+ 1127               	.LM160:
+ 1128 0402 80E0      		ldi r24,0
+ 1129 0404 00D0      		rcall yackinhibit
  535:main.c        ****                 yackinhibit(OFF); // Go to normal mode after playing saved message;
- 1135               	.LM162:
- 1136 040a 64E0      		ldi r22,lo8(4)
- 1137               	.L118:
- 1138 040c 82E0      		ldi r24,lo8(2)
- 1139 040e 00D0      		rcall yackmessage
- 1140 0410 00C0      		rjmp .L117
- 1141               	.L90:
+ 1131               	.LM161:
+ 1132 0406 64E0      		ldi r22,lo8(4)
+ 1133               	.L117:
+ 1134 0408 82E0      		ldi r24,lo8(2)
+ 1135 040a 00D0      		rcall yackmessage
+ 1136 040c 00C0      		rjmp .L105
+ 1137               	.L90:
  544:main.c        ****                 
  545:main.c        ****                 
  546:main.c        ****         }
  547:main.c        ****         
  548:main.c        ****         if (c == TRUE) // If c still contains a string, the command was not handled properly
- 1143               	.LM163:
- 1144 0412 C130      		cpi r28,lo8(1)
- 1145 0414 01F0      		breq .L89
+ 1139               	.LM162:
+ 1140 040e C130      		cpi r28,lo8(1)
+ 1141 0410 01F0      		breq .L89
  549:main.c        **** 		{
  550:main.c        **** 			yacksave(); //Save any non-volatile changes to EEPROM
  551:main.c        **** 			yackdelay(DAHLEN * 3); //Eliminate runon txok on some commands
  552:main.c        ****             yackstring(txok);
  553:main.c        **** 		}
  554:main.c        ****         else if (c)
- 1147               	.LM164:
- 1148 0416 CC23      		tst r28
- 1149 0418 01F4      		brne .+2
- 1150 041a 00C0      		rjmp .L70
+ 1143               	.LM163:
+ 1144 0412 CC23      		tst r28
+ 1145 0414 01F4      		brne .+2
+ 1146 0416 00C0      		rjmp .L70
  555:main.c        ****             yackerror();    
- 1152               	.LM165:
- 1153 041c 00D0      		rcall yackerror
- 1154 041e 00C0      		rjmp .L70
- 1155               	.L105:
+ 1148               	.LM164:
+ 1149 0418 00D0      		rcall yackerror
+ 1150 041a 00C0      		rjmp .L70
+ 1151               	.L105:
  556:main.c        ****             
  557:main.c        **** 	}
  558:main.c        ****         
  559:main.c        ****         
- 560:main.c        **** 	yackstring(prgx); 			// Sign off
- 1157               	.LM166:
- 1158 0420 80E0      		ldi r24,lo8(prgx)
- 1159 0422 90E0      		ldi r25,hi8(prgx)
- 1160 0424 00D0      		rcall yackstring
- 1161               	.L117:
+ 560:main.c        **** 	//yackstring(prgx); 			// Sign off (removed, since we have the LED to indicate)
  561:main.c        **** 
  562:main.c        **** 	yackinhibit(OFF);		// Back to normal mode
- 1163               	.LM167:
- 1164 0426 80E0      		ldi r24,0
- 1165               	/* epilogue start */
+ 1153               	.LM165:
+ 1154 041c 80E0      		ldi r24,0
+ 1155               	/* epilogue start */
  563:main.c        **** 	
  564:main.c        **** }
- 1167               	.LM168:
- 1168 0428 CF91      		pop r28
- 1169 042a 1F91      		pop r17
- 1170 042c 0F91      		pop r16
+ 1157               	.LM166:
+ 1158 041e CF91      		pop r28
+ 1159 0420 1F91      		pop r17
+ 1160 0422 0F91      		pop r16
  562:main.c        **** 	
- 1172               	.LM169:
- 1173 042e 00C0      		rjmp yackinhibit
- 1174               	.L89:
+ 1162               	.LM167:
+ 1163 0424 00C0      		rjmp yackinhibit
+ 1164               	.L89:
  550:main.c        **** 			yackdelay(DAHLEN * 3); //Eliminate runon txok on some commands
- 1176               	.LM170:
- 1177 0430 00D0      		rcall yacksave
+ 1166               	.LM168:
+ 1167 0426 00D0      		rcall yacksave
  551:main.c        ****             yackstring(txok);
- 1179               	.LM171:
- 1180 0432 89E0      		ldi r24,lo8(9)
- 1181 0434 00D0      		rcall yackdelay
+ 1169               	.LM169:
+ 1170 0428 89E0      		ldi r24,lo8(9)
+ 1171 042a 00D0      		rcall yackdelay
  552:main.c        **** 		}
- 1183               	.LM172:
- 1184 0436 80E0      		ldi r24,lo8(txok)
- 1185 0438 90E0      		ldi r25,hi8(txok)
- 1186 043a 00D0      		rcall yackstring
- 1187 043c 00C0      		rjmp .L70
- 1193               	.Lscope7:
- 1194               		.section	.text.startup,"ax",@progbits
- 1196               	.global	main
- 1198               	main:
+ 1173               	.LM170:
+ 1174 042c 80E0      		ldi r24,lo8(txok)
+ 1175 042e 90E0      		ldi r25,hi8(txok)
+ 1176 0430 00D0      		rcall yackstring
+ 1177 0432 00C0      		rjmp .L70
+ 1183               	.Lscope7:
+ 1184               		.section	.text.startup,"ax",@progbits
+ 1186               	.global	main
+ 1188               	main:
  565:main.c        **** 
  566:main.c        **** 
  567:main.c        **** 
@@ -1497,109 +1489,109 @@
  575:main.c        ****  @return Not relevant
  576:main.c        **** */
  577:main.c        **** {
- 1200               	.LM173:
- 1201               	.LFBB8:
- 1202               	/* prologue: function */
- 1203               	/* frame size = 0 */
- 1204               	/* stack size = 0 */
- 1205               	.L__stack_usage = 0
+ 1190               	.LM171:
+ 1191               	.LFBB8:
+ 1192               	/* prologue: function */
+ 1193               	/* frame size = 0 */
+ 1194               	/* stack size = 0 */
+ 1195               	.L__stack_usage = 0
  578:main.c        **** 	
  579:main.c        **** 	yackinit(); 					// Initialize YACK hardware
- 1207               	.LM174:
- 1208 0000 00D0      		rcall yackinit
+ 1197               	.LM172:
+ 1198 0000 00D0      		rcall yackinit
  580:main.c        **** 	
  581:main.c        **** 	yackinhibit(ON);  //side tone greeting to confirm the unit is alive and kicking
- 1210               	.LM175:
- 1211 0002 81E0      		ldi r24,lo8(1)
- 1212 0004 00D0      		rcall yackinhibit
+ 1200               	.LM173:
+ 1201 0002 81E0      		ldi r24,lo8(1)
+ 1202 0004 00D0      		rcall yackinhibit
  582:main.c        **** 	yackstring(imok);
- 1214               	.LM176:
- 1215 0006 80E0      		ldi r24,lo8(imok)
- 1216 0008 90E0      		ldi r25,hi8(imok)
- 1217 000a 00D0      		rcall yackstring
+ 1204               	.LM174:
+ 1205 0006 80E0      		ldi r24,lo8(imok)
+ 1206 0008 90E0      		ldi r25,hi8(imok)
+ 1207 000a 00D0      		rcall yackstring
  583:main.c        **** 	yackinhibit(OFF);
- 1219               	.LM177:
- 1220 000c 80E0      		ldi r24,0
- 1221 000e 00D0      		rcall yackinhibit
- 1222               	.L121:
+ 1209               	.LM175:
+ 1210 000c 80E0      		ldi r24,0
+ 1211 000e 00D0      		rcall yackinhibit
+ 1212               	.L120:
  584:main.c        **** 	
  585:main.c        **** 	while(1) // Endless core loop of the keyer app
  586:main.c        **** 	{
  587:main.c        **** 		
  588:main.c        **** 		if (yackctrlkey(TRUE)) // If command key pressed, go to command mode
- 1224               	.LM178:
- 1225 0010 81E0      		ldi r24,lo8(1)
- 1226 0012 00D0      		rcall yackctrlkey
- 1227 0014 8111      		cpse r24,__zero_reg__
+ 1214               	.LM176:
+ 1215 0010 81E0      		ldi r24,lo8(1)
+ 1216 0012 00D0      		rcall yackctrlkey
+ 1217 0014 8111      		cpse r24,__zero_reg__
  589:main.c        **** 			commandmode();
- 1229               	.LM179:
- 1230 0016 00D0      		rcall commandmode
- 1231               	.L120:
+ 1219               	.LM177:
+ 1220 0016 00D0      		rcall commandmode
+ 1221               	.L119:
  590:main.c        **** 		
  591:main.c        ****        	yackbeat();
- 1233               	.LM180:
- 1234 0018 00D0      		rcall yackbeat
+ 1223               	.LM178:
+ 1224 0018 00D0      		rcall yackbeat
  592:main.c        **** 		beacon(PLAY); // Play beacon if requested
- 1236               	.LM181:
- 1237 001a 82E0      		ldi r24,lo8(2)
- 1238 001c 00D0      		rcall beacon
+ 1226               	.LM179:
+ 1227 001a 82E0      		ldi r24,lo8(2)
+ 1228 001c 00D0      		rcall beacon
  593:main.c        ****        	yackiambic(OFF);
- 1240               	.LM182:
- 1241 001e 80E0      		ldi r24,0
- 1242 0020 00D0      		rcall yackiambic
+ 1230               	.LM180:
+ 1231 001e 80E0      		ldi r24,0
+ 1232 0020 00D0      		rcall yackiambic
  594:main.c        ****         
  595:main.c        **** 	}
- 1244               	.LM183:
- 1245 0022 00C0      		rjmp .L121
- 1247               	.Lscope8:
- 1248               		.local	timer.1995
- 1249               		.comm	timer.1995,2,1
- 1250               		.data
- 1253               	interval.1994:
- 1254 0000 E8FD      		.word	-536
- 1257               	lfsr.1962:
- 1258 0002 E1AC      		.word	-21279
- 1259               	.global	imok
- 1260               		.section	.progmem.data,"a",@progbits
- 1263               	imok:
- 1264 0000 3733 00   		.string	"73"
- 1265               	.global	prgx
- 1268               	prgx:
- 1269 0003 2300      		.string	"#"
- 1270               	.global	vers
- 1273               	vers:
- 1274 0005 5630 2E38 		.string	"V0.87"
- 1274      3700 
- 1275               	.global	txok
- 1278               	txok:
- 1279 000b 5200      		.string	"R"
- 1284               		.text
- 1286               	.Letext0:
- 1287               		.ident	"GCC: (GNU) 5.4.0"
- 1288               	.global __do_copy_data
- 1289               	.global __do_clear_bss
+ 1234               	.LM181:
+ 1235 0022 00C0      		rjmp .L120
+ 1237               	.Lscope8:
+ 1238               		.local	timer.1995
+ 1239               		.comm	timer.1995,2,1
+ 1240               		.data
+ 1243               	interval.1994:
+ 1244 0000 E8FD      		.word	-536
+ 1247               	lfsr.1962:
+ 1248 0002 E1AC      		.word	-21279
+ 1249               	.global	imok
+ 1250               		.section	.progmem.data,"a",@progbits
+ 1253               	imok:
+ 1254 0000 3733 00   		.string	"73"
+ 1255               	.global	prgx
+ 1258               	prgx:
+ 1259 0003 2300      		.string	"#"
+ 1260               	.global	vers
+ 1263               	vers:
+ 1264 0005 5630 2E38 		.string	"V0.87"
+ 1264      3700 
+ 1265               	.global	txok
+ 1268               	txok:
+ 1269 000b 5200      		.string	"R"
+ 1274               		.text
+ 1276               	.Letext0:
+ 1277               		.ident	"GCC: (GNU) 5.4.0"
+ 1278               	.global __do_copy_data
+ 1279               	.global __do_clear_bss
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
-     /tmp/ccQFoyYn.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccQFoyYn.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccQFoyYn.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccQFoyYn.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccQFoyYn.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccQFoyYn.s:115    .text:0000000000000000 pitch
-     /tmp/ccQFoyYn.s:188    .text:0000000000000038 setfarns
-     /tmp/ccQFoyYn.s:270    .text:0000000000000078 lfsr
-     /tmp/ccQFoyYn.s:1257   .data:0000000000000002 lfsr.1962
-     /tmp/ccQFoyYn.s:324    .text:00000000000000b0 rndcall
-     /tmp/ccQFoyYn.s:388    .text:00000000000000f0 cstrain
-     /tmp/ccQFoyYn.s:566    .text:00000000000001b2 beacon
-     /tmp/ccQFoyYn.s:1253   .data:0000000000000000 interval.1994
+     /tmp/ccfSUqM4.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccfSUqM4.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccfSUqM4.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccfSUqM4.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccfSUqM4.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccfSUqM4.s:115    .text:0000000000000000 pitch
+     /tmp/ccfSUqM4.s:188    .text:0000000000000038 setfarns
+     /tmp/ccfSUqM4.s:270    .text:0000000000000078 lfsr
+     /tmp/ccfSUqM4.s:1247   .data:0000000000000002 lfsr.1962
+     /tmp/ccfSUqM4.s:324    .text:00000000000000b0 rndcall
+     /tmp/ccfSUqM4.s:388    .text:00000000000000f0 cstrain
+     /tmp/ccfSUqM4.s:566    .text:00000000000001b2 beacon
+     /tmp/ccfSUqM4.s:1243   .data:0000000000000000 interval.1994
                              .bss:0000000000000000 timer.1995
-     /tmp/ccQFoyYn.s:779    .text:00000000000002ea commandmode
-     /tmp/ccQFoyYn.s:1273   .progmem.data:0000000000000005 vers
-     /tmp/ccQFoyYn.s:1268   .progmem.data:0000000000000003 prgx
-     /tmp/ccQFoyYn.s:1278   .progmem.data:000000000000000b txok
-     /tmp/ccQFoyYn.s:1198   .text.startup:0000000000000000 main
-     /tmp/ccQFoyYn.s:1263   .progmem.data:0000000000000000 imok
+     /tmp/ccfSUqM4.s:779    .text:00000000000002ea commandmode
+     /tmp/ccfSUqM4.s:1263   .progmem.data:0000000000000005 vers
+     /tmp/ccfSUqM4.s:1268   .progmem.data:000000000000000b txok
+     /tmp/ccfSUqM4.s:1188   .text.startup:0000000000000000 main
+     /tmp/ccfSUqM4.s:1253   .progmem.data:0000000000000000 imok
+     /tmp/ccfSUqM4.s:1258   .progmem.data:0000000000000003 prgx
 
 UNDEFINED SYMBOLS
 yackchar

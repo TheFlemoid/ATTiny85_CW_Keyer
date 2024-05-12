@@ -214,6 +214,7 @@ void yackinit (void)
 	// Configure DDR. Make OUT and ST output ports
 	SETBIT (OUTDDR,OUTPIN);    
 	SETBIT (STDDR,STPIN);
+    SETBIT (CMDDDR,CMDPIN);
 	
 	// Raise internal pullups for all inputs
 	SETBIT (KEYPORT,DITPIN);  
@@ -359,6 +360,7 @@ void yackinhibit (byte mode)
 	
 	if (mode)
 	{
+        SETBIT(CMDPORT,CMDPIN); // Show the command mode light if inhibit is active
 		volflags &= ~(TXKEY | SIDETONE);
 		volflags |= SIDETONE;
 	}
@@ -366,6 +368,7 @@ void yackinhibit (byte mode)
 	else
 		
 	{
+        CLEARBIT(CMDPORT,CMDPIN); // Stop the command mode light if inhibit is inactive
 		volflags &= ~(TXKEY | SIDETONE);
 		volflags |= (yackflags & (TXKEY | SIDETONE));
         key(UP);
@@ -973,12 +976,14 @@ byte yackctrlkey(byte mode)
 			{
 				yackspeed(DOWN,WPMSPEED);
                 volbfr &= ~(CKLATCH); // Ignore that control key was pressed
+                CLEARBIT(CMDPORT,CMDPIN); // Stop the command mode light since we're ignoring control key
 			}	
 			
 			if (!( KEYINP & (1<<DAHPIN))) // Someone pressing DAH paddle
 			{
 				yackspeed(UP,WPMSPEED);
                 volbfr &= ~(CKLATCH);
+                CLEARBIT(CMDPORT,CMDPIN); // Stop the command mode light since we're ignoring control key
 			}	
 			
 		}
